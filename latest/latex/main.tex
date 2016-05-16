@@ -1,0 +1,98 @@
+% PhD thesis
+% ================================================================================
+% Title: Measurements of sintwobeta using charmonium and open charm decays at LHCb
+% Author: Frank Meier
+% Created on: 2016-05-16
+% ================================================================================
+\documentclass[12pt,a4paper,twoside,BCOR=13mm,openright,cleardoublepage=plain]{scrbook}
+
+% Variables that controls behaviour
+\usepackage{ifthen} % for conditional statements
+\newboolean{pdflatex}
+\setboolean{pdflatex}{true} % False for eps figures 
+
+\newboolean{articletitles}
+\setboolean{articletitles}{true} % False removes titles in references
+
+\newboolean{uprightparticles}
+\setboolean{uprightparticles}{false} %True for upright particle symbols
+
+\newboolean{inbibliography}
+\setboolean{inbibliography}{false} %True once you enter the bibliography
+
+\input{preamble}
+
+\begin{document}
+\pagenumbering{Roman}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%  Title  %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\setcounter{footnote}{1}
+
+\input{00-Titlepages/titlepage}
+
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\setcounter{footnote}{0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  Abstract  %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{00-Titlepages/abstract}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  List of To-dos   %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\todototoc
+%\listoftodos
+%\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  Table of Content   %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Main text %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{plain} % restore page numbers for the main text
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\linenumbers
+
+\input{01-Introduction/introduction}
+
+\input{02-StandardModel/standardmodel}
+
+\input{03-Detector/detector}
+
+%\addcontentsline{toc}{chapter}{Appendices}
+\input{A-Appendix/appendix}
+
+\clearpage
+\addcontentsline{toc}{chapter}{Bibliography}
+\setboolean{inbibliography}{true}
+\bibliographystyle{LHCb}
+\bibliography{99-References/bibliography,99-References/LHCb-PAPER,99-References/LHCb-CONF,99-References/LHCb-DP,99-References/LHCb-TDR,99-References/LHCb-ANA,99-References/LHCb-THESIS,99-References/external}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Acknowledgmenets %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\input{A-Acknowledgements/acknowledgements}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% Erklärung %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{B-Erklaerung/erklaerung}
+
+\end{document}

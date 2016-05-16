@@ -1,0 +1,17 @@
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.synctex.gz(busy)
+*.toc
+._*
+.DS_Store
+*.tdo
+*.idx
+*.ilg
+*.ind
+main.pdf
