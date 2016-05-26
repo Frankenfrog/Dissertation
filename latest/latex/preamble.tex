@@ -1,6 +1,3 @@
-% THis file contains all the default packages and modifications for
-% LHCb formatting
-
 %% %%%%%%%%%%%%%%%%%%
 %%  Page formatting
 %% %%%%%%%%%%%%%%%%%%
@@ -102,8 +99,8 @@
 %%%%%%%%%%%%%%%%%
 \usepackage{microtype}
 \usepackage{placeins} % allows to set float barriers (all previously included floats will be set before the barrier)
-\usepackage{csquotes} % context sensitive quotation
 \usepackage{lineno}  % for line numbering during review
+\usepackage{csquotes} % context sensitive quotation
 \usepackage{xspace} % To avoid problems with missing or double spaces after
                     % predefined symbols
 %\usepackage{caption} %these three command get the figure and table captions automatically small
@@ -138,6 +135,8 @@
 \usepackage{upgreek} % Adds in support for greek letters in roman typeset
 \usepackage{fancyvrb} % allows verbatim in math
 \usepackage{xfrac}
+\usepackage[T1]{fontenc}
+\usepackage{fix-cm}
 \usepackage[official]{eurosym}
 
 %% to-do notes
@@ -183,7 +182,7 @@ end#1\endcsname
 
 % Get hyperlinks to captions and in references.
 % These do not work with revtex. Use "hypertext" as class option instead.
-\usepackage{hyperref}    % Hyperlinks in references
+\usepackage[colorlinks=false, pdfborder={0 0 0}]{hyperref}    % Hyperlinks in references
 \usepackage[all]{hypcap} % Internal hyperlinks to floats.
 
 % Clever referencing

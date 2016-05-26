@@ -4,9 +4,10 @@
 % Author: Frank Meier
 % Created on: 2016-05-16
 % ================================================================================
+\RequirePackage[l2tabu, orthodox]{nag}
 \documentclass[12pt,a4paper,twoside,BCOR=13mm,openright,cleardoublepage=plain]{scrbook}
 
-% Variables that controls behaviour
+% Variables that control behaviour
 \usepackage{ifthen} % for conditional statements
 \newboolean{pdflatex}
 \setboolean{pdflatex}{true} % False for eps figures 
@@ -71,7 +72,19 @@
 
 \input{02-StandardModel/standardmodel}
 
-\input{03-Detector/detector}
+\input{03-CPViolation/cpviolation}
+
+\input{04-Detector/detector}
+
+\input{05-DataAnalysis/dataanalysis}
+
+\input{06-FlavourTagging/tagging}
+
+\input{07-Bd2JpsiKS/bd2jpsiks}
+
+\input{08-B02DD/b02dd}
+
+\input{09-Conclusion/conclusion}
 
 %\addcontentsline{toc}{chapter}{Appendices}
 \input{A-Appendix/appendix}
