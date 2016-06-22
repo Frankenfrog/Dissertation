@@ -1,4 +1,48 @@
 %!TEX root = ../main.tex
+%% JpsiKS specific
+\def\BdToJPsiKS         {\ensuremath{\decay{\Bd}{J/\psi\KS}}\xspace}
+\def\BsToJPsiKS         {\ensuremath{\decay{\Bs}{J/\psi\KS}}\xspace}
+\def\BToJPsiKS          {\ensuremath{\decay{\PB}{J/\psi\KS}}\xspace}
+\def\SJpsiKS            {\ensuremath{S_{J/\psi\KS}}\xspace}
+\def\CJpsiKS            {\ensuremath{C_{J/\psi\KS}}\xspace}
+\def\JPsiToMuMu         {\decay{J/\psi}{\mumu}}
+\def\JPsiToee           {\decay{J/\psi}{\epem}}
+\def\KSToPiPi           {\decay{\KS}{\pipi}}
+\def\sintwobeta         {\ensuremath{\sin 2\beta}\xspace}
+
+%% fixing Jpsi
+\def\JpsiX              {\ensuremath{J/\psi\PX}\xspace}
+\def\BdToJPsiKstar      {\ensuremath{\decay{\Bd}{J/\psi\Kstarz}}\xspace}
+\def\BToJPsiKstar       {\ensuremath{\decay{\PB}{J/\psi\Kstar}}\xspace}
+\def\BuToJPsiK          {\decay{\Bu}{J/\psi\Kp}}
+\def\myBsToJPsiPhi      {\ensuremath{\decay{\Bs}{J/\psi\phi}}\xspace}
+\def\BsToJPsiKst        {\decay{\Bs}{J/\psi\Kstarzb}}
+\def\BuToJPsiPi         {\decay{\Bu}{J/\psi\pip}}
+\def\BsToJPsiPiPi       {\decay{\Bs}{J/\psi\pipi}}
+\def\BsToJPsiKK         {\decay{\Bs}{J/\psi\KpKm}}
+\def\BsToJPsiPhiPhi     {\ensuremath{\decay{\Bs}{J/\psi\phi\phi}}\xspace}
+\def\BsToJPsiFourhPhi   {\ensuremath{\decay{\Bs}{J/\psi(\to 4h)\phi}}\xspace}
+\def\BsToJPsiF          {\ensuremath{\decay{\Bs}{J/\psi f_0(980)}}\xspace}
+\def\BdToJPsiPiPi       {\ensuremath{\decay{\Bd}{J\psi\pipi}}\xspace}
+\def\BdToJPsiX          {\ensuremath{\decay{\Bd}{J/\psi\PX}}\xspace}
+\def\BuToJPsiX          {\ensuremath{\decay{\Bu}{J/\psi\PX}}\xspace}
+\def\BsToJPsiX          {\ensuremath{\decay{\Bs}{J/\psi\PX}}\xspace}
+\def\BdToJPsiRho        {\ensuremath{\decay{\Bd}{J/\psi\rho^{0}(770)}}\xspace}
+\def\LbToJPsiL          {\ensuremath{\decay{\Lb}{J/\psi\Lz}}\xspace}
+
+%% further decays from the B2CC WG
+\def\BsToPsiTwoSKpi     {\decay{\Bsb}{\psitwos\Kp\pim}}
+\def\BsToEtacPPbarPhi   {\ensuremath{\decay{\Bs}{\etac(\to\proton\antiproton)\phi}}\xspace}
+\def\BsToEtacFourhPhi   {\ensuremath{\decay{\Bs}{\etac(\to 4h)\phi}}\xspace}
+\def\BsToEtacPPbarPiPi  {\decay{\Bs}{\etac(\to\proton\antiproton)\pipi}}
+\def\BsToEtacPPbarKK    {\ensuremath{\decay{\Bs}{\etac(\to\proton\antiproton)\KpKm}}\xspace}
+\def\BsToEtacPhi        {\decay{\Bs}{\etac\phi}}
+\def\BsToPsiTwoSPhi     {\ensuremath{\decay{\Bs}{\psitwos\phi}}\xspace}
+\def\PhiToKK            {\ensuremath{\decay{\phi}{\KpKm}}\xspace}
+\def\BsToChicPhi        {\ensuremath{\decay{\Bs}{\chiczero\phi}}\xspace}
+\def\BToPsiKpi          {\ensuremath{\decay{\PB}{\psi K\pi}}\xspace}
+\def\BdToPsiTwoSKS      {\ensuremath{\decay{\Bd}{\psitwos\KS}}\xspace}
+
 %% B2OC specific decays
 \def\allBToDD           {\ensuremath{\decay{\Bd}{\D^{(*)+}_{(\squark)}\D^{(*)-}}}\xspace}
 \def\BdToDD             {\ensuremath{\decay{\Bd}{\Dp\Dm}}\xspace}
@@ -16,9 +60,22 @@
 \def\BToDsDs            {\ensuremath{\decay{\PB}{\Dsp\Dsm}}\xspace}
 \def\BdToDsDs           {\ensuremath{\decay{\Bd}{\Dsp\Dsm}}\xspace}
 \def\BsToDsDs           {\ensuremath{\decay{\Bs}{\Dsp\Dsm}}\xspace}
-\def\BsToDspi           {\ensuremath{\decay{\Bs}{\Dsm\pip}}\xspace}
+\def\BuToDK             {\ensuremath{\decay{\Bpm}{\PD\Kpm}}\xspace}
+\def\BToDK              {\ensuremath{\decay{\PB}{\PD\PK}}\xspace}
+\def\BuToDpi            {\ensuremath{\decay{\Bpm}{\PD\pipm}}\xspace}
 \def\BdToDpi            {\ensuremath{\decay{\Bd}{\PD\pi}}\xspace}
-\def\BuToDstPi          {\ensuremath{\decay{\Bu}{\Dstarz\pip}}\xspace}
+\def\BToDpi             {\ensuremath{\decay{\PB}{\PD\pi}}\xspace}
+\def\BsToDspi           {\ensuremath{\decay{\Bs}{\Dsm\pip}}\xspace}
+\def\BuToDstpi          {\ensuremath{\decay{\Bu}{\Dstarz\pip}}\xspace}
+\def\BdToDKpi           {\ensuremath{\decay{\Bd}{\PD\Kp\pim}}\xspace}
+\def\BmToDKpipi         {\ensuremath{\decay{\Bm}{\PD\Km\pip\pim}}\xspace}
+\def\BmToDpipipi        {\ensuremath{\decay{\Bm}{\PD\pim\pip\pim}}\xspace}
+\def\BToDKst            {\ensuremath{\decay{\PB}{\PD\Kstar}}\xspace}
+\def\BdToDKst           {\ensuremath{\decay{\Bd}{\PD\Kstarz}}\xspace}
+\def\BdbToDKst          {\ensuremath{\decay{\Bdb}{\PD\Kstarzb}}\xspace}
+\def\BuToDh             {\ensuremath{\decay{\Bmp}{\PD\Ph^{\mp}}}\xspace}
+\def\BToDh              {\ensuremath{\decay{\PB}{\PD\Ph}}\xspace}
+\def\BdToDstmunu        {\ensuremath{\decay{\Bd}{\Dstarm\mup\neum}}\xspace}
 \def\DToKpipi           {\ensuremath{\decay{\Dpm}{\Kmp\pipm\pipm}}\xspace}
 \def\DmpToKpipi         {\ensuremath{\decay{\Dmp}{\Kpm\pimp\pimp}}\xspace}
 \def\DpToKpipi          {\ensuremath{\decay{\Dp}{\Km\pip\pip}}\xspace}
@@ -32,13 +89,25 @@
 \def\DmToKKpi           {\ensuremath{\decay{\Dm}{\Kp\Km\pim}}\xspace}
 \def\DpTopipipi         {\ensuremath{\decay{\Dp}{\pim\pip\pip}}\xspace}
 \def\DstpToDpizero      {\ensuremath{\decay{\Dstarp}{\Dp\piz}}\xspace}
-\def\DstpToDzeropi      {\ensuremath{\decay{\Dstarp}{\Dz\pip}}\xspace}
-\def\DstToDzeropi       {\ensuremath{\decay{\Dstarpm}{\Dz\pipm}}\xspace}
 \def\DstToDpizero       {\ensuremath{\decay{\Dstarpm}{\Dpm\piz}}\xspace}
 \def\DstToDgamma        {\ensuremath{\decay{\Dstarpm}{\Dpm\gamma}}\xspace}
-\def\DzToKpi            {\ensuremath{\decay{\Dz}{\Km\pip}}\xspace}
+\def\DstpToDzeropi      {\ensuremath{\decay{\Dstarp}{\Dz\pip}}\xspace}
+\def\DstmToDzeropi      {\ensuremath{\decay{\Dstarm}{\Dzb\pim}}\xspace}
+\def\DstToDzeropi       {\ensuremath{\decay{\Dstarpm}{\Dz\pipm}}\xspace}
 \def\DstzToDzpi         {\ensuremath{\decay{\Dstarz}{\Dz\piz}}\xspace}
 \def\DstzToDzgamma      {\ensuremath{\decay{\Dstarz}{\Dz\gamma}}\xspace}
+\def\DToKpi             {\ensuremath{\decay{\PD}{\PK\pi}}\xspace}
+\def\DToKK              {\ensuremath{\decay{\PD}{\Kp\Km}}\xspace}
+\def\DTopipi            {\ensuremath{\decay{\PD}{\pip\pim}}\xspace}
+\def\DzToKpi            {\ensuremath{\decay{\Dz}{\Km\pip}}\xspace}
+\def\DTohh              {\ensuremath{\decay{\PD}{\Ph^{-}\Ph^{+}}}\xspace}
+\def\DzTohh             {\ensuremath{\decay{\Dz}{\Ph^{-}\Ph^{+}}}\xspace}
+\def\DzToKpipipi        {\ensuremath{\decay{\Dz}{\Km\pip\pip\pim}}\xspace}
+\def\DToKSpipi          {\ensuremath{\decay{\PD}{\KS\pip\pim}}\xspace}
+\def\DToKShh            {\ensuremath{\decay{\PD}{\KS\Ph^{+}\Ph^{-}}}\xspace}
+\def\DToKpipiz          {\ensuremath{\decay{\PD}{\Kmp\pipm\piz}}\xspace}
+\def\DTopipipiz         {\ensuremath{\decay{\PD}{\pip\pim\piz}}\xspace}
+\def\DToKKpiz           {\ensuremath{\decay{\PD}{\Kp\Km\piz}}\xspace}
 \def\DsD                {\ensuremath{\Dsp\Dm}\xspace}
 \def\DstD               {\ensuremath{\Dstarp\Dm}\xspace}
 \def\KpipiKpipi         {\ensuremath{\Km\pip\pip\Kp\pim\pim}\xspace}
@@ -48,17 +117,17 @@
 \def\Lcpm               {{\ensuremath{\Lz^\pm_\cquark}}\xspace}
 
 %% further decays
+\def\BdToSixh           {\ensuremath{\decay{\Bd}{6h}}\xspace}
 \def\LcToKppi           {\ensuremath{\decay{\Lc}{\Km\proton\pip}}\xspace}
-\def\BuToJpsiK          {\ensuremath{\decay{\Bu}{\jpsi\Kp}}\xspace}
-\def\BdToJpsiKS         {\ensuremath{\decay{\Bd}{\jpsi\KS}}\xspace}
+\def\LbTopmunu          {\ensuremath{\decay{\Lb}{\proton\mu\nu}}\xspace}
+\def\KstToKpi           {\ensuremath{\decay{\Kstarz}{\Kp\pim}}\xspace}
+\def\KstbToKpi          {\ensuremath{\decay{\Kstarzb}{\Km\pip}}\xspace}
+
 
 %% quark decays
 \def\bToccbard          {\ensuremath{\decay{\bquark}{\cquark\cquarkbar\dquark}}\xspace}
 \def\bToccbars          {\ensuremath{\decay{\bquark}{\cquark\cquarkbar\squark}}\xspace}
 \def\bToccbarq          {\ensuremath{\decay{\bquark}{\cquark\cquarkbar\quark}}\xspace}
-
-
-\def\JpsiX              {\ensuremath{\jpsi\PX}\xspace}
 
 \def\Sf                 {\ensuremath{S_{f}}\xspace}
 \def\Cf                 {\ensuremath{C_{f}}\xspace}
@@ -67,6 +136,7 @@
 \def\etaOS              {\eta^{\text{OS}}}
 \def\Deltaomega         {\Delta p_0}
 \def\sintwobeta         {\ensuremath{\sin 2\beta}\xspace}
+\def\sintwobetaoreff    {\ensuremath{\sin 2\beta_{\mathrm{(eff)}}}\xspace}
 \def\pT                 {\ensuremath{p_{\text{T}}}\xspace}
 \def\dmBdBs             {\ensuremath{\Delta m_{\Bs-\Bd}}\xspace}
 
