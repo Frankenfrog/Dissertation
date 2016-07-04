@@ -4,20 +4,53 @@
 \label{sec:bd2jpsiks:backgrounds}
 
 Although \BdToJPsiKS is an experimentally very clean decay channel care has to
-be taken to properly identify, suppress or even reject, and parametrize
-backgrounds. While the two muons can be identified quite effectively the pions
-of the \KS decay might actually be kaons or protons which have been
-mis-identified. This would lead to background contributions from \BdToJPsiKst
-and \LbToJPsiL. To analyse the $\proton \to \pion$ mis-ID the proton mass
-hypothesis can be assigned to one of the pions and the invariant mass of the
-proton-pion pair $m_{\proton\pion}$ can be recalculated. A peak at the \Lz
-mass $M_{\Lz} = \SI{1115.683}{\MeVcc}$~\cite{PDG2014} can be seen which is
-reduced by applying a tighter requirement on the difference of the proton-pion
-log-likelihood for candidates close to $M_{\Lz}$. With \LbToJPsiL signal MC it
-is checked that after reconstruction, stripping and all offline selection
-requirements, including the veto described above, the expected yield is a
-sub-percent effect. The broad width of the \Kstarz does not allow an analogous
-approach. Nevertheless, studies on \BdToJPsiKst MC show that the expected
-contribution is even lower than for \LbToJPsiL. The main reason is the short
-lifetime of the \Kstarz which is exploited by the lifetime significance cut on
-the \KS.
+be taken to properly identify, suppress or even reject backgrounds. While the
+two muons can be identified quite effectively the pions of the \KS decay might
+actually be kaons or protons which have been mis-identified. This would lead
+to background contributions from \BdToJPsiKst and \LbToJPsiL. To analyse the
+$\proton \to \pion$ mis-ID the proton mass hypothesis is assigned to one of
+the pions and the invariant mass of the proton-pion pair $m_{\proton\pion}$ is
+recalculated. An excess of candidates at the \Lz mass $M_{\Lz} =
+\SI{1115.683}{\MeVcc}$~\cite{PDG2014} can be seen which is reduced by applying
+a tighter requirement on the difference of the proton-pion log-likelihood for
+candidates close to $M_{\Lz}$. With \LbToJPsiL signal MC it is checked that
+after reconstruction, stripping and all offline selection requirements,
+including the veto described above, the expected yield is a sub-percent
+effect. For $\kaon \to \pion$ mis-ID the broad width of the \Kstarz does not
+allow an analogous approach. But studies on \BdToJPsiKst MC show that the
+expected contribution is even lower than for \LbToJPsiL. The main reason is
+the short lifetime of the \Kstarz which is exploited by the lifetime
+significance cut on the \KS. So, it can basically be assumed that besides the
+signal candidates almost only combinatorial background is present in the data
+sample. Nevertheless, it has to be studied whether the background shows any
+tagging-dependent asymmetry which would dilute the measured \CP asymmetry.
+
+By performing a fit to the invariant mass distribution the \sPlot technique
+provides a possibility to study the tagging-dependent distributions of the
+combinatorial background. First of all, the time-integrated asymmetry
+\begin{align}
+  \mathcal{A}_\text{bkg}^{\text{int}}= \frac{\param{N}{\Bzb}{bkg} - \param{N}{\Bz}{bkg}}{\param{N}{\Bzb}{bkg} + \param{N}{\Bz}{bkg}}
+\end{align}
+is calculated for both track type categories and separately for the OS
+combination and the SS\pion tagger. Out of the four values listed in
+\cref{tab:bkgtimeintegratedasymm} only the one for the downstream OS tagged
+sample stands out as it disfavors \CP symmetry at more than \num{3} standard
+deviations.
+%
+\begin{table}[!htb]
+\centering
+\caption{Time-integrated asymmetry of \sweighted background distributions for
+downstream and long track OS and SS\pion tagged events.}
+\label{tab:bkgtimeintegratedasymm}
+\begin{tabular}{lr@{$\,\pm\,$}l}
+\toprule
+category    & \multicolumn{2}{c}{$\mathcal{A}_\text{bkg}^{\text{int}}$}\\
+\midrule
+DD OS       & $0.017$     & $0.005$ \\
+DD SS\pion  & $-0.016$    & $0.011$ \\
+LL OS       & $-0.005$    & $0.012$ \\
+LL SS\pion  & $0.044$     & $0.034$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+%
