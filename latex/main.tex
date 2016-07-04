@@ -21,6 +21,9 @@
 \newboolean{inbibliography}
 \setboolean{inbibliography}{false} %True once you enter the bibliography
 
+\newboolean{wordcount}
+\setboolean{wordcount}{false} % False for normal usage; true for wordcount.sh
+
 \input{preamble}
 
 \begin{document}
@@ -106,6 +109,8 @@
 %%%%%% Erklärung %%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{B-Erklaerung/erklaerung}
+\ifthenelse{\boolean{wordcount}}{
+}
+{\input{B-Erklaerung/erklaerung}}
 
 \end{document}

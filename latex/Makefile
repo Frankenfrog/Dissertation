@@ -15,18 +15,11 @@ TARGET = PhDthesis
 # name of command to perform Latex (either pdflatex or latex)
 LATEX = pdflatex
 
-ifeq ($(LATEX),pdflatex)
-	FIGEXT = .pdf
-	MAINEXT= .pdf
-	BUILDCOMMAND=rm -f $(MAIN).aux && $(LATEX) $(MAIN) && bibtex $(MAIN) && $(LATEX) $(MAIN) && $(LATEX) $(MAIN)
-	MAKEMAINCOUNT= sed 's\#{wordcount}{false}\#{wordcount}{true}\#' main-prl.tex > main-count.tex
-	BUILDCOMMANDCOUNT= $(MAKEMAINCOUNT) && rm -f $(MAIN)-count.aux && $(LATEX) $(MAIN)-count && bibtex $(MAIN)-count >/dev/null; true && $(LATEX) $(MAIN)-count && ./wordcount.sh $(MAIN)-count && rm wordcount.pdf main-count* 
-else
-	FIGEXT = .eps
-	MAINEXT= .pdf
-	BUILDCOMMAND=rm -f $(MAIN).aux && $(LATEX) $(MAIN) && bibtex $(MAIN) && $(LATEX) $(MAIN) && $(LATEX) $(MAIN) && dvips -z -o $(MAIN).ps $(MAIN) && ps2pdf $(MAIN).ps && rm -f head.tmp body.tmp
-	BUILDCOMMANDCOUNT=
-endif
+FIGEXT = .pdf
+MAINEXT= .pdf
+BUILDCOMMAND=rm -f $(MAIN).aux && $(LATEX) $(MAIN) && bibtex $(MAIN) && $(LATEX) $(MAIN) && $(LATEX) $(MAIN)
+MAKEMAINCOUNT= sed 's\#{wordcount}{false}\#{wordcount}{true}\#' $(MAIN).tex > main-count.tex
+BUILDCOMMANDCOUNT= $(MAKEMAINCOUNT) && rm -f $(MAIN)-count.aux && $(LATEX) $(MAIN)-count && bibtex $(MAIN)-count >/dev/null; true && $(LATEX) $(MAIN)-count && $(LATEX) $(MAIN)-count && ./wordcount.sh $(MAIN)-count && rm main-count*
 
 # list of all source files
 TEXSOURCES = $(wildcard *.tex) $(wildcard *.bib)
