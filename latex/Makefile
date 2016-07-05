@@ -19,7 +19,7 @@ FIGEXT = .pdf
 MAINEXT= .pdf
 BUILDCOMMAND=rm -f $(MAIN).aux && $(LATEX) $(MAIN) && bibtex $(MAIN) && $(LATEX) $(MAIN) && $(LATEX) $(MAIN)
 MAKEMAINCOUNT= sed 's\#{wordcount}{false}\#{wordcount}{true}\#' $(MAIN).tex > main-count.tex
-BUILDCOMMANDCOUNT= $(MAKEMAINCOUNT) && rm -f $(MAIN)-count.aux && $(LATEX) $(MAIN)-count && bibtex $(MAIN)-count >/dev/null; true && $(LATEX) $(MAIN)-count && $(LATEX) $(MAIN)-count && ./wordcount.sh $(MAIN)-count && rm main-count*
+BUILDCOMMANDCOUNT= $(MAKEMAINCOUNT) && rm -f $(MAIN)-count.aux && $(LATEX) $(MAIN)-count && bibtex $(MAIN)-count >/dev/null; true && $(LATEX) $(MAIN)-count && $(LATEX) $(MAIN)-count && ./wordcount.sh $(MAIN)-count && rm wordcount.pdf main-count*
 
 # list of all source files
 TEXSOURCES = $(wildcard *.tex) $(wildcard *.bib)

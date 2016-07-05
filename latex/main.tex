@@ -23,6 +23,14 @@
 
 \newboolean{wordcount}
 \setboolean{wordcount}{false} % False for normal usage; true for wordcount.sh
+\ifthenelse{\boolean{wordcount}}%
+{\usepackage{comment} % comment lines
+ \excludecomment{table} % Remove table
+ \let\endtable\relax % Remove table
+ \excludecomment{figure} % Remove figure
+ \let\endfigure\relax % Remove figure
+}{
+}
 
 \input{preamble}
 
