@@ -119,11 +119,12 @@
 \usepackage{siunitx}
 \DeclareSIUnit{\EUR}{\text{\euro}}
 \sisetup{
-  detect-weight = true, 
+  detect-weight = true,
   separate-uncertainty=true,
   uncertainty-separator = {\,},
-  list-units = single
-%  range-units           = single,
+  list-units = single,
+  range-phrase = --,
+  range-units = single
 %  exponent-product      = {\cdot}
 }
 
@@ -148,6 +149,10 @@
 \usepackage{longtable}
 % multi-rows
 \usepackage{multirow}
+% Table float box with bottom caption, box width adjusted to content
+% \usepackage{scrhack}
+% \usepackage{floatrow}
+% \newfloatcommand{capbtabbox}{table}[][\FBwidth]
 
 \usepackage{blindtext}
 
