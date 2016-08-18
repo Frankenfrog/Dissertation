@@ -2,3 +2,164 @@
 
 \section{Decay time fit (10 pages)}
 \label{sec:b02dd:decaytimefit}
+
+%============================================================================%
+\input{07-B02DD/resolution}
+
+\FloatBarrier
+%============================================================================%
+\input{07-B02DD/acceptance}
+
+\FloatBarrier
+%============================================================================%
+\subsection{External inputs}
+\label{sec:b02dd:decaytimefit:constraints}
+
+\lhcb has performed a measurement of the production asymmetry as a function
+of transverse momentum and pseudorapidity using \SI{7}{\TeV}
+data~\cite{LHCb-PAPER-2014-042}. Taking those distributions from \BdToDD
+individual weighted averages for the 2011 and 2012 subsamples are calculated
+yielding
+%
+\begin{equation}
+  \begin{split}
+    \prodasym{11} &= -0.0047 \pm 0.0106 \,\text{(stat)} \pm 0.0014 \, \text{(syst)} \,, \\
+    \prodasym{12} &= -0.0071 \pm 0.0107 \,\text{(stat)} \pm 0.0014 \, \text{(syst)} \,.
+  \end{split}
+\end{equation}
+%
+As the measurement of the production asymmetry has been performed on 2011 data
+only, the numbers for $\prodasym{11}$ and $\prodasym{12}$ are highly
+correlated. So, the latter is modelled as $\prodasym{12} = \prodasym{11} +
+\Delta\prodasym{}$ with $\Delta\prodasym{} = -0.0024 \pm 0.0018
+\,\text{(syst)}$. The systematic uncertainty accounts for the difference of
+the production asymmetries observed for the two data-taking conditions in the
+measurement of the semileptonic $\CP$ asymmetry~\cite{LHCb-PAPER-2014-053} and
+is used as width of a Gaussian constraint. The $\Bz$ oscillation frequency and
+the $\Bz$ lifetime are constrained to their world averages $\dm =
+\SI{0.510\pm0.004}{\planckbar\invps}$~\cite{HFAG} and $\tau =
+\SI{1.519\pm0.005}{\ps}$~\cite{PDG2014}, respectively. The decay time
+resolution parameters (\cref{tab:b02dd:decaytimefit:resolution}), the flavour
+tagging calibration parameters
+(\cref{tab:dataanalysis:taggingcalibration:dsdcalibration}) which are taken
+from the \BdToDsD calibration and the $\Bz$ lifetime difference $\DG =
+\SI{0}{\invps}$ are fixed in the likelihood fit.
+
+%============================================================================%
+\subsection{Statistical Uncertainty}
+\label{sec:decaytimefit:uncertainty}
+\todo{decide on how to assign statistical uncertainties}
+\input{07-B02DD/uncertainty}
+
+%============================================================================%
+\subsection{Results}
+
+The fit results of the $\CP$ observables from the decay time fit are
+
+\begin{align}
+\begin{split}
+  \SDD                &= -0.54\,\pm\,^{0.17}_{0.16} \ , \\
+  \CDD                &= \phantom{-}0.26\,\pm\,^{0.18}_{0.17} \ , \\
+  \rho(\SDD,\CDD)     &= 0.48 \ . \\
+\end{split}
+\label{eq:b02dd:decaytimefit:cpresults}
+\end{align}
+
+\Cref{fig:b02dd:decaytimefit} shows a plot of the decay time distribution of the
+\BdToDD data sample and the projection of the acceptance model. The latter
+shows (taking the rather large uncertainties into account) a good agreement
+with the shape on signal MC (cf. \cref{fig:b02dd:decaytimefit:acceptance_MC}).
+
+\begin{figure}[!htb]
+\hspace*{\fill}
+\begin{minipage}{0.4\textwidth}
+\includegraphics[width=\textwidth]{07-B02DD/tikz/pdf/obsTime_summed_pull_logy.pdf}
+\end{minipage}
+\hfill
+\begin{minipage}{0.4\textwidth}
+\includegraphics[width=\textwidth]{07-B02DD/tikz/pdf/Acceptancespline_nolog.pdf}
+\end{minipage}
+\hspace*{\fill}
+\caption{Plot of the decay time distribution of the background-subtracted \BdToDD
+data sample with the projection of the \PDF and the pull distribution on the
+left. The y-axis is plotted in logarithmic scale. Plot of the nominal decay
+time acceptance model on the right. The red stripes indicate the 1\,$\sigma$
+error band taking into account the statistical uncertainties.}
+\label{fig:b02dd:decaytimefit}
+\end{figure}
+
+The correlation matrix is visualised in
+\cref{fig:b02dd:decaytimefit:FullFitCorrMatrixHotCold}. The parameters of the
+acceptance spline (fit results listed in
+\cref{tab:b02dd:decaytimefit:SplineAcceptanceFitResults}) show a quite high positive
+correlation among themselves. As expected (see~\cite{LHCb-ANA-2011-004}) \SDD
+and \CDD have a correlation of about 0.5. Apart from these only quite small
+correlations are present. Normally, one would expect a correlation between \dm and \CDD.
+But the constraint which is applied on \dm is a lot tighter than the
+sensitivity available from the data sample. So almost no correlation with \CDD
+appears. In a cross-check where \dm is not constrained a correlation
+coefficient of \num{-0.8} occurs. But because the sensitivity on \CDD goes
+down significantly in this scenario the constraint on \dm is maintained in
+the nominal setup even though the correlation between \SDD and \CDD would drop.
+
+\begin{figure}[!htb]
+\centering
+% \includegraphics[width=0.8\textwidth]{07-B02DD/figs/FitResultsCorrMatrix_RedBlueDiscrete_wText.pdf}
+\caption{Visualised correlation matrix of the fit parameters in the decay time
+fit to data. Positive correlations are represented by the red palette on the $z$ axis,
+while negative correlations are represented by the blue palette of the $z$
+axis.}
+\label{fig:b02dd:decaytimefit:FullFitCorrMatrixHotCold}
+\end{figure}
+
+\begin{table}[!htb]
+\caption{Acceptance spline parameters from the decay time fit to \BdToDD data.}
+\label{tab:b02dd:decaytimefit:SplineAcceptanceFitResults}
+\centering
+\begin{tabular}{lr@{$\,\pm\,$}l}
+  \toprule
+  Parameter                     & \multicolumn{2}{c}{Value} \\
+  \midrule
+    $h_1$  & $0.67$  & $0.06$  \\
+    $h_2$  & $0.87$  & $0.11$  \\
+    $h_4$  & $0.992$ & $0.010$ \\
+    \bottomrule
+\end{tabular}
+\end{table}
+
+The time-dependent signal asymmetry is shown in \cref{fig:b02dd:decaytimefit:asymmetry}.
+\begin{figure}[!htb]
+\centering
+% \includegraphics[width=0.7\textwidth]{07-B02DD/figs/Asymmetry.pdf}
+% \begin{tikzpicture}[scale=0.38]
+% \input{07-B02DD/tikz/Asymmetry_final}
+% \end{tikzpicture}
+\caption{
+Time-dependent signal-yield asymmetry $(N_{\Bzb} - N_{\Bz})/(N_{\Bzb} +
+N_{\Bz})$. Here, $N_{\Bz} (N_{\Bzb})$ is the number of $\BdToDD$ decays with
+a $\Bz$ ($\Bzb$) flavor tag. The data points are obtained with the sPlot
+technique~\cite{Pivk:2004ty}, assigning signal weights to the events based on a
+fit to the reconstructed mass distribution. The solid curve is the projection of
+the signal PDF.}
+\label{fig:b02dd:decaytimefit:asymmetry}
+\end{figure}
+
+The 1D likelihood scans can be found in \cref{fig:b02dd:decaytimefit:1DLLScan}.
+\begin{figure}[!htb]
+\centering
+% \includegraphics[width=0.48\textwidth]{07-B02DD/figs/LLScan_1D_S.pdf}
+% \includegraphics[width=0.48\textwidth]{07-B02DD/figs/LLScan_1D_C.pdf}
+\caption{One dimensional likelihood profile scans for $\SDD$ and $\CDD$.}
+\label{fig:b02dd:decaytimefit:1DLLScan}
+\end{figure}
+
+The 2D likelihood scan is depicted in \cref{fig:b02dd:decaytimefit:2DLLScan}.
+\begin{figure}[!htb]
+\centering
+% \includegraphics[width=0.48\textwidth]{07-B02DD/figs/2DLikelihoodscan.pdf}
+\caption{Two dimensional likelihood profile scan for $\SDD$ and $\CDD$.
+The contour line shows the $1\sigma$ confidence level.}
+\label{fig:b02dd:decaytimefit:2DLLScan}
+\end{figure}
+
+\FloatBarrier

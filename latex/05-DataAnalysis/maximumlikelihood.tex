@@ -2,3 +2,15 @@
 
 \section{Maximum likelihood method (1 page)}
 \label{sec:dataanalysis:maximumlikelihood}
+
+To include uncertainties on fixed parameters in the fit Gaussian PDFs
+%
+\begin{align}
+\label{eq:b02dd:decaytimefit:gaussian}
+\mathcal{G}(x;\mu,\sigma) = \frac{1}{\sigma \sqrt{2 \pi}}\mathrm{e}^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+\end{align}
+%
+with mean $\mu$ and width $\sigma$ are multiplied to the likelihood function.
+Herein, the parameter to be constrained is the variable and the Gaussian's
+mean and width are fixed to the parameter's value and uncertainty,
+respectively.

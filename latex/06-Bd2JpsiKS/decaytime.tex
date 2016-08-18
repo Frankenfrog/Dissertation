@@ -1,35 +1,25 @@
 %!TEX root = ../main.tex
-\newpage
-\section{Decay time resolution and acceptance (3 pages)}
-\label{sec:bd2jpsiks:decaytime}
-
-\subsection{Decay time resolution}
+\section{Decay time resolution}
 \label{sec:bd2jpsiks:decaytime:resolution}
 
-Although the determination of vertices and the measurement of momenta is
-pretty accurate at \lhcb (especially thanks to the VELO) a finite resolution
-remains which causes a finite decay time resolution. This can dilute the
-measured \CP asymmetry but the slow oscillation of \Bd mesons reduces the
-impact significantly. Nevertheless, a proper description of the decay time
-resolution needs to be found. The most obvious effect of the decay time
-resolution are candidates which are reconstructed with negative decay times.
-However, these are ideal candidates to determine the decay time resolution. An
-unbinned likelihood fit to the decay time distribution of an unbiased
-\BdToJPsiKS sample with true \jpsi candidates (selected by a fit of the
-invariant $m_{\mumu}$ mass distribution) is performed. The fit model consists
-of a component for the prompt peak around \SI{0}{\ps}, \ie the decay time
-resolution model, a component to describe events where the wrong PV has been
-associated and therefore a large difference between true and reconstructed
-decay time occurs, and long lived components which are parametrised with two
-exponentials with different pseudo lifetimes and which are themselves
-convolved with the decay time resolution model. The decay time resolution
-depends on characteristics of the event. The DTF provides predictions for the
-per-event decay time resolution $\sigma_t$ which in principle could be used as
-width of a Gaussian resolution model. Unfortunately, these predictions are not
-perfect and a certain calibration needs to be applied. Additionally, to
-account for different sources causing the decay time resolution an effective
-model with two Gaussian functions which share a common mean but have different
-calibrations is used.
+The most obvious effect of the decay time resolution are candidates which are
+reconstructed with negative decay times. However, these are ideal candidates
+to determine the decay time resolution. An unbinned likelihood fit to the
+decay time distribution of an unbiased \BdToJPsiKS sample with true \jpsi
+candidates (selected by a fit of the invariant $m_{\mumu}$ mass distribution)
+is performed. The fit model consists of a component for the prompt peak around
+\SI{0}{\ps}, \ie the decay time resolution model, a component to describe
+events where the wrong PV has been associated and therefore a large difference
+between true and reconstructed decay time occurs, and long lived components
+which are parametrised with two exponentials with different pseudo lifetimes
+and which are themselves convolved with the decay time resolution model. The
+decay time resolution depends on characteristics of the event. The DTF
+provides predictions for the per-event decay time resolution $\sigma_t$ which
+in principle could be used as width of a Gaussian resolution model.
+Unfortunately, these predictions are not perfect and a certain calibration
+needs to be applied. Additionally, to account for different sources causing
+the decay time resolution an effective model with two Gaussian functions which
+share a common mean but have different calibrations is used.
 
 The first step is to find a reasonable calibration model. A linear ($f_1$) and
 a quadratic ($f_2$) calibration model are tested:
@@ -74,7 +64,7 @@ values of the calibration parameters are determined. The dilution factor
 induced by the decay time resolution is calculated to be \num{0.986} for
 downstream and \num{0.989} for long track candidates.
 
-\subsection{Decay time acceptance}
+\section{Decay time acceptance}
 \label{sec:bd2jpsiks:decaytime:acceptance}
 
 The trigger line requirements applied in the selection of the \BdToJPsiKS

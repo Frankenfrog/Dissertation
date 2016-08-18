@@ -1,0 +1,19 @@
+%!TEX root = ../main.tex
+
+\section{Blinding}
+\label{sec:dataanalysis:blinding}
+
+To eliminate the experimenter's bias, a blinding transformation is applied on
+the fitted \CP parameters \SDD and \CDD with the
+\verb|RooUnblindUniform| method of \roofit's \verb|RooBlindTools|~\cite{roofit}.
+The transformation implemented in the \verb|RooUnblindUniform| method adds a
+hidden offset to the fit parameter. Doing so, the uncertainty on the extracted
+parameter does not change and can still be used for understanding the outcome of
+the fit. The hidden offset is drawn from a uniform distribution with a range
+$\pm s$, using a random number generator with known seed. The seed is generated
+from a so-called \emph{blinding string}. If two different analyses of the same
+physics parameter agree on a common scale and blinding string, then the results
+of those analyses can be compared without unblinding. We choose the range of the
+uniform distribution to be $[-2,2]$. Given the physical range of \sintwobeta is
+$[-1,1]$, this ensures a good opacity.
+\todo{rewrite blinding}

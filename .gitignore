@@ -1,10 +1,12 @@
 *.aux
 *.bbl
 *.blg
+*.eps
 *.fdb_latexmk
 *.fls
 *.log
 *.out
+*.png
 *.synctex.gz
 *.synctex.gz(busy)
 *.toc
