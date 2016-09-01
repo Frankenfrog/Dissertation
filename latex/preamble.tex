@@ -96,6 +96,8 @@
 \pgfdeclarelayer{foreground}
 \pgfsetlayers{background,main,foreground}
 
+\usepackage[english]{babel}
+
 %%%%%%%%%%%%%%%%%
 \usepackage{microtype}
 \usepackage{placeins} % allows to set float barriers (all previously included floats will be set before the barrier)
@@ -124,7 +126,8 @@
   uncertainty-separator = {\,},
   list-units = single,
   range-phrase = --,
-  range-units = single
+  range-units = single,
+  retain-explicit-plus=true
 %  exponent-product      = {\cdot}
 }
 
