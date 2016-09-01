@@ -1,0 +1,79 @@
+%!TEX root = ../main.tex
+
+%----------------------------------------------------------------------------%
+\subsubsection[\texorpdfstring{$z$}{z}-scale]{\texorpdfstring{$\boldsymbol{z}$}{z}-scale}
+\label{sec:b02dd:systematics:z_scale}
+
+The decay times are determined by measuring the distance between PV and decay
+vertex. So, any uncertainty on the positioning of detector elements
+(especially the VELO modules) leads to biased decay times. Due to the high
+boosting the main contribution to the flight distance is in $z$ direction. The
+scale uncertainty in $z$ direction has been estimated to be
+$\sigma_{z\text{-scale}} = \SI{0.022}{\percent}$~\cite{LHCb-ANA-2011-055}. The
+influence on the measurement of the \CP observables is studied by performing
+\num{1000} pseudoexperiments. For each pseudoexperiment a value for the uncertainty
+on the $z$-scale is drawn from a Gaussian distribution around zero of width
+$\sigma_{z\text{-scale}}$. The sum of \SI{50}{\fs} and the product of this
+value with the decay time is used as width of the Gaussian function modelling
+the decay time resolution in the generation. In the fit the width is set to
+\SI{50}{\fs}. The product of the bias from the pull distributions of the
+pseudoexperiments and the nominal statistical uncertainty is taken as
+systematic uncertainty:
+\begin{align*}
+s_{\SDD}^{z\text{-scale}} = \num{0.0031}\ , \qquad s_{\CDD}^{z\text{-scale}} = \num{0.0028}\,.
+\end{align*}
+
+%----------------------------------------------------------------------------%
+\subsubsection{Production Asymmetry}
+\label{sec:b02dd:systematics:production_asymmetry}
+
+The systematic uncertainty on the production asymmetry \prodasym{11} is
+studied using \num{1000} pseudoexperiments. The nominal value is used in the
+generation and the procedure described in Ref.~\cite{Karbach:1490463} is
+applied in the fit: Before fitting the data sample the mean of the Gaussian
+constraint for \prodasym{11} is shifted by one systematic uncertainty. The
+resulting Gaussian distribution is used to draw a new value for the mean.
+Then, the new Gaussian distribution is used to constrain \prodasym{11} in the
+fit. Both shifts, upwards and downwards, are tested and the larger deviation
+is taken as systematic uncertainty:
+%
+\begin{align*}
+s_{\SDD}^{\prodasym{}} = \num{0.0015}\ , \qquad s_{\CDD}^{\prodasym{}} = \num{0.004}\,.
+\end{align*}
+%
+For the production asymmetry difference $\Delta\prodasym{}$ the systematic
+uncertainty is already included in the Gaussian constraint of the nominal fit.
+
+%----------------------------------------------------------------------------%
+\subsubsection{Decay Width Difference \texorpdfstring{\DGd}{Delta Gamma\_d}}
+\label{sec:b02dd:systematics:deltagammad}
+
+The decay width difference \DGd is expected to be very small and therefore
+fixed to zero in the nominal fit. But experimentally it has a relatively large
+uncertainty. This is taken into account by performing \num{1000}
+pseudoexperiments where the current statistical precision $\sigma(\DGd) =
+\SI{\pm0.007}{\invps}$~\cite{PDG2014} is used in the generation of the data
+samples while it is, like in the nominal model, neglected in the fit. The mean
+parameters of the pull distributions are translated into systematic
+uncertainties of
+\begin{align*}
+s_{\SDD}^{\DGd} = \num{0.014}\ , \qquad s_{\CDD}^{\DGd} = \num{0.0021}\,.
+\end{align*}
+
+%----------------------------------------------------------------------------%
+\subsubsection{\texorpdfstring{$\Bz$}{B0} Mass Difference \texorpdfstring{\dmd}{Delta m\_d}}
+\label{sec:b02dd:systematics:deltamd}
+
+The systematic uncertainty on the world average of \dmd
+($\SI{\pm0.002}{\hbar\invps}$) is not covered by the Gaussian constraint that
+is used in the nominal fit. Instead, it is analysed using \num{1000}
+pseudoexperiments. In the generation the nominal model is used. Before
+performing the fit the mean of the Gaussian distribution (its width is the
+statistical precision of the world average) is shifted by one systematic
+uncertainty (once up and once down) and a new value is drawn from the
+distribution. This new constraint is then used in the minimisation. Looking at
+the resulting pull distributions systematic uncertainties of
+\begin{align*}
+s_{\SDD}^{\dmd} = \num{0.0025}\ , \qquad s_{\CDD}^{\dmd} = \num{0.006}\,,
+\end{align*}
+are assigned.
