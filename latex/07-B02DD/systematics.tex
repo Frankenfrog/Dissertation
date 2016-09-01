@@ -2,3 +2,114 @@
 
 \section{Studies of systematic effects (5 pages)}
 \label{sec:b02dd:systematics}
+
+%============================================================================%
+\subsection{Cross-checks}
+\label{sec:systematics:xchecks}
+To check for possible systematic effects, fits in different subsamples of the
+nominal data set are performed. The cross-checks are performed for the two
+tagging algorithms (OS vs. SS (not exclusive samples)), the two years of
+data-taking (2011 vs. 2012) , combinations of those, the magnet polarities (Up
+vs. Down), the two final states ($\KpipiKpipi$ vs. $\KKpiKpipi$) and for four
+different slices of the BDT classifier for the $\KpipiKpipi$ final state.
+
+\begin{figure}[thb]
+\centering
+\input{07-B02DD/SComparison}
+\caption{
+Comparison of fit results of \SDD for fits on various subsamples.}
+\label{fig:b02dd:systematics:xchecks:subsamples:s}
+\end{figure}
+\begin{figure}[thb]
+\centering
+\input{07-B02DD/CComparison}
+\caption{
+Comparison of fit results of \CDD for fits on various subsamples.}
+\label{fig:b02dd:systematics:xchecks:subsamples:c}
+\end{figure}
+The fit results in the various scenarios are illustrated in
+\cref{fig:b02dd:systematics:xchecks:subsamples:s,fig:b02dd:systematics:xchecks:subsamples:c}.
+While almost all splits show compatible results a rather large difference can
+be observed between the 2011 and the 2012 subsample for $\SDD$. This is even
+more pronounced when using only SS tagging. When determining the flavour
+tagging calibration parameters separately for 2011 and 2012 data small
+non-significant differences are observed but these can not explain the
+different results of the $\CP$ observables. So the best explanation is that
+the difference is due to a statistical fluctuation.
+
+For the nominal fit the decay times and the decay time errors from the DTF are
+used. The central values of the $\CP$ observables slightly change when instead
+using the decay time (error) from the LVF, $\SDD = \num{1.141}$ (LVF) vs.
+\num{1.139} (DTF) and $\CDD = \num{1.734}$ (LVF) vs. \num{1.731} (DTF). But
+this difference is below the statistical significance.
+
+\FloatBarrier
+
+%============================================================================%
+\subsection{Decay Time Fit Bias}
+\label{sec:b02dd:systematics:fitbias}
+
+The likelihood fit itself might be biased. The nominal fit results for the
+$\CP$ observables are used to generate \num{10000} pseudoexperiments. The pull
+distributions in \cref{fig:b02dd:systematics:fitbias:pulls} show a very small
+deviation of the mean value from zero.
+%
+\begin{figure}[htb]
+\includegraphics[width=0.49\textwidth]{07-B02DD/tikz/pdf/parSigTimeSin2b_pull_fitbias.pdf}
+\includegraphics[width=0.49\textwidth]{07-B02DD/tikz/pdf/parSigTimeC_pull_fitbias.pdf}
+\caption{Pull distributions of $\SDD$ and $\CDD$ for a study on the systematic
+uncertainty due to the likelihood fitter.}
+\label{fig:b02dd:systematics:fitbias:pulls}
+\end{figure}
+%
+Multiplying it with the statistical uncertainty the systematic uncertainty is
+calculated to be
+\begin{align}
+s_{\SDD}^{\textrm{fit}} = \num{0.004}\ , \qquad s_{\CDD}^{\textrm{fit}} = \num{0.0025}\ .
+\end{align}
+For all following studies of systematic uncertainties the residuals are
+corrected for the decay time fit bias. Otherwise, even effects that are
+actually not biasing would be misinterpreted due to the fit bias.
+
+%============================================================================%
+\subsection{Fit Model}
+\label{sec:b02dd:systematics:fitmodel}
+\input{07-B02DD/fitmodelsystematics}
+
+%============================================================================%
+\subsection{Further Studies}
+\label{sec:b02dd:systematics:others}
+\input{07-B02DD/othersystematics}
+
+% \FloatBarrier
+%============================================================================%
+\subsection{Total Systematic Uncertainty}
+\label{sec:b02dd:systematics:total}
+
+The systematic uncertainties are summarised in
+\cref{tab:b02dd:systematics:total}. The full systematic uncertainty is
+calculated by summing the individual uncertainties in quadrature.
+%
+\begin{table}[!htb]
+\caption{Systematic uncertainties on the $\CP$ observables $\SDD$ and $\CDD$.}
+\label{tab:b02dd:systematics:total}
+  \centering
+    \begin{tabular}{lSS}
+      \toprule
+      Origin & {\param{\sigma}{}{$\SDD$}} & {\param{\sigma}{}{$\CDD$}}    \\
+      \midrule
+      Neglecting components in mass model     &  0.05    & 0.013  \\
+      $\DGd$                                  &  0.014   & 0.0021 \\
+      Decay time acceptance                   &  0.007   & 0.0027 \\
+      Correlation between mass and decay time &  0.0007  & 0.007  \\
+      Parametrisation of PDFs in mass model   &  0.004   & 0.006  \\
+      $\dmd$                                  &  0.0025  & 0.006  \\
+      Fit bias                                &  0.004   & 0.0025 \\
+      Production asymmetry                    &  0.0015  & 0.004  \\
+      $z$-scale                               &  0.0031  & 0.0028 \\
+      Decay time resolution                   &  0.0020  & 0.0023 \\
+      \midrule
+      Sum                                     &  0.05    & 0.018  \\
+      \bottomrule
+    \end{tabular}
+\end{table}
