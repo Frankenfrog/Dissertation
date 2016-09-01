@@ -33,13 +33,13 @@
   width=\textwidth,
   height=65ex,
   font=\small,
-  xmin=0.65,xmax=2.45,ymin=0.3,ymax=19.7,
-  xlabel={$\CDD$ (blinded)},
+  xmin=-2,xmax=0.6,ymin=0.3,ymax=19.7,
+  xlabel={$\SDD$},
   xlabel style={
         at={(ticklabel cs:1)},
         anchor=north east,
     },%
-  xtick={1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2},
+  xtick={-1.5, -1.25, -1.0, -0.75, -0.5, -0.25, 0, 0.25, 0.5},
   % xticklabels={,,},
   xticklabel style={%
     major tick length=3pt
@@ -49,9 +49,9 @@
 
 \begin{pgfonlayer}{background}
 % filled area at average value
-\fill[color=ClrUncert] ({rel axis cs:0,0}-|{axis cs:1.57,0}) rectangle ({rel axis cs:1.89,1}-|{axis cs:1.89,0});
+\fill[color=ClrUncert] ({rel axis cs:0,0}-|{axis cs:-0.7,0}) rectangle ({rel axis cs:-0.38,1}-|{axis cs:-0.38,0});
 % line at average value
-\draw[ultra thin,color=ClrFullFit]({rel axis cs:0,0}-|{axis cs:1.73,0}) -- ({rel axis cs:1.73,1}-|{axis cs:1.73,0});
+\draw[ultra thin,color=ClrFullFit]({rel axis cs:0,0}-|{axis cs:-0.54,0}) -- ({rel axis cs:-0.54,1}-|{axis cs:-0.54,0});
 
 % lines to separate the different subsamples categories
 \draw[ultra thin, dashed, color=Black!80] (axis cs: \pgfkeysvalueof{/pgfplots/xmin},17.5) -- (axis cs: \pgfkeysvalueof{/pgfplots/xmax},17.5);
@@ -91,9 +91,9 @@ table[
         x error plus=ex+,
         x error minus=ex-,
 ]{
-  x     y   ex+   ex-  
-  1.65  19  0.19  0.19
-  1.87  18  0.27  0.27
+  x      y   ex+   ex-  
+  -0.49  19  0.20  0.20
+  -0.72  18  0.31  0.31
 };
 
 %-------------------------------------------------------------------------------
@@ -124,9 +124,9 @@ table[
         x error plus=ex+,
         x error minus=ex-,
 ]{
-  x    y  ex+   ex-
-  2.00 17 0.30  0.30
-  1.59 16 0.19  0.19
+  x     y  ex+   ex-
+  0.12  17 0.30  0.30
+  -0.84 16 0.20  0.20
 };
 
 %-------------------------------------------------------------------------------
@@ -157,9 +157,9 @@ table[
         x error plus=ex+,
         x error minus=ex-,
 ]{
-  x    y  ex+   ex-
-  1.33 15 0.26  0.26
-  1.95 14 0.26  0.26
+  x     y  ex+   ex-
+  -0.99 15 0.26  0.26
+  -0.59 14 0.30  0.30
 };
 
 %-------------------------------------------------------------------------------
@@ -192,18 +192,17 @@ table[
         x error plus=ex+,
         x error minus=ex-,
 ]{
-  x    y   ex+   ex-
-  1.90 13  0.39  0.39
-  1.54 12  0.22  0.22
-  2.19 11  0.33  0.33
-  1.69 10  0.36  0.36
+  x     y   ex+   ex-
+  0.00  13  0.34  0.34
+  -0.74 12  0.24  0.24
+  0.50  11  0.49  0.49
+  -1.21 10  0.36  0.36
 };
 
 %-------------------------------------------------------------------------------
 % Magnet polarity
 \node[exp_label, color=ClrMagPol] (UP) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},9){Up};
 \node[exp_label, color=ClrMagPol] (DOWN) at (axis cs: \pgfkeysvalueof{/pgfplots/xmin},8){Down};
-
 
 % Full uncertainty
 \addplot+[only marks,
@@ -228,9 +227,9 @@ table[
         x error plus=ex+,
         x error minus=ex-,
 ]{
-  x    y  ex+   ex-
-  1.70 9  0.22  0.22
-  1.79 8  0.23  0.23
+  x     y  ex+   ex-
+  -0.68 9  0.21  0.21
+  -0.42 8  0.24  0.24
 };
 
 %-------------------------------------------------------------------------------
@@ -263,11 +262,11 @@ table[
         x error plus=ex+,
         x error minus=ex-,
 ]{
-  x    y  ex+   ex-
-  1.65 7  0.44  0.44
-  1.50 6  0.29  0.29
-  2.28 5  0.38  0.38
-  1.53 4  0.32  0.32
+  x     y  ex+   ex-
+  -0.30 7  0.47  0.47
+  -0.46 6  0.28  0.28
+  -0.42 5  0.38  0.38
+  -0.70 4  0.32  0.32
 };
 
 %-------------------------------------------------------------------------------
@@ -298,9 +297,9 @@ table[
         x error plus=ex+,
         x error minus=ex-,
 ]{
-  x    y  ex+   ex-
-  1.67 3  0.18  0.18
-  1.92 2  0.44  0.44
+  x     y  ex+   ex-
+  -0.49 3  0.18  0.18
+  -0.74 2  0.41  0.41
 };
 
 %-------------------------------------------------------------------------------
@@ -331,8 +330,8 @@ table[
         x error plus=ex+,
         x error minus=ex-,
 ]{
-  x    y  ex+   ex-
-  1.73 1  0.16  0.16
+  x     y  ex+   ex-
+  -0.54 1  0.16  0.16
 };
 
 \end{axis}

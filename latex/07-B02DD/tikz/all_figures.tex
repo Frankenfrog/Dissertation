@@ -60,6 +60,9 @@
 \usetikzlibrary{patterns}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.12}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
 \pgfrealjobname{all_figures}
 
 \begin{document}
@@ -152,6 +155,18 @@
 \begin{tikzpicture}[scale=0.38]
 \input{Profile_DecayTime_SS}
 \end{tikzpicture}
+\endpgfgraphicnamed
+
+\beginpgfgraphicnamed{pdf/SComparison}
+% \begin{tikzpicture}[scale=0.38]
+\input{SComparison}
+% \end{tikzpicture}
+\endpgfgraphicnamed
+
+\beginpgfgraphicnamed{pdf/CComparison}
+% \begin{tikzpicture}[scale=0.38]
+\input{CComparison}
+% \end{tikzpicture}
 \endpgfgraphicnamed
 
 \end{document}
