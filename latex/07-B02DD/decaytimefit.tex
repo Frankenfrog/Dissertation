@@ -69,31 +69,59 @@ from the \BdToDsD calibration, and the $\Bz$ lifetime difference $\DG =
 \SI{0}{\invps}$ are fixed in the likelihood fit.
 
 %============================================================================%
-\subsection{Statistical Uncertainty}
-\label{sec:decaytimefit:uncertainty}
-\todo{decide on how to assign statistical uncertainties}
-\input{07-B02DD/uncertainty}
-
-%============================================================================%
 \subsection{Results}
 
+\todo{consider which uncertainties should be quoted, full FT uncertainties in constraints?}
 The fit results of the $\CP$ observables from the decay time fit are
-
 \begin{align}
 \begin{split}
-  \SDD                &= -0.54\,\pm\,^{0.17}_{0.16} \ , \\
-  \CDD                &= \phantom{-}0.26\,\pm\,^{0.18}_{0.17} \ , \\
-  \rho(\SDD,\CDD)     &= 0.48 \ . \\
+  \SDD                &= -0.54\,\pm\,0.17 \, , \\
+  \CDD                &= \phantom{-}0.26\,\pm\,0.17 \, , \\
+  \rho(\SDD,\CDD)     &= \phantom{-}0.48 \, . \\
 \end{split}
 \label{eq:b02dd:decaytimefit:cpresults}
 \end{align}
 
-A plot of the decay time distribution and the projection of the acceptance
-model are shown in \cref{fig:b02dd:decaytimefit}. Good agreement between the
-latter and the shape on signal MC (cf.
-\cref{fig:b02dd:decaytimefit:acceptance_MC}) can be observed but the low
-statistics leading to rather large uncertainties indicated by the error band
-diminishes the significance of the comparison.
+Only after rescaling the sWeights via
+\begin{align}
+  w_i = w_i \frac{\sum w_i}{\sum w_i^2}\,,
+\end{align}
+correct asymmetric uncertainty estimates are delivered by \minos, which is
+\root's standard method to analyse the likelihood shape. To check if the
+coverage is guaranteed the bootstrapping method is applied. The nominal fit
+procedure, \ie performing the mass fit, calculating the sWeights and fitting
+the weighted tagged decay time distribution, is executed and the fit results
+are stored. The drawing and fitting is done \num{10000} times. It turns out
+that half of the fits fail if the flavour tagging calibration parameters are
+constrained within their statistical uncertainties. When fixing them to their
+central values the fit failure rate drops to a per-mille effect. From the
+distribution of fit results the two-side \SI{68}{\percent} confidence
+intervals are extracted. To account for the uncertainties on the flavour
+tagging calibration parameters \num{10000} pseudoexperiments are performed, in
+which the nominal model is used to generate the signal decay time distribution
+and the fit results of the nominal fit are chosen for the \CP observables \SDD
+and \CDD. Before generating the flavour tagging calibration parameters are
+drawn from Gaussian distributions around their central values using the
+combined statistical + systematic uncertainties. In the subsequent fit the
+flavour tagging calibration parameters are fixed to their central values, like
+in the fits to the bootstrapped samples. The resulting pull distributions are
+broader than standard normal distributions. The deviation of the width from
+unity shows how much the statistical uncertainties are underestimated in the
+likelihood fit due to not accounting for the variation of the flavour tagging
+calibration parameters. So, the statistical uncertainties for \SDD and
+\CDD from the bootstrapping including the impact of the uncertainty of the
+flavour tagging calibration parameters are given by scaling the bootstrapping
+uncertainties by the width of the pull distributions:
+\begin{align}
+    \sigma_{\SDD}(\text{bootstrapping}) &= \,^{+0.17}_{-0.16} \,, \\
+    \sigma_{\CDD}(\text{bootstrapping}) &= \,^{+0.18}_{-0.17} \,.
+\end{align}
+These uncertainties match the nominal ones from \minos quite well. A plot of
+the decay time distribution and the projection of the acceptance model are
+shown in \cref{fig:b02dd:decaytimefit}. Good agreement between the latter and
+the shape on signal MC (cf. \cref{fig:b02dd:decaytimefit:acceptance_MC}) can
+be observed but the low statistics leading to rather large uncertainties
+indicated by the error band diminishes the significance of the comparison.
 
 \begin{figure}[htb]
 \hspace*{\fill}
