@@ -12,7 +12,67 @@ multivariate analysis to further reduce combinatorial background.
 \subsection{Preselection}
 \label{sec:b02dd:selection:cuts}
 
-\todo{Preselection for \BdToDD}
+Only events that have been triggered by a topological trigger line or by the
+inclusive $\phi$ line and that in total contain less than \num{500} long
+tracks are considered. All candidate kaon and pion tracks have to be long
+tracks and have to satisfy quality criteria. Lower limits on the momentum ($p
+> \SI{1}{\GeVc}$) and on the transverse momentum ($\pT > \SI{100}{\MeVc}$) are
+required. The candidates should be inconsistent with originating from the PV
+and the particle identification (PID) system needs to classify them as pions
+or kaons with only a small probability to be a ghost.
+
+Of all the possible combinations of three charged hadron tracks forming a
+$\Dp$ meson candidate only the two possibilities \DToKpipi and \DToKKpi are
+used. The vertex needs to be significantly displaced from all PVs in the event
+and the distance of the closest approach between all pairs of particles
+forming the vertex has to be below \SI{0.5}{\mm}. The scalar sum of the \pT
+has to exceed \SI{1800}{\MeVc} and the combined invariant mass has to be in
+the range \SI{\pm25}{\MeVcc} around the nominal \Dp mass~\cite{PDG2014}. The
+tightened mass window as well as requiring that the \chisq of the flight
+distance of each $\Dpm$ meson with respect to the $\Bd$ decay vertex has to be
+larger than \num{2} reduces the amount of (partially) charmless contributions.
+On top of that, a cut on the decay time significance of the $\Dpm$ mesons,
+defined as their decay time with respect to the $\Bz$ decay vertex divided by
+the corresponding uncertainty, is supposed to further suppress the (partially)
+charmless contributions. The optimal cut value is estimated under the
+assumption that a very tight cut leaves only candidates with resonant $\Dpm$
+mesons. Gradually loosening the cut the value can be found where the product
+of the \Bd signal yield, extracted from a fit on data, and the signal
+efficiency, determined on MC, exceeds the estimation from the initial tight
+cut scenario. If both $\Dpm$ mesons are reconstructed via \DToKpipi decays the
+decay time significance has to be greater than \num{0}. It needs to be greater
+than \num{3} if one of the $\Dpm$ mesons is reconstructed in the \KKpi and the
+other in the \Kpipi final state. Although in this case the final states
+of the \Dpm mesons differ the same cut is applied to both \Dpm mesons as on
+signal MC the comparison of the distributions of the decay time significance
+shows a good agreement between \DToKpipi and \DToKKpi decays.
+
+The vertex formed by a pair of oppositely charged $\Dpm$ candidates needs to
+be of good quality. The scalar sum of the $\pT$ of the $\Dpm$ mesons must
+exceed $\SI{5}{\GeVc}$. In the stripping a BDT to select $\Bd$ candidates is
+applied. The BDT is based on the \pT and the flight distance \chisq of the \Bz
+as well as on the sum of the \Bz and both \PD vertex \chisq's divided by the
+sum of the degrees of freedom of these vertex fits. Moreover, the \Bd
+candidates are required to have $p > \SI{10}{\GeVc}$ and to have
+$\chisqip<\num{25}$, where $\chisqip$ is defined as the difference in the
+vertex fit $\chi^2$ of the associated PV with and without the $B^0$ candidate.
+
+The reconstructed decay time $t$ of the \Bd candidate is determined from a
+DTF, in which the \Bd production vertex is constrained to the position of the
+associated PV. Only candidates with decay times in the range
+\SIrange{0.25}{10.25}{\ps} are kept. The invariant mass $m_{\Dp\Dm}$ of the
+$\Bd$ candidate has to be in the range \SIrange{5150}{5500}{\MeVcc}. It is
+calculated from a DTF, in which the invariant masses of $\Kpipi$ and $\KKpi$
+are additionally constrained to the known $\Dp$ mass. It is required that
+these fits have converged. Further outliers are removed by requiring that the
+uncertainty on the invariant mass and on the decay time has to be below
+\SI{30}{\MeVcc} and \SI{0.2}{\ps}, respectively, and that the absolute value
+of the $z$ coordinate of the PV is smaller than \SI{250}{\milli\meter}.
+
+The signal efficiency of the preselection for the final state with two kaons
+is $\SI{82}{\percent}$ at a background rejection of $\SI{94}{\percent}$. For
+the final state with three kaons the signal efficiency is
+$\SI{67.5}{\percent}$ at a background rejection of $\SI{98}{\percent}$.
 
 \subsection{Vetoes}
 \label{sec:b02dd:selection:vetoes}
@@ -204,14 +264,12 @@ background at a signal efficiency of \SI{87.2\pm1.9}{\percent}.
 \label{sec:b02dd:selection:final_selection}
 
 Finally, the fit range of the invariant $m_{\Dp\Dm}$ mass is reduced to
-\SIrange{5150}{5500}{\MeVcc}, which eliminates some backgrounds at low masses,
-\eg misreconstructed \BdToDstD, prevents overtraining effects on the high-mass
-sideband used in the training of the BDT, and leaves enough candidates in the
-upper mass sideband to determine the shape of the combinatorial background.
-Additionally, the decay time is restricted to be in the range
-\SIrange{0.25}{10.25}{\ps} to avoid edge effects. In \SI{0.8}{\percent} of the
-selected events more than one candidate remains, which is very unlikely given
-the low branching branching fraction. So choosing randomly only one of the
-multiple candidates is kept.
-
-\clearpage
+\SIrange{5150}{5500}{\MeVcc}, which eliminates some backgrounds, like
+misreconstructed \mbox{\BdToDstD}, at low masses, prevents overtraining
+effects on the high-mass sideband used in the training of the BDT, and leaves
+enough candidates in the upper mass sideband to determine the shape of the
+combinatorial background. Additionally, the decay time is restricted to be in
+the range \SIrange{0.25}{10.25}{\ps} to avoid edge effects. In
+\SI{0.8}{\percent} of the selected events more than one candidate remains,
+which is very unlikely given the low branching branching fraction. So choosing
+randomly only one of the multiple candidates is kept.
