@@ -3,10 +3,27 @@
 \section{Maximum likelihood method (1 page)}
 \label{sec:dataanalysis:maximumlikelihood}
 
-To include uncertainties on fixed parameters in the fit Gaussian PDFs
+For parameter estimations, especially in the case of multidimensional fits,
+the (extended) maximum likelihood method is often used. The extended
+likelihood function is defined as
+\begin{align}
+	\label{eq:likelihood}
+	\mathcal{L}(\vec{\lambda};\vec{x}) = \frac{e^{-N} N^n}{n!} \prod_{s} \prod_{i=1}^{N^s} \mathcal{P}^s(\vec{x}_i; \vec{\lambda}_s) \, .
+\end{align}
+Here, $\mathcal{P}^s$ is a properly normalised probability density function
+(PDF), which can differ between several simultaneously treated categories
+indexed via $s$. The vector $\vec{x}$ contains the values of all observables
+and the vector $\vec{\lambda}_s$ comprises all parameters, for which the
+optimal values, \ie the ones that maximise the likelihood function, have to be
+found. Most numerical algorithms do not maximise the likelihood function but
+instead look for the minimum of the negative log-likelihood $-\ln\mathcal{L}$,
+which represents the same optimum. The prefactor takes the probability into
+account that $n = \sum_s N^s$ events are observed although $N$ are expected.
+The value of this expectation is as well estimated in the likelihood fit. To
+include uncertainties on fixed parameters in the likelihood fit Gaussian PDFs
 %
 \begin{align}
-\label{eq:b02dd:decaytimefit:gaussian}
+\label{eq:dataanalysis:maximumlikelihood:constraint}
 \mathcal{G}(x;\mu,\sigma) = \frac{1}{\sigma \sqrt{2 \pi}}\mathrm{e}^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
 \end{align}
 %
