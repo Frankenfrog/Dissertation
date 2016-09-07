@@ -3,6 +3,58 @@
 \section{Flavour tagging calibration (1 page)}
 \label{sec:dataanalysis:taggingcalibration}
 
+The output of the flavour tagging algorithms $\eta$ needs to be calibrated to
+ensure that it reflects the true mistag probability $\omega$. Usually, a
+linear function
+\begin{align}
+	\omega(\eta) = p_0 + p_1 (\eta - \langle\eta\rangle)
+\label{eq:dataanalysis:taggingcalibration:generalfunction}
+\end{align}
+is chosen. Shifting the function by the average mistag estimate
+$\langle\eta\rangle$ reduces the correlation between the calibration
+parameters $p_0$ and $p_1$, which in case of a perfect calibration leads to
+$p_0 = \langle\eta\rangle$ and $p_1 = 1$.
+
+Due to different interaction rates of the tagging particles with the detector
+material or detection asymmetries the performance of the flavour tagging
+algorithms can be dependent on the initial flavour. This behaviour is quite
+unfortunate in the measurement of \CP violation as it can dilute or enhance
+the observed asymmetry. To account for these tagging asymmetries separate
+parametrisations for the flavour tagging calibrations of initial \Bd and \Bzb
+are implemented:
+\begin{equation}
+\begin{split}
+  \omega^{\Bz }(\eta) = p_0^{\Bz } + p_1^{\Bz }\left(\eta - \langle\eta\rangle\right) \, , \\
+  \omega^{\Bzb}(\eta) = p_0^{\Bzb} + p_1^{\Bzb}\left(\eta - \langle\eta\rangle\right) \, .
+\end{split}
+\label{eq:dataanalysis:taggingcalibration:individual_parametrisations}
+\end{equation}
+Equivalently, the calibration parameters for \Bd and \Bzb can be related
+through their mean and their difference:
+\begin{equation}
+  p_i        = \frac{p_i^{\Bz } + p_i^{\Bzb}}{2} \, , \quad
+  \Delta p_i = p_i^{\Bz } - p_i^{\Bzb} \, , \quad
+  \text{with }i = 0,1 \,.
+\label{eq:dataanalysis:taggingcalibration:individual_pis}
+\end{equation}
+The asymmetry of the mistags can then be written as
+\begin{align}
+	\Delta\omega(\eta) = \Delta p_0 + \Delta p_1 (\eta - \langle\eta\rangle)\,.
+\label{eq:dataanalysis:taggingcalibration:mistagasymmetry}
+\end{align}
+
+For the flavour tagging calibration it is beneficial to use flavour specific
+decay channels that are kinematically similar to the signal channel.
+Additionally, the selection between the two channels should be as close as
+possible. This allows to transfer the calibration results from the control to
+the signal channel without assigning large systematic uncertainties. On the
+other hand, the control channel should ideally be a mode with high statistics
+to reduce the statistical uncertainties on the flavour tagging calibration
+parameters. A good compromise between these two requirements is found by
+choosing \BdToDsD as calibration mode for \BdToDD, while for \BdToJPsiKS the
+OS tagging combination and the cut-based SS\pion tagging algorithm are
+calibrated with \BuToJPsiK and \BdToJPsiKstar decays, respectively.
+
 \input{05-DataAnalysis/DsDcalibration}
 
 \input{05-DataAnalysis/JpsiXcalibration}
