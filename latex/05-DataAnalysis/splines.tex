@@ -2,3 +2,19 @@
 
 \section{Spline interpolation (0.5 pages)}
 \label{sec:dataanalysis:splines}
+
+In many cases phenomenological models are an efficient way of describing
+shapes, \eg when parametrising acceptances, which are typically influenced by
+more effects than could realistically be analysed separately. Interpolating
+cubic splines, which are piecewise defined polynomials of degree three, are an
+useful implementation~\cite{Splines}. They are parametrised by a set of knots
+and coefficients at these positions and can be written as the sum over base
+splines. The first and second derivatives are continuous throughout the
+domain. The choice of the number and positions of the knots determines how
+accurate the given shape can be described.
+
+In this thesis cubic splines are used to parametrise the shape of mistag
+distributions and to transfer a histogram of the decay-time-dependent
+efficiency into an unbinned, analytically integrable representation in the
+\BdToJPsiKS analysis, and to model the deviation of the decay time
+distribution from a pure exponential distribution in the \BdToDD analysis.
