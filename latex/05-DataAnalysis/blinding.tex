@@ -3,17 +3,20 @@
 \section{Blinding}
 \label{sec:dataanalysis:blinding}
 
-To eliminate the experimenter's bias, a blinding transformation is applied on
-the fitted \CP parameters \SDD and \CDD with the
-\verb|RooUnblindUniform| method of \roofit's \verb|RooBlindTools|~\cite{roofit}.
-The transformation implemented in the \verb|RooUnblindUniform| method adds a
-hidden offset to the fit parameter. Doing so, the uncertainty on the extracted
-parameter does not change and can still be used for understanding the outcome of
-the fit. The hidden offset is drawn from a uniform distribution with a range
-$\pm s$, using a random number generator with known seed. The seed is generated
-from a so-called \emph{blinding string}. If two different analyses of the same
-physics parameter agree on a common scale and blinding string, then the results
-of those analyses can be compared without unblinding. We choose the range of the
-uniform distribution to be $[-2,2]$. Given the physical range of \sintwobeta is
-$[-1,1]$, this ensures a good opacity.
-\todo{rewrite blinding}
+Especially when performing precision measurements or searching for rare decays
+it is advisable to blind the results throughout the analysis and even as
+analyst only look at them after some thorough (ideally external) review
+process. Blinding means that the central value or the final result is unknown
+to all involved people. This procedure avoids the experimenter's bias, \ie the
+unintended biasing of a result towards a known or expected value or towards a
+(subconsciously) desired observation. The blinding transformation that has
+been applied in the measurements of \CP violation in \BdToJPsiKS and \BdToDD
+decays is adding a hidden offset to the fitted \CP parameters \Sf and \Cf
+using the \verb|RooUnblindUniform| method of \roofit's
+\verb|RooBlindTools|~\cite{roofit}. With this method the uncertainty on the
+extracted parameters does not change and can still be used for optimising the
+selection. Here, the offset is drawn from a uniform distribution between
+\num{-2} and \num{+2} using a random number generator whose seed is generated
+from a so-called \emph{blinding string}. As the physical range of
+\sintwobeta is $[-1,1]$, this ensures a good opacity. A review of blind
+analyses is given in Ref.~\cite{Blinding}.
