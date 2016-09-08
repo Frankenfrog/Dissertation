@@ -2,3 +2,32 @@
 
 \subsection{Unfolding data distributions using sWeights (1 page)}
 \label{sec:dataanalysis:selection:splot}
+
+The shape of invariant mass and decay time distributions of signal decays is
+mostly defined by some theoretical considerations that eventually need to be
+modified to account for experimental effects, like resolutions or acceptances.
+However, for background contributions especially the shape of the decay time
+distribution is usually difficult to motivate from first principles.
+Therefore, it is beneficial to statistically remove their contribution. The
+\sPlot technique~\cite{Pivk:2004ty} achieves this goal by unfolding the data
+distributions using weights calculated from yields of an extended maximum
+likelihood fit (see \cref{sec:dataanalysis:maximumlikelihood}). This fit is
+typically performed for the invariant mass distribution where reliable
+parametrisations for signal and background contributions can quite easily be
+found. Based on the fit results sWeights according to
+\begin{align}
+	\SPlotweight(x_i) = \frac{\sum_{j = 1}^{N_s}\textbf{V}_{\text{n}j}f_j(x_i)}{\sum_{k = 1}^{N_s} N_k f_k(x_i)}
+\label{eq:dataanalysis:selection:splot:weightdefinition}
+\end{align}
+can be calculated for each candidate. Herein, the indices $j$ and $k$ sum over
+the $N_s$ categories described in the PDF $f$. The matrix \textbf{V} contains
+the covariances between the yields $N$ and needs to be determined from an
+individual fit in which all other floating parameters are fixed. The sWeights
+fulfil the condition that their sum over one category returns the
+corresponding fitted yield. The sWeights can be applied to other observables
+if they are uncorrelated with the one used to obtain the sWeights. In
+sweighted histograms the uncertainty on the bin content of bin $i$ is given by
+\begin{align}
+	\sigma(i) = \sqrt{\sum_{e \subset i} (\SPlotweight)^2}\,.
+\label{eq:dataanalysis:selection:splot:weighterror}
+\end{align}
