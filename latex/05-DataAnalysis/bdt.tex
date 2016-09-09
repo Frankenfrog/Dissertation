@@ -2,3 +2,54 @@
 
 \subsection{Multivariate selection (1 page)}
 \label{sec:dataanalysis:selection:bdt}
+
+Machine learning algorithms are more and more entering the field of particle
+physics. These multivariate techniques improve the possibility to separate
+signal from background contributions as they make use of correlations between
+input variables. Software packages, like TMVA~\cite{Hocker:2007ht} or
+scikit-learn~\cite{scikit-learn}, provide implementations of these algorithms.
+
+The simplest classifier is a decision tree, which splits the phase space
+according to repeated decisions on certain variables. Starting from a root
+node the variable and cut value is determined where the best separation can be
+achieved according to a criterion like the Gini index~\cite{giniindex}, $p
+\cdot (1-p)$ with $p$ being the purity. At each following node the cut value
+and even the variable used for the separation can be chosen dependent on the
+previous decision. The depth of the tree, \ie the maximal number of
+consecutive decisions, is tunable. When a stop criterion is matched, \eg the
+ratio of candidates reaching a node falls below a predefined threshold, no
+further decisions are applied. The tree is trained with a set of labelled
+data. Each final leaf is classified as signal or background depending on the
+class of the majority of training events ending in that leaf. An improvement
+can be achieved by combining several decision trees to a forest. In this case,
+the classification of an event follows a majority vote of the individual
+trees. Additionally, the impact of the training events is altered by applying
+weights using a procedure called boosting. However, the ability to easily
+interpret the training result vanishes for a Boosted Decision Tree
+(BDT)~\cite{Breiman,Roe}. There are several possibilities how the boosting is
+realised. In the AdaBoost method~\cite{AdaBoost} events that are misidentified
+in the previous tree are weighted by
+\begin{align}
+	\alpha = \frac{1 - \eps}{\eps}\,,
+\end{align}
+with $\eps < \num{0.5}$ being the misclassification rate of the previous tree.
+This criterion is fulfilled as long as the decision tree performs better than
+a random choice. The learning rate can be further modified by using an
+exponent $\beta$ for the weight, $\alpha \to \alpha^{\beta}$. To have the same
+effective number of events as before, \ie the same sum of weights, the events
+are renormalised before training the next tree. The BDT output classifier $y$
+is given by the weighted mean of the tree's output $h$, which is \num{+1} for
+signal and \num{-1} for background,
+\begin{align}
+	y = \frac{1}{N_{\textrm{trees}}} \sum_i^{N_{\textrm{trees}}} \ln(\alpha_i) h_i\,.
+\end{align}
+This means that an event is classified more signal-like the higher the BDT
+output classifier. Another boosting algorithm is the GradientBoost
+method~\cite{GradientBoost}. It is based on minimising a defined loss
+function, which describes the deviation between the classification and the
+truth, by calculating the gradient of the loss function.
+
+The importance of an input variable to the BDT training can be determined by
+how often it is used inside the BDT and by how important the cuts are in terms
+of events reaching the corresponding nodes and separation power between signal
+and background.
