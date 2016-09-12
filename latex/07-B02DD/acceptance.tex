@@ -10,12 +10,11 @@ these effects the $\Bd$ lifetime is constrained to its PDG value of $\tau =
 \SI{1.519\pm0.005}{\ps}$~\cite{PDG2014} in the nominal fit and any deviation
 of the decay time distribution (summed over the tags) from a pure exponential
 shape is supposed to be described by cubic splines (see
-\cref{sec:dataanalysis:splines}). Knots are positioned on the rising edge,
-approximately at the turning point, and at the boundaries of the decay time
-range, so at $\{\SIlist[list-final-separator={,
-}]{0.25;0.8;2.0;10.25}{\ps}\}$. The normalisation of the splines is arbitrary
-and it has been decided to fix the second to last spline coefficient to
-$\num{1.0}$.
+\cref{sec:dataanalysis:splines}). Knots are positioned on the rising edge at
+\SI{0.8}{\ps}, approximately at the turning point at \SI{2}{\ps}, and at the
+boundaries of the decay time range (\SIlist{0.25;10.25}{\ps}). The
+normalisation of the splines is arbitrary and it has been decided to fix the
+second to last spline coefficient to $\num{1.0}$.
 
 On signal MC the truth information is available so the shape of the decay time
 acceptance can be separated from the exponential decay. This shape is compared
@@ -31,9 +30,9 @@ individually.
 \caption{Decay time acceptance of truth-matched signal MC for the $\KpipiKpipi$
 final state (left) and the $\KKpiKpipi$ final state (right). The black data
 points show the true decay time acceptance determined by dividing the
-reconstructed by the true decay time distribution. The blue line is the spline
-acceptance function and the red stripes indicate the $1\,\sigma$ error band
-taking into account the statistical uncertainties.}
+reconstructed by the true decay time distribution. The blue dashed line is the
+spline acceptance function with four knots and the green dashed-dotted line
+with six knots.}
 \label{fig:b02dd:decaytimefit:acceptance_MC}
 \end{figure}
 

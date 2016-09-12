@@ -23,7 +23,7 @@ or kaons with only a small probability to be a ghost.
 
 Of all the possible combinations of three charged hadron tracks forming a
 $\Dp$ meson candidate only the two possibilities \DToKpipi and \DToKKpi are
-used. The vertex needs to be significantly displaced from all PVs in the event
+selected. The vertex needs to be significantly displaced from all PVs in the event
 and the distance of the closest approach between all pairs of particles
 forming the vertex has to be below \SI{0.5}{\mm}. The scalar sum of the \pT
 has to exceed \SI{1800}{\MeVc} and the combined invariant mass has to be in
@@ -57,17 +57,18 @@ candidates are required to have $p > \SI{10}{\GeVc}$ and to have
 $\chisqip<\num{25}$, where $\chisqip$ is defined as the difference in the
 vertex fit $\chi^2$ of the associated PV with and without the $B^0$ candidate.
 
-The reconstructed decay time $t$ of the \Bd candidate is determined from a
-DTF, in which the \Bd production vertex is constrained to the position of the
-associated PV. Only candidates with decay times in the range
-\SIrange{0.25}{10.25}{\ps} are kept. The invariant mass $m_{\Dp\Dm}$ of the
-$\Bd$ candidate has to be in the range \SIrange{5150}{5500}{\MeVcc}. It is
-calculated from a DTF, in which the invariant masses of $\Kpipi$ and $\KKpi$
-are additionally constrained to the known $\Dp$ mass. It is required that
-these fits have converged. Further outliers are removed by requiring that the
-uncertainty on the invariant mass and on the decay time has to be below
-\SI{30}{\MeVcc} and \SI{0.2}{\ps}, respectively, and that the absolute value
-of the $z$ coordinate of the PV is smaller than \SI{250}{\milli\meter}.
+The reconstructed decay time $t$ of the \Bd candidate is determined from a DTF
+(see \cref{sec:dataanalysis:dtf}), in which the \Bd production vertex is
+constrained to the position of the associated PV. Only candidates with decay
+times in the range \SIrange{0.25}{10.25}{\ps} are kept. The invariant mass
+$m_{\Dp\Dm}$ of the $\Bd$ candidate has to be in the range
+\SIrange{5150}{5500}{\MeVcc}. It is calculated from a DTF, in which the
+invariant masses of $\Kpipi$ and $\KKpi$ are additionally constrained to the
+known $\Dp$ mass. It is required that these fits have converged. Further
+outliers are removed by requiring that the uncertainty on the invariant mass
+and on the decay time has to be below \SI{30}{\MeVcc} and \SI{0.2}{\ps},
+respectively, and that the absolute value of the $z$ coordinate of the PV is
+smaller than \SI{250}{\milli\meter}.
 
 The signal efficiency of the preselection for the final state with two kaons
 is $\SI{82}{\percent}$ at a background rejection of $\SI{94}{\percent}$. For
@@ -83,8 +84,8 @@ these $\Dsp$ contributions the kaon mass hypothesis is assigned to the pion
 with the higher transverse momentum of $\DpToKpipi$ candidates. The candidate
 is rejected if the invariant mass of the hypothetical kaon pair is compatible
 with the $\phi$ mass of $M_{\phi} = \SI{1019.461}{\MeVcc}$~\cite{PDG2014}
-within $\pm\SI{10}{\MeVcc}$ or if the invariant mass $m(\Km\Kp\pip)$ is
-compatible with the \Dsp mass of $M_{\Dsp} =
+within $\pm\SI{10}{\MeVcc}$ or if the invariant mass of the $\kaon\kaon\pion$
+combination is compatible with the \Dsp mass of $M_{\Dsp} =
 \SI{1968.30}{\MeVcc}$~\cite{PDG2014} within $\pm\SI{25}{\MeVcc}$ and the pion
 with the higher \pT (the one that the kaon mass hypothesis is assigned to) has
 a larger $\texttt{ProbNN}K$ than $\texttt{ProbNN}\pion$ probability. When
@@ -115,12 +116,12 @@ performance. The selection steps described above, are applied before the
 training.
 
 Two BDTs separated by the number of kaons in the \Bd final state are trained.
-The importance of the \num{21} input variables to the training differs, which
+The importance of the \num{21} features of the training differs, which
 is considered by their order in \cref{tab:b02dd:selection:mva:inputs}.
 %
 \begin{table}[!htb]
 \centering
-\caption{List of input variables used in the training of the BDTs.}
+\caption{List of features used in the training of the BDTs.}
 \begin{tabular}{ll}
  \toprule
   BDT for \KpipiKpipi                          &  BDT for \KKpiKpipi                           \\
@@ -151,7 +152,7 @@ is considered by their order in \cref{tab:b02dd:selection:mva:inputs}.
 \label{tab:b02dd:selection:mva:inputs}
 \end{table}
 %
-One of the input variables is the ratio of the kaon over the sum of the kaon and the
+One of the features is the ratio of the kaon over the sum of the kaon and the
 pion probabilities:
 %
 \begin{equation}
@@ -160,12 +161,12 @@ pion probabilities:
 \end{equation}
 %
 It turns out that this ratio performs a little bit better than just using the
-simple ProbNN variables. Among the other input variables are observables
+simple ProbNN variables. Among the other features are observables
 related to the kinematics of the decay like transverse momenta, decay time
 significances and direction angles, qualities of the track segments in the
 VELO and the T-stations, and vertex qualities.
 
-Before the training the input variables are transformed to decorrelate and
+Before the training the features are transformed to decorrelate and
 decompose them into the principal components, which improves the performance of
 the BDT. The BDTs are each built out of \num{700} trees. The depth of the trees is
 limited to three. At each node at least \SI{3}{\percent} of the training
@@ -195,8 +196,8 @@ performance is clearly overestimated in the training.
 %
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.49\textwidth]{07-B02DD/figs/BDTComparison_Kpipi.pdf}
-    \includegraphics[width=0.49\textwidth]{07-B02DD/figs/BDTComparison_KKpi.pdf}
+    \includegraphics[width=0.49\textwidth]{07-B02DD/tikz/pdf/BDTComparison_Kpipi.pdf}
+    \includegraphics[width=0.49\textwidth]{07-B02DD/tikz/pdf/BDTComparison_KKpi.pdf}
     \caption{Distribution of the BDT output for background-subtracted data (blue) and
     signal MC (black) for the \KpipiKpipi final state (left) and the
     \KKpiKpipi final state (right).}
@@ -224,8 +225,8 @@ the BDT classifier output.
 %
 \begin{figure}[!htb]
 \centering
-\includegraphics[width=0.48\textwidth]{07-B02DD/figs/Sensitivities_Kpipi.pdf}
-\includegraphics[width=0.48\textwidth]{07-B02DD/figs/Sensitivities_KKpi.pdf}
+\includegraphics[width=0.48\textwidth]{07-B02DD/tikz/pdf/Sensitivities_Kpipi.pdf}
+\includegraphics[width=0.48\textwidth]{07-B02DD/tikz/pdf/Sensitivities_KKpi.pdf}
 \caption{Sensitivity of \SDD (red short-dashed) and \CDD (blue long-dashed) as
 a function of the BDT classifier output for the \KpipiKpipi final state (left)
 and the \KKpiKpipi final state (right).}
@@ -271,5 +272,5 @@ enough candidates in the upper mass sideband to determine the shape of the
 combinatorial background. Additionally, the decay time is restricted to be in
 the range \SIrange{0.25}{10.25}{\ps} to avoid edge effects. In
 \SI{0.8}{\percent} of the selected events more than one candidate remains,
-which is very unlikely given the low branching branching fraction. So choosing
-randomly only one of the multiple candidates is kept.
+which is very unlikely given the low branching fraction. Therefore, only one
+of the multiple candidates is kept, which is chosen randomly.
