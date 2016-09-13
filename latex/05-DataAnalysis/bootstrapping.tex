@@ -8,6 +8,10 @@ model-independent approach to estimate confidence level intervals. Toy data
 samples are produced by drawing events from the nominal data sample, with
 replacement, until the statistics matches the number of candidates of the
 nominal data sample. This means that the same event can be drawn multiple
-times. The toy data samples serve as test samples on which all calculations or
-fits that are done on the nominal data sample can be repeated several times.
-\todo{extend bootstrapping, advantages, ...}
+times. The bootstrapping method can easily be used for multiple dimensions.
+Thus, it maintains correlations between the observables without any
+assumptions or model dependencies. Therefore, bootstrapped samples serve as
+perfect representations of the original data. Calculations or fits that are
+originally done once on the nominal data sample can be repeated several times.
+So, reliable estimates for standard deviations or confidence level intervals
+can be derived.
