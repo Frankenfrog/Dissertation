@@ -1,0 +1,27 @@
+%!TEX root = ../main.tex
+
+\section{Selection (1 page)}
+\label{sec:dataanalysis:selection}
+
+When reconstructing decays in a hadronic environment, like at \lhcb, it is
+inevitable that some of the candidates do not stem from the signal decay chain
+that one wants to analyse. In fact, most of the reconstructed candidates are
+usually built from random combinations of tracks that have no common physical
+origin. But especially when searching for a very rare signal it is better to
+be careful and at first stage rather keep an event than throwing it away. Of
+course, these background candidates allocate disk space and cost computational
+resources. Furthermore, the sensitivity of a measurement suffers from
+background contamination. Therefore, a selection needs to be developed that
+separates signal from background candidates. The simplest selection is a
+requirement of the type $a < b$. Several of these cuts can be combined to a
+sequence but for each variable a maximum of two requirements can be applied,
+\ie a minimal and a maximal value can be defined. This means that out of the
+whole phase space a hyperrectangle is selected. In principle, the cut-based
+selection can be extended by allowing case differentiation, \ie connecting
+sequences with an \texttt{OR} requirement. But its simplicity is also a
+strength of the cut-based selection. It is very fast and the selection
+requirements can easily be understood and connected to event or particle
+properties. Additionally, the efficiency of the requirements can be determined
+individually. To account for dependencies between the variables a grid search
+can be performed, in which the optimal cut values are determined recursively.
+However, even this can sometimes lead to suboptimal selection performances.
