@@ -16,12 +16,11 @@ separates signal from background candidates. The simplest selection is a
 requirement of the type $a < b$. Several of these cuts can be combined to a
 sequence but for each variable a maximum of two requirements can be applied,
 \ie a minimal and a maximal value can be defined. This means that out of the
-whole phase space a hyperrectangle is selected. In principle, the cut-based
-selection can be extended by allowing case differentiation, \ie connecting
-sequences with an \texttt{OR} requirement. But its simplicity is also a
-strength of the cut-based selection. It is very fast and the selection
+whole phase space only a hyperrectangle is selected. But the simplicity is
+also a strength of the cut-based selection. It is very fast and the selection
 requirements can easily be understood and connected to event or particle
 properties. Additionally, the efficiency of the requirements can be determined
 individually. To account for dependencies between the variables a grid search
 can be performed, in which the optimal cut values are determined recursively.
-However, even this can sometimes lead to suboptimal selection performances.
+However, a cut-based selection often leads to suboptimal selection
+performances.

@@ -3,19 +3,22 @@
 \subsection{Multivariate selection (1 page)}
 \label{sec:dataanalysis:selection:bdt}
 
-Machine learning algorithms are more and more entering the field of particle
-physics. These multivariate techniques improve the possibility to separate
-signal from background contributions as they make use of correlations between
-input variables. Software packages, like TMVA~\cite{Hocker:2007ht} or
+In principle, the cut-based selection can be extended by allowing case
+differentiation, \ie connecting sequences with \texttt{OR} requirements, or by
+constructing combinations of variables, like products or ratios. Even more
+elaborate are machine learning algorithms, which more and more enter the field
+of particle physics. These multivariate techniques improve the possibility to
+separate signal from background contributions as they make use of correlations
+between input variables. Software packages, like TMVA~\cite{Hocker:2007ht} or
 scikit-learn~\cite{scikit-learn}, provide implementations of these algorithms.
 
-The simplest classifier is a decision tree, which splits the phase space
-according to repeated decisions on certain variables. Starting from a root
-node the variable and cut value is determined where the best separation can be
-achieved according to a criterion like the Gini index~\cite{giniindex}, $p
-\cdot (1-p)$ with $p$ being the purity. At each following node the cut value
-and even the variable used for the separation can be chosen dependent on the
-previous decision. The depth of the tree, \ie the maximal number of
+A simple multivariate classifier is a decision tree, which splits the phase
+space according to repeated decisions on certain variables. Starting from a
+root node the variable and cut value is determined where the best separation
+can be achieved according to a criterion like the Gini index~\cite{giniindex},
+$p \cdot (1-p)$ with $p$ being the purity. At each following node the cut
+value and even the variable used for the separation can be chosen dependent on
+the previous decision. The depth of the tree, \ie the maximal number of
 consecutive decisions, is tunable. When a stop criterion is matched, \eg the
 ratio of candidates reaching a node falls below a predefined threshold, no
 further decisions are applied. The tree is trained with a set of labelled
