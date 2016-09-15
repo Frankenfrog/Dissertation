@@ -1,4 +1,77 @@
 %!TEX root = ../main.tex
 
-\subsection{Figures of merits (2 pages)}
+\subsection{Figures of merit (2 pages)}
 \label{sec:dataanalysis:selection:fom}
+
+One of the main questions when performing a selection is, how the
+requirements, be it a sequence of cuts or the classifier of a multivariate
+method, should be optimized. In an ideal world, one would find a selection
+that keeps all signal candidates and removes all background contributions. But
+this is unrealistic. Instead, suitable figures of merit have to be defined,
+whose optimum should correspond with the ideal selection.  In a measurement of
+\CP violation the goal is to obtain the optimal precision. Therefore, the
+sensitivity on the \CP observables itself seems to be the best figure of
+merit. However, there are some caveats. On the one hand there is usually more
+than one observable describing the \CP violation and a strategy needs to be
+found how the sensitivities of the different \CP observables can be combined
+into a single figure of merit. On the other hand the absolute uncertainty
+might depend on the central value and thus small values for the \CP
+observables could be preferred. Finally, the full time-dependent fit has to be
+performed, which is often very complex and takes a long time until it
+converges. For all these reasons, alternative figure of merits are developed.
+A very simple one is the pure signal efficiency. Under the assumptions that a
+high signal yield is more important than a low background contamination and
+that the selection requirements are effectively suppressing background
+contributions, a possible selection strategy is to judge requirements only by
+their signal efficiency. In the \BdToJPsiKS analysis this approach is chosen
+using the requirement that the individual cuts have to be at least
+\SI{99}{\percent} signal efficient. In principle, including the background
+yield to the definition of the figure of merit should make it easier to find
+the optimal cut point. There are several possibilities how the signal yield
+$S$ and the background yield $B$ can be combined:
+The figure of merit
+\begin{align}
+	Q_1 = \frac{S}{S + B}\,,
+\end{align}
+called purity, describes the fraction of signal candidates. It is limited to
+unity, which is reached when no background candidates are left over. Using
+merely the purity does not lead to an optimal selection. Instead, the signal
+significance
+\begin{align}
+	Q_2 = \frac{S}{\sqrt{S + B}}\,,
+\end{align}
+which states by how many standard deviations the signal yield exceeds zero, is
+widely used. To enhance the impact of a high signal yield, the signal
+significance can be multiplied with the purity:
+\begin{align}
+	Q_3 = \frac{S^2}{\sqrt{(S + B)^3}}\,.
+\end{align}
+However, an important aspect that is neglected in those figures of merit is
+the decay time distribution. The contribution of a signal candidate to the
+sensitivity on the \CP observables depends on its decay time. For instance,
+the sine term in the partial decay rate (see
+\cref{eq:cpviolation:simpledecayrates}) has its maximum at $t =
+\frac{\pi}{2\,\dmd} \approx \SI{3}{\ps}$. Thus, signal candidates with such
+decay times have a higher impact. This can be expressed via the sum
+\begin{align}
+	\sum_{i=1}^{N_S} \left[\frac{\sin(\dmd\,t_i)}{1 + d_i\,S_f\,\sin(\dmd\,t_i)}\right]^2\,,
+\end{align}
+which adds up the square of the differentiation of the log-likelihood
+with respect to the parameter of interest, here simply $\Sf$ if
+\cref{eq:cpviolation:simpledecayrates} with $\Cf = 0$ is used, of all
+$N_S$ signal candidates. Additionally, it has to be considered that the decay
+time distribution of background candidates usually follows an exponential
+function with an effective lifetime that is significantly smaller than the \Bd
+signal lifetime. This can be incorporated by using a decay-time dependent
+purity $f_i(t)$:
+\begin{align}
+	Q_4 = \sum_{i=1}^{N} f_i^2 \cdot \left[\frac{\sin(\dmd\,t_i)}{1 + d_i\,S_f\,\sin(\dmd\,t_i)}\right]^2\,.
+\end{align}
+Here, the sum is built over all $N$ candidates, signal and background. The
+purity can be determined via a fit to the invariant mass distribution or more
+specifically via sWeights (see \cref{sec:dataanalysis:selection:splot}).
+Moreover, the influence of further experimentally induced dilutions can be
+added, \eg from the flavour tagging (see \cref{sec:detector:software:tagging})
+or the decay time resolution (see \cref{sec:dataanalysis::resolution}). Such a
+generalized figure of merit for decay-time dependent measurements of
+\CP violation is derived in Ref.~\cite{FOM}.
