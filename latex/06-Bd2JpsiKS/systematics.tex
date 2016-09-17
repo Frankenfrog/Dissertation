@@ -2,3 +2,90 @@
 
 \section{Studies of systematic effects (2 pages)}
 \label{sec:bd2jpsiks:systematics}
+
+To check if and how various effects systematically influence the measurement
+of the \CP violation parameters, the likelihood fit is performed
+\begin{itemize}
+    \item with a second independent fitter~\cite{Cauet-PhDThesis},
+    \item without a parametrisation of the background using sWeights extracted
+    from the \sPlot technique,
+    \item  on subsamples split by the \KS track type, the trigger
+    requirements, the tagging algorithms, the magnet polarity, and the year of
+    data-taking.
+\end{itemize}
+All results show good agreement with the nominal results. Additionally, the
+results from a pure time-dependent and from a pure time-integrated fit are
+compatible with each other and with the nominal fit, which comprises both
+effects.
+
+Systematic uncertainties from several effects, especially from possible
+mismodelling of PDFs and from systematic uncertainties on external input
+parameters, are considered. Pseudoexperiments are generated using PDFs that
+contain a slight modification compared to the nominal PDF, which is used for
+the subsequent fit of the samples. Whenever the mean of the pull distribution
+exceeds zero by more than \num{0.032}, a systematic uncertainty is assigned.
+Pull distributions show the difference between the individual fit result and
+the generation value for the \CP observable normalised by the fit uncertainty.
+The value of the criterion is defined by one standard deviation according to
+the statistics of \num{1000} pseudoexperiments performed for each study. The
+size of the systematic uncertainty is taken from the residual distributions,
+which show the same as the pull distributions apart from not being normalised.
+
+The possible tagging asymmetry of the background contribution is treated as a
+source for a systematic uncertainty on the \CP observables using the asymmetry
+parameters determined from an sweighted fit to the background decay time
+distribution (see last part of \cref{sec:bd2jpsiks:backgrounds}). It is found
+to account for \SI{83}{\percent} of the systematic uncertainty on \SJpsiKS and
+\SI{8}{\percent} for \CJpsiKS. The systematic uncertainties on the flavour
+tagging calibration parameters (see
+\cref{sec:dataanalysis:taggingcalibration:jpsixcalibration}) are transferred
+to systematic uncertainties on \SJpsiKS and \CJpsiKS by shifting all
+calibration parameters related to $p_0$ upwards by one systematic uncertainty
+and those related to $p_1$ downwards in the generation of the
+pseudoexperiments while setting them to their nominal values in the fit. This
+yields \SI{9}{\percent} of the systematic uncertainty on \SJpsiKS, and
+\SI{21}{\percent} for \CJpsiKS. The assumption $\DGd = 0$ is responsible for
+\SI{6}{\percent} of the systematic uncertainty on \SJpsiKS. It is determined
+generating the pseudoexperiments setting $\DGd = \SI{0.007}{\invps}$, the
+current experimental uncertainty~\cite{PDG2014}. The largest contribution
+(\SI{42}{\percent}) to the systematic uncertainty on \CJpsiKS arises from the
+systematic uncertainty on the world average of \dmd. Further effects, which
+have been analysed concerning causing systematic uncertainties, are the decay
+time resolution model, the uncertainty on the length scale of the vertex
+detector, the decay time acceptance model, the correlation between the
+invariant mass and the decay time, and the production asymmetry. They are all
+small or even negligible compared to the previously described effects.
+
+The values of all individual systematic uncertainties and of the total
+systematic uncertainty, which is calculated as the sum of all contributions in
+quadrature, are listed in \cref{tab:bd2jpsiks:systematics}. The systematic
+uncertainty on \SJpsiKS of \num{\pm0.020} is more than \SI{40}{\percent}
+smaller than the statistical uncertainty. For \CJpsiKS the total uncertainty
+even increases by only \SI{1}{\percent} through the systematic uncertainty.
+
+\begin{table}[htb]
+  \caption{Systematic uncertainties on \SJpsiKS and \CJpsiKS. Entries marked
+  with a dash represent studies where no significant effect is observed.}
+  \label{tab:bd2jpsiks:systematics}
+  \centering
+    \begin{tabular}{lSS}
+      \toprule
+      Origin & {\param{\sigma}{}{$\SJpsiKS$}} & {\param{\sigma}{}{$\CJpsiKS$}} \\
+      \midrule
+      Background Tagging Asymmetry            &  0.018  &  0.0015 \\
+      Tagging calibration                     &  0.006  &  0.0024 \\
+      $\DGd$                                  &  0.005  &  {---} \\
+      Fraction of wrong PV component          &  0.0021 &  0.0011 \\
+      $z$-scale                               &  0.0012 &  0.0023 \\
+      $\dmd$                                  &  {---}  &  0.0034 \\
+      Upper decay time acceptance             &  {---}  &  0.0012 \\
+      Correlation between mass and decay time &  {---}  &  {---} \\
+      Decay time resolution calibration       &  {---}  &  {---} \\
+      Decay time resolution offset            &  {---}  &  {---} \\
+      Low decay time acceptance               &  {---}  &  {---} \\
+      Production asymmetry                    &  {---}  &  {---} \\
+      \midrule
+      Sum                                     &  0.020  &  0.005 \\
+      \bottomrule
+    \end{tabular}
+\end{table}
