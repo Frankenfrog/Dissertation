@@ -69,4 +69,64 @@ downstream and \num{0.989} for long track candidates.
 
 The trigger line requirements applied in the selection of the \BdToJPsiKS
 candidates partially bias the decay time distribution. The sample is divided
-into an \emph{almost unbiased} subset and an \emph{exclusively biased} subset.
+into an \emph{almost unbiased} subset (AU), defined by
+\begin{description}
+  \item[AU] $\equiv$ \UseVerb{AlmostUnbiased}
+\end{description}
+and an \emph{exclusively biased} subset (EB), defined by
+\begin{description}
+  \item[EB] $\equiv$ \UseVerb{ExclusivelyBiased}
+\end{description}
+
+For both samples the relative efficiency is calculated as the ratio between
+the number of signal candidates fulfilling the trigger requirements and those
+fulfilling the requirements of an unbiased collection of trigger lines. A
+simultaneous fit of the mass distribution in ten bins of the decay time is
+performed to obtain the signal yield ratios. The resulting histograms (see
+\cref{fig:bd2jpsiks:decaytime:acceptance:splines}) are fitted with cubic
+splines using the bin centres as knots for the splines. In the fit of the
+spline function the bin contents are allowed to vary inside their
+uncertainties, which are estimated as binomial errors for the AU sample and
+via Gaussian error propagation for the EB sample. The acceptance shape at and
+beyond the decay time limits is unknown, so it is assumed that the efficiency
+shape is flat in front of the first and behind the last bin centre.
+
+\begin{figure}[htb]
+\includegraphics[width=0.49\textwidth]{06-Bd2JpsiKS/tikz/pdf/Acceptancespline_zoomed_hlt2.pdf}
+\includegraphics[width=0.49\textwidth]{06-Bd2JpsiKS/tikz/pdf/Acceptancespline_zoomed_hlt1.pdf}
+\caption{Histograms of the trigger acceptance for the almost unbiased (left) and the
+exclusively biased (right) sample. The blue curve shows the fitted acceptance
+using splines.}
+\label{fig:bd2jpsiks:decaytime:acceptance:splines}
+\end{figure}
+
+Another efficiency loss is observed at high decay times. This is mainly caused
+by a reconstruction inefficiency of the VELO. To account for this effect the
+lifetime $\tau$ is modified according to
+\begin{equation}
+  \widetilde{\tau} = \frac{\tau}{1 + \beta_\tau \tau}\,. 
+\end{equation}
+The correction factor $\beta_\tau$ is determined in a fit to simulated data,
+where the generation value for the lifetime is known and thus can be fixed. To
+avoid further decay-time biasing effects an unbiased sample is used. The
+values, which are obtained individually for the two data-taking conditions and
+the two track types, are listed in
+\cref{tab:bd2jpsiks:decaytime:acceptance:beta}.
+\begin{table}[htb]
+	\centering
+	\caption{Decay time correction factor $\beta_\tau$ in \si{\invps}.}
+	\begin{tabular}{ccc}
+		\toprule
+		 & 2011 & 2012 \\
+		\midrule
+		downstream & $0.0036\pm0.0029$ & $0.0084\pm0.0032$ \\
+		long track & $0.018\pm0.004$   & $0.035\pm0.005$ \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:bd2jpsiks:decaytime:acceptance:beta}
+\end{table}
+It is apparent that the correction factors are roughly two times larger in
+2012 than in 2011 and four to five times larger for long tracks than for
+downstream tracks. While the former can be explained with changes in the
+reconstruction software, the latter comparison clearly shows that the VELO is
+the main reason for this acceptance effect.

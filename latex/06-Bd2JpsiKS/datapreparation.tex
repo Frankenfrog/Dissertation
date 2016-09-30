@@ -2,3 +2,43 @@
 
 \section{Data Preparation (1 page)}
 \label{sec:bd2jpsiks:datapreparation}
+
+
+\BdToJPsiKS decays are reconstructed through the subsequent decays
+\mbox{\JPsiToMuMu} and \KSToPiPi. Only combinations of two long or two
+downstream tracks are considered for the pions. All events must have passed
+either the \texttt{L0Muon} or the \texttt{L0DiMuon} trigger line. This is
+implicitly given by the explicit requirement that a positive \jpsi TOS
+decision of the \texttt{DiMuonHighMass} or the \texttt{TrackMuon} trigger line
+in the Hlt1 stage and of the \texttt{DiMuonDetachedJPsi} trigger line in the
+Hlt2 stage exists. These trigger requirements have a total signal efficiency
+of about $\SI{85}{\percent}$.
+
+In the stripping loose requirements on the quality of the \jpsi, the \KS and
+the \Bd vertex are applied. The invariant masses of the $\mumu$ and the
+$\pip\pim$ combination are required to be roughly consistent with the known
+\jpsi and \KS masses, respectively. Moreover, the \KS candidates must have a
+significant decay length and some further kinematic requirements need to be
+fulfilled. Despite these rather loose selection requirements, the signal to
+background ratio is already quite good. Therefore, in the offline selection
+almost all cuts are tuned to have a high signal efficiency. The probability of
+the muon and pion tracks to be ghost tracks (see
+\cref{sec:detector:software:reconstruction}) is reduced to
+\SIlist{20;30}{\percent}, respectively. The mass window around the \jpsi meson
+is tightened to correspond to five standard deviations. For the \KS meson the
+mass window is adapted to the track type of the pions. It contains four and
+eight standard deviations for the long and the downstream candidates,
+respectively. A specific treatment against misidentified \LbToJPsiL and
+\BdToJPsiKstar decays is performed. The former are rejected by tighter PID
+requirements on the pions if the invariant mass under a \pion\proton mass
+hypothesis is compatible with the $\Lambda$ mass~\cite{PDG2014}. The latter
+are suppressed with a cut on the \KS decay time in units of its uncertainty.
+
+The invariant \Bd mass, which is restricted to candidates inside
+\SIrange{5230}{5330}{\MeVcc}, is obtained from a fit to the whole decay chain
+(DTF) with constraints on the \jpsi and \KS masses. The decay-time related
+observables stem from a DTF with a PV constraint. To facilitate the
+description of the decay time acceptance and to further suppress prompt
+combinatorial background, only candidates with $t > \SI{0.3}{\ps}$ are kept.
+In the last step of the selection one candidate is chosen randomly for events
+where multiple candidates have survived the previously described selection.

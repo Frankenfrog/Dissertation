@@ -7,7 +7,7 @@
 \def\CJpsiKS            {\ensuremath{C_{J/\psi\KS}}\xspace}
 \def\JPsiToMuMu         {\decay{J/\psi}{\mumu}}
 \def\JPsiToee           {\decay{J/\psi}{\epem}}
-\def\KSToPiPi           {\decay{\KS}{\pipi}}
+\def\KSToPiPi           {\decay{\KS}{\pip\pim}}
 \def\sintwobeta         {\ensuremath{\sin 2\beta}\xspace}
 
 %% fixing Jpsi
@@ -211,3 +211,6 @@ _{\ForEach{;}{
 \DeclareSIUnit[per-mode=symbol]\MeVcc{\mega\eV\per\square\clight}
 \DeclareSIUnit[per-mode=symbol]\GeVcc{\giga\eV\per\square\clight}
 \DeclareSIUnit[per-mode=symbol]\TeVcc{\tera\eV\per\square\clight}
+
+\SaveVerb{AlmostUnbiased}=Hlt1DiMuonHighMass && Hlt2DiMuonDetachedJPsi=
+\SaveVerb{ExclusivelyBiased}=(Hlt1TrackMuon && !Hlt1DiMuonHighMass) && Hlt2DiMuonDetachedJPsi=
