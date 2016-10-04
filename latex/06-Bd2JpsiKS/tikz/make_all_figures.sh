@@ -1,6 +1,6 @@
 #!/bin/sh
 
-figs=(Acceptancespline_zoomed_hlt1 Acceptancespline_zoomed_hlt2)
+figs=(Acceptancespline_zoomed_hlt1 Acceptancespline_zoomed_hlt2 MassPulls_summed)
 
 for fig in ${figs[@]}; do
   pdflatex --jobname=pdf/$fig all_figures.tex
