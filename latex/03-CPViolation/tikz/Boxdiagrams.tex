@@ -1,0 +1,57 @@
+\begin{tikzpicture}
+ \begin{feynman}
+    \vertex (a1);
+    \vertex[right=1cm of a1] (a2);
+    \vertex[right=1.5cm of a2] (a3);
+    \vertex[right=1cm of a3] (a4) {$\dquarkbar$};
+
+    \vertex[below=2cm of a1] (b1);
+    \vertex[right=1cm of b1] (b2);
+    \vertex[right=1.5cm of b2] (b3);
+    \vertex[right=1cm of b3] (b4) {$\bquark$};
+
+    \diagram* {
+      {[edges=fermion]
+        (b1) -- (b2) -- [edge label={$\uquark,\cquark,\tquark$}] (b3) -- (b4),
+        (a4) -- (a3) -- [edge label={$\uquarkbar,\cquarkbar,\tquarkbar$}] (a2) -- (a1),
+      },
+      (a2) -- [boson, edge label'=$\Wpm$] (b2),
+      (a3) -- [boson, edge label=$\Wpm$] (b3),
+    };
+
+    \node [left=0.25em of b1] (dquark) {$\dquark$};
+    \node [left=0.25em of a1] (bquarkbar) {$\bquarkbar$};
+    \node [below left=1cm and 0.5cm of bquarkbar] {$\Bd$};
+    \node [below right=1cm and 0.5cm of a4] {$\Bdb$};
+    
+  \end{feynman}
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+ \begin{feynman}
+    \vertex (a1);
+    \vertex[right=1cm of a1] (a2);
+    \vertex[right=1.5cm of a2] (a3);
+    \vertex[right=1cm of a3] (a4) {$\dquarkbar$};
+
+    \vertex[below=2cm of a1] (b1);
+    \vertex[right=1cm of b1] (b2);
+    \vertex[right=1.5cm of b2] (b3);
+    \vertex[right=1cm of b3] (b4) {$\bquark$};
+
+    \diagram* {
+      {[edges=fermion]
+        (b1) -- (b2) -- [edge label={$\uquark,\cquark,\tquark$}] (a2) -- (a1),
+        (a4) -- (a3) -- [edge label={$\uquarkbar,\cquarkbar,\tquarkbar$}] (b3) -- (b4),
+      },
+      (a2) -- [boson, edge label'=$\Wpm$] (a3),
+      (b2) -- [boson, edge label=$\Wpm$] (b3),
+    };
+
+    \node [left=0.25em of b1] (dquark) {$\dquark$};
+    \node [left=0.25em of a1] (bquarkbar) {$\bquarkbar$};
+    \node [below left=1cm and 0.5cm of bquarkbar] {$\Bd$};
+    \node [below right=1cm and 0.5cm of a4] {$\Bdb$};
+    
+  \end{feynman}
+\end{tikzpicture}
