@@ -1,4 +1,32 @@
 %!TEX root = ../main.tex
 
-\subsection{Direct \texorpdfstring{$\CP$}{CP} violation (1 page)}
+\subsection{Direct \texorpdfstring{$\CP$}{CP} violation}
 \label{sec:cpviolation:types:direct}
+
+Two different type of phases can contribute to decay amplitudes, weak phases
+and strong phases. Weak phases can enter through the CKM matrix and take the
+opposite sign for \Af and \Abarfbar. Strong phases typically appear in
+scattering processes and originate from intermediate on-shell states. They
+occur with the same sign in \Af and \Abarfbar. However, only phase differences
+are physically meaningful, as the SM is a gauge-invariant theory and thus
+absolute phases could be removed by a rotation of the system. So, at least two
+terms with different weak and strong phases need to contribute to the decay
+amplitudes to have an effect. The superposition of several contributions with
+individual magnitudes $A_i$, weak phases $e^{i\phi_i}$ and strong phases
+$e^{i\delta_i}$ leads to
+\begin{align}
+\begin{split}
+	\Af = &\sum_i A_i e^{i(\delta_i+\phi_i)}\,,\\
+	\Abarfbar = e^{2i(\xi_f-\xi_B)}&\sum_i A_i e^{i(\delta_i-\phi_i)}\,,
+\end{split}
+\end{align}
+where $\xi_f$ and $\xi_B$ are arbitrary phases coming from the \CP
+transformation on the \Bd meson and the final state, respectively. If the
+final state $f$ is a \CP eigenstate, the term $e^{2i\xi_f} = \num{\pm1}$
+represents the \CP eigenvalue. Direct \CP violation is present for
+\begin{align}
+	\left|\frac{\Abarfbar}{\Af}\right| = \left|\frac{\sum A_i e^{i(\delta_i-\phi_i)}}{\sum A_i e^{i(\delta_i+\phi_i)}}\right| \neq 1\,.
+\end{align}
+
+This type of \CP violation is observed in charmless two-body decays of neutral
+$B$ mesons~\cite{Lees:2012mma,Duh:2012ie,LHCb-PAPER-2013-018}.

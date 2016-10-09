@@ -3,13 +3,16 @@
 \section{The system of neutral \texorpdfstring{$\Bd$}{B0} mesons (3 pages)}
 \label{sec:cpviolation:neutralBmesons}
 
-It has been defined that \Bd mesons consist of \bquarkbar and
-\dquark quarks, while \Bdb mesons contain \bquark and
-\dquarkbar quarks. These two mesons can mix, \ie they can oscillate between
-the two flavour states. As flavour changing neutral currents (FCNC) are
-forbidden in the SM, the \Bd--\Bdb oscillation is in lowest order Standard
-Model described by quantum loops involving charged currents as shown in the
-Feynman diagrams in
+In the system of neutral \Bd mesons four decay amplitudes occur. The decay
+amplitude \Af stands for the decay of a \Bd meson into a final state $f$, while
+\Abarf is the decay amplitude of an \Bdb meson into the same final state.
+Similarly, the decay amplitudes into the \CP-conjugated final state $\bar{f}$
+can be defined. By convention \Bd mesons consist of \bquarkbar and \dquark
+quarks, while \Bdb mesons contain \bquark and \dquarkbar quarks. These two
+mesons can mix, \ie they can oscillate between the two flavour states. As
+flavour changing neutral currents (FCNC) are forbidden in the SM, the
+\Bd--\Bdb oscillation is in lowest order Standard Model described by quantum
+loops involving charged currents as shown in the Feynman diagrams in
 \cref{fig:cpviolation:neutralBmesons:boxdiagram}.
 \begin{figure}[htb]
 \centering
@@ -73,6 +76,7 @@ condition $|p|^2 + |q|^2 = 1$ and whose ratio can be expressed with the matrix
 elements as
 \begin{align}
 	\frac qp = \sqrt{\frac{2M_{12}^\ast - i\Gamma_{12}^\ast}{2M_{12} - i\Gamma_{12}}}\,.
+\label{eq:cpviolation:neutralBmesons:qp}
 \end{align}
 The well-defined masses and decay widths
 $m_{L,H}$ and $\Gamma_{L,H}$ of $B_L$ and $B_H$ lead to the eigenvalues
@@ -93,6 +97,7 @@ $B$ mesons purely produced as \Bd or \Bdb can be derived
 	\ket{\Bd(t)} = g_+(t)\ket{\Bd}  + \frac qp g_-(t)\ket{\Bdb}\,,\\
 	\ket{\Bd(t)} = g_+(t)\ket{\Bdb} + \frac pq g_-(t)\ket{\Bd} \,,
 \end{split}
+\label{eq:cpviolation:Btimeevolution}
 \end{align}
 with the time-dependent coefficients
 \begin{align}
@@ -100,7 +105,24 @@ with the time-dependent coefficients
 	g_+(t) = e^{-i\frac{\mu_L + \mu_H}{2}t}\left[+\cosh\frac{\DGd\,t}{4} \cos\frac{\dmd\,t}{2} - i \sinh\frac{\DGd\,t}{4} \sin\frac{\dmd\,t}{2}\right]\,,\\
 	g_-(t) = e^{-i\frac{\mu_L + \mu_H}{2}t}\left[-\sinh\frac{\DGd\,t}{4} \cos\frac{\dmd\,t}{2} + i \cosh\frac{\DGd\,t}{4} \sin\frac{\dmd\,t}{2}\right]\,.
 \end{split}
+\label{eq:cpviolation:gplusgminus}
 \end{align}
 The mass difference $\dmd = m_H - m_L$ drives the oscillation and can be
 interpreted as mixing frequency, while $\DGd = \Gamma_H - \Gamma_L$ is
 negligible in the \Bd meson sector.
+
+The differential decay rates, \ie the squared decay amplitudes, can be
+expressed by combining the terms in
+\cref{eq:cpviolation:Btimeevolution,eq:cpviolation:gplusgminus} as
+\begin{align}
+\begin{split}
+	\Gamma(\Bd(t)\to f) &= |\Af|^2 \Big\{|g_+(t)|^2 + |\lambda_f|^2|g_-(t)|^2 + 2\,Re[\lambda_f g_+^\ast(t)g_-(t)]\Big\}\,,\\
+	\Gamma(\Bzb(t)\to f) &= |\Af|^2 \left|\frac pq \right|^2 \Big\{|g_-(t)|^2 + |\lambda_f|^2|g_+(t)|^2 + 2\,Re[\lambda_f g_+(t)g_-^{\ast}(t)]\Big\}\,,
+\end{split}
+\label{eq:cpviolation:complexdecayrates}
+\end{align}
+using
+\begin{align}
+	\lambda_f = \frac qp \frac{\Abarf}{\Af}\,.
+\label{eq:cpviolation:lambda}
+\end{align}

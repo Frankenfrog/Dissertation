@@ -3,25 +3,69 @@
 \subsection{\texorpdfstring{$\CP$}{CP} violation in the interference of decay and decay after mixing (2 pages)}
 \label{sec:cpviolation:types:interference}
 
-\begin{equation}
-\begin{aligned}
-  \frac{\mathrm{d}\Gamma(t,d)}{\mathrm{d}t}
-  &\propto \mathrm{e}^{-t/\tau}
-    \Big(
-      1
-      - d\, \Sf \sin{\left(\dm\,t\right)}
-      + d\, \Cf \cos{\left(\dm\,t\right)}
-    \Big)\,,
-\end{aligned}
-\label{eq:cpviolation:simpledecayrates}
-\end{equation}
+Even if there is no direct or indirect \CP violation, it is possible that \CP
+violation occurs, in the interference between decay amplitudes with and
+without mixing. However, the final state has to be a \CP eigenstate, \ie
+accessible for decaying \Bd and \Bdb mesons. The definition from
+\cref{eq:cpviolation:lambda} slightly changes to
+\begin{align}
+  \lambda = \eta_{\CP} \frac qp \frac{\Abarfbar}{\Af}\,.
+\end{align}
+Here, $\eta_{\CP}$ is the \CP eigenvalue of the final state
+\begin{align}
+  \CP \ket{f_{\CP}} = \ket{\fbar_{\CP}} = \eta_{\CP} \ket{f_{\CP}} = \num{\pm1} \ket{f_{\CP}}\,.
+\end{align}
+The condition that any deviation from unity for $\lambda$ indicates \CP
+violation holds. Indirect \CP violation ($|q/p| \neq 1$) and direct \CP
+violation ($|\Abarfbar/\Af| \neq 1$) affect the magnitude of $\lambda$, while
+\CP violation in the interference is associated with
+\begin{align}
+  \mathcal{I}m\,\lambda \neq 0\,.
+\label{eq:cpviolation:imlambda}
+\end{align}
 
+The time-dependent asymmetry
 \begin{equation}
-\begin{split}
-  {\mathcal A}^{\text{theo}}(t) & \equiv
-    \frac{\Gamma(\Bzb(t) \to \Dp\Dm) - \Gamma(\Bz(t) \to \Dp\Dm)}
-         {\Gamma(\Bzb(t) \to \Dp\Dm) + \Gamma(\Bz(t) \to \Dp\Dm)}\\
-   &= \Sf\sin(\dm\,t) - \Cf\cos(\dm\,t).\
-\end{split}
+  {\mathcal A}(t) \equiv
+    \frac{\Gamma(\Bzb(t) \to f_{\CP}) - \Gamma(\Bz(t) \to f_{\CP})}
+         {\Gamma(\Bzb(t) \to f_{\CP}) + \Gamma(\Bz(t) \to f_{\CP})}
 \label{eq:cpviolation:asymmetry}
 \end{equation}
+can be used to measure \CP violation in the interference of decay and decay
+after mixing. It compares the decay rates of initial ($t = 0$) \Bdb and \Bd
+mesons. Plugging in the expressions from
+\cref{eq:cpviolation:complexdecayrates} and using
+\begin{align}
+\begin{split}
+  |g_{\pm}(t)|^2 &= \frac{e^{-\Gamma\,t}}{2}\left[\cosh\frac{\DGd\,t}{2} \pm \cos(\dmd\,t)\right]\,,\\
+  g_+^{\ast}(t)g_-(t) &= \frac{e^{-\Gamma\,t}}{2} \left[-\sinh\frac{\DGd\,t}{2} - i \sin(\dmd\,t)\right]\,,
+\end{split}
+\end{align}
+$\mathcal{A}$ can be written as
+\begin{align}
+  \mathcal{A}(t) = \frac{2\,\mathcal{I}m\,\lambda \sin(\dmd\,t) - (1 - |\lambda|^2)\cos(\dmd\,t)}{(1 + |\lambda|^2)\cosh(\frac{\DGd\,t}{2}) + 2\,Re\,\lambda \sinh(\frac{\DGd\,t}{2})}
+\end{align}
+It is apparent that this asymmetry only vanishes if $|\lambda| \neq 1$ (direct
+or indirect \CP violation) or if $\lambda$ has an imaginary part, which is the
+condition for \CP violation stated in \cref{eq:cpviolation:imlambda}. Defining
+\begin{align}
+  \Sf = \frac{2\,\mathcal{I}m\,\lambda}{1 + |\lambda|^2} \quad \text{and} \quad \Cf = \frac{1 - |\lambda|^2}{1 + |\lambda|^2}\,,
+\end{align}
+and neglecting $\DGd$ the time-dependent asymmetry simplifies to
+\begin{equation}
+  \mathcal{A}(t) = \Sf\sin\dmd\,t - \Cf\cos\dmd\,t
+\label{eq:cpviolation:simpleasymmetry}
+\end{equation}
+
+% \begin{equation}
+% \begin{aligned}
+%   \frac{\mathrm{d}\Gamma(t,d)}{\mathrm{d}t}
+%   &\propto \mathrm{e}^{-t/\tau}
+%     \Big(
+%       1
+%       - d\, \Sf \sin{\left(\dm\,t\right)}
+%       + d\, \Cf \cos{\left(\dm\,t\right)}
+%     \Big)\,,
+% \end{aligned}
+% \label{eq:cpviolation:simpledecayrates}
+% \end{equation}
