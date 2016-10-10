@@ -1,6 +1,6 @@
 #!/bin/sh
 
-figs=(Boxdiagrams)
+figs=(Boxdiagrams BdToJPsiKS)
 
 for fig in ${figs[@]}; do
   pdflatex --jobname=pdf/$fig all_figures.tex

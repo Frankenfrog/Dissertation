@@ -1,0 +1,47 @@
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex(a1) {$\bquarkbar$};
+    \vertex[right=1cm of a1] (a2) ;
+    \vertex[right=2cm of a2] (a3) {$\cquarkbar$};
+    \vertex[below=2cm of a1] (b1) {$\dquark$};
+    \vertex[below=2cm of a3] (b2) {$\dquark$};
+    \vertex[below=1.5em of a3] (c1) {$\cquark$};
+    \vertex[above=1.5em of b2] (c3) {$\squarkbar$};
+    \vertex at ($(c1)!0.5!(c3) - (1cm,0)$) (c2) ;
+    \diagram* {
+      {[edges=fermion]
+        (a3) -- (a2) -- (a1),
+        (b1) -- (b2),
+        (c3) -- (c2) -- (c1),
+      },
+      (a2) -- [boson] (c2),
+    };
+    \node [below left=1cm and 0.5em of a1] (Bd) {$\Bd$};
+    \node [right=1em of $(c1)!0.5!(a3)$] {$J/\psi$};
+    \node [right=1em of $(c3)!0.5!(b2)$] {$\Kz$};
+  \end{feynman}
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex(a1) {$\bquark$};
+    \vertex[right=1cm of a1] (a2) ;
+    \vertex[right=2cm of a2] (a3) {$\cquark$};
+    \vertex[below=2cm of a1] (b1) {$\dquarkbar$};
+    \vertex[below=2cm of a3] (b2) {$\dquarkbar$};
+    \vertex[below=1.5em of a3] (c1) {$\cquarkbar$};
+    \vertex[above=1.5em of b2] (c3) {$\squark$};
+    \vertex at ($(c1)!0.5!(c3) - (1cm,0)$) (c2) ;
+    \diagram* {
+      {[edges=fermion]
+        (a1) -- (a2) -- (a3),
+        (b2) -- (b1),
+        (c1) -- (c2) -- (c3),
+      },
+      (a2) -- [boson] (c2),
+    };
+    \node [below left=1cm and 0.5em of a1] (Bzb) {$\Bzb$};
+    \node [right=1em of $(c1)!0.5!(a3)$] {$J/\psi$};
+    \node [right=1em of $(c3)!0.5!(b2)$] {$\Kzb$};
+  \end{feynman}
+\end{tikzpicture}

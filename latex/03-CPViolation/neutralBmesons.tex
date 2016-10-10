@@ -23,14 +23,19 @@ loops involving charged currents as shown in the Feynman diagrams in
 The corresponding decay amplitude is given by
 \begin{align}
 	\mathcal{A}(\Bdb\!\to\Bd) \propto \frac{g_2^4}{16\,\pi^2}(\Vtb\Vtds)^2 \frac{\bra{\Bd}(\dquarkbar_L\gamma_\mu\bquark_L)(\dquarkbar_L\gamma^\mu\bquark_L)\ket{\Bdb}}{M_W^2}S(x_t)\,,
+\label{eq:cpviolation:mixingamplitude}
 \end{align}
+\todo{probably typo in book}
 with the \W boson mass $M_W$, the squared fraction of the top quark mass $x_t
 = m_t^2/M_W^2$ and the Inami-Lim function~\cite{Inami:1980fz}
 \begin{align}
 	S(x_t) = x_t \left(\frac 14 + \frac 94 \frac{1}{1 - x_t} - \frac 32 \frac{1}{(1 - x_t)^2}\right) + \frac 32 \left(\frac{x_t}{x_t - 1}\right)^3 \log x_t\,,
+\label{eq:cpviolation:inamilim}
 \end{align}
-Here, it is accounted for the suppression of contributions with up and charm quarks
-in the loop due to $m_{\uquark,\cquark}^2 \ll m_{\tquark}^2$.
+Here, it is accounted for the suppression of contributions with up and charm
+quarks in the loop due to $m_{\uquark,\cquark}^2 \ll m_{\tquark}^2$. Formulae
+(\ref{eq:cpviolation:mixingamplitude}) and (\ref{eq:cpviolation:inamilim}) are
+taken from Ref.~\cite{Brock:2011zz}.
 
 To derive the time evolution of initially produced \Bd and \Bdb mesons the
 Schrödinger equation~\cite{Schroedinger} needs to be solved. Assuming the
@@ -76,8 +81,16 @@ condition $|p|^2 + |q|^2 = 1$ and whose ratio can be expressed with the matrix
 elements as
 \begin{align}
 	\frac qp = \sqrt{\frac{2M_{12}^\ast - i\Gamma_{12}^\ast}{2M_{12} - i\Gamma_{12}}}\,.
-\label{eq:cpviolation:neutralBmesons:qp}
+\label{eq:cpviolation:qp}
 \end{align}
+Explicit calculations of $\Gamma_{12}$ as performed in
+Ref.~\cite{Buras:1984pq} show that to a very good approximation
+\cref{eq:cpviolation:qp} can be simplified to
+\begin{align}
+	\frac qp \approx \sqrt{\frac{M_{12}^\ast}{M_{12}}} = \frac{\Vtbs\Vtd}{\Vtb\Vtds}\,.
+\label{eq:cpviolation:qp_simplified}
+\end{align}
+
 The well-defined masses and decay widths
 $m_{L,H}$ and $\Gamma_{L,H}$ of $B_L$ and $B_H$ lead to the eigenvalues
 \begin{align}
