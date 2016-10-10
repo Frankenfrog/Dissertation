@@ -49,16 +49,28 @@ significance can be multiplied with the purity:
 However, an important aspect that is neglected in those figures of merit is
 the decay time distribution. The contribution of a signal candidate to the
 sensitivity on the \CP observables depends on its decay time. For instance,
-the sine term in the partial decay rate (see
-\cref{eq:cpviolation:simpledecayrates}) has its maximum at $t =
-\frac{\pi}{2\,\dmd} \approx \SI{3}{\ps}$. Thus, signal candidates with such
+the sine term in the partial decay rate
+\begin{equation}
+\begin{aligned}
+  \frac{\mathrm{d}\Gamma(t,d)}{\mathrm{d}t}
+  &\propto \mathrm{e}^{-t/\tau}
+    \Big(
+      1
+      - d\, \Sf \sin{\left(\dm\,t\right)}
+      + d\, \Cf \cos{\left(\dm\,t\right)}
+    \Big)\,,
+\end{aligned}
+\label{eq:simpledecayrates}
+\end{equation}
+with $d = \num{+1}$ for \Bd and $d = \num{-1}$ for \Bdb, has its maximum at $t
+= \frac{\pi}{2\,\dmd} \approx \SI{3}{\ps}$. Thus, signal candidates with such
 decay times have a higher impact. This can be expressed via the sum
 \begin{align}
 	\sum_{i=1}^{N_S} \left[\frac{\sin(\dmd\,t_i)}{1 + d_i\,S_f\,\sin(\dmd\,t_i)}\right]^2\,,
 \end{align}
 which adds up the square of the differentiation of the log-likelihood
 with respect to the parameter of interest, here simply $\Sf$ if
-\cref{eq:cpviolation:simpledecayrates} with $\Cf = 0$ is used, of all
+\cref{eq:simpledecayrates} with $\Cf = 0$ is used, of all
 $N_S$ signal candidates. Additionally, it has to be considered that the decay
 time distribution of background candidates usually follows an exponential
 function with an effective lifetime that is significantly smaller than the \Bd
