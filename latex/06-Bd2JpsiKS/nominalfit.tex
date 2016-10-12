@@ -17,11 +17,24 @@ track type categories. The four tail parameters of the signal parametrisation
 are taken from fits to simulated events.
 
 The PDF describing the signal decay time distribution is basically given by
-\cref{eq:simpledecayrates}. It is extended by taking into account
-the production asymmetry and the experimental effects of mistagging.
-Furthermore, it is convolved with the decay time resolution model presented in
-\cref{sec:bd2jpsiks:decaytime:resolution} and multiplied by the time-dependent
-efficiency correction for low and high decay times developed in
+\begin{equation}
+\begin{aligned}
+  \frac{\mathrm{d}\Gamma(t,d)}{\mathrm{d}t}
+  &\propto \mathrm{e}^{-t/\tau}
+    \Big(
+      1
+      - d\, \Sf \sin{\left(\dm\,t\right)}
+      + d\, \Cf \cos{\left(\dm\,t\right)}
+    \Big)\,,
+\end{aligned}
+\label{eq:simpledecayrates}
+\end{equation}
+with $d = \num{+1}$ for \Bd and $d = \num{-1}$ for \Bdb. The decay width
+difference \DGd is set to zero. The theoretical parametrisation is extended by
+taking into account the production asymmetry and the experimental effects of
+mistagging. Furthermore, it is convolved with the decay time resolution model
+presented in \cref{sec:bd2jpsiks:decaytime:resolution} and multiplied by the
+time-dependent efficiency correction for low and high decay times developed in
 \cref{sec:bd2jpsiks:decaytime:acceptance}. The background decay time
 distribution is parametrised with the sum of exponential functions. How many
 of those give the best description in the various categories, in which the
