@@ -4,11 +4,12 @@
 \label{sec:cpviolation:btoccbars}
 
 The gold-plated mode to measure \CP violation in the system of neutral $B$
-mesons is \BdToJPsiKS. It proceeds via a \bToccbars transition. Direct and
-indirect \CP violation is strongly suppressed, which makes it a very clean
-mode to determine the weak mixing phase, and thus the CKM angle $\beta$, via
-\CP violation in the interference of decay and decay after mixing. As the
-Feynman diagrams in \cref{fig:cpviolation:bd2jpsiks_feynmans} show, actually
+mesons is \BdToJPsiKS. It proceeds via a Cabibbo-favored \bToccbars
+transition. Direct and indirect \CP violation is strongly suppressed, which
+makes it a very clean mode to determine the weak mixing phase, and thus the
+CKM angle $\beta$, via \CP violation in the interference of decay and decay
+after mixing. As the Feynman diagrams in
+\cref{fig:cpviolation:bd2jpsiks_feynmans} show, actually
 \BdToJPsiKz and \BdbToJPsiKzb decays take place.
 \begin{figure}[htb]
 \centering
@@ -43,9 +44,33 @@ mixing of the \Bd mesons (see \cref{eq:cpviolation:qp_simplified}) the
 parameter describing \CP violation from \cref{eq:cpviolation:lambda} becomes
 \begin{align}
 	\lambda_{\JPsi\KS} = - \frac{\Vtbs\Vtd}{\Vtb\Vtds}\frac{\Vcs\Vcds}{\Vcss\Vcd}\frac{\Vcb\Vcss}{\Vcbs\Vcs} = - \frac{\Vtbs\Vtd}{\Vtb\Vtds}\frac{\Vcds\Vcb}{\Vcd\Vcbs}
+\label{eq:lambda_JPsiKS}
 \end{align}
 The minus sign indicates that the final state $\JPsi\KS$ is \CP-odd, as an
 angular momentum of $l = 1$ is necessary to compensate that the \Bd meson as
 initial state has spin zero, while the final state consists of a \CP-even
 $\JPsi$ meson with spin one and an almost \CP-even\footnote{When reconstructed
-in a pair of two pions it is fully \CP-even.} \KS meson with spin zero.
+in a pair of two pions it is fully \CP-even.} \KS meson with spin zero. Due to
+only considering the dominant tree contribution the absolute value of
+$\lambda_{\JPsi\KS}$ is unity. Therefore, the \CP observables from
+\cref{eq:cpviolation:SfCf_general} become
+\begin{align}
+	\CJpsiKS = 0\,,
+\end{align}
+and
+\begin{align}
+	\SJpsiKS &= \mathcal{I}m\lambda_{\JPsi\KS}
+			 = \sin\left[\text{arg}\left(-\frac{\Vtbs\Vtd}{\Vtb\Vtds}\frac{\Vcds\Vcb}{\Vcd\Vcbs}\right)\right]\\
+			 &= \sin\left[\text{arg}\left(-\left(\frac{\Vcds\Vcb}{\Vtb\Vtds}\right)^2\right)\right]
+			 = \sintwobeta\,.
+\end{align}
+This shows that the measurement of \CP violation in \BdToJPsiKS offers a clean
+opportunity to determine the CKM triangle angle $\beta$. Studying other decay
+channels with \bToccbars transitions, like \BdToJPsiKL or \BdToPsiTwoSKS,
+further improves the sensitivity on $\beta$.
+
+The corresponding golden decay channel with an \squark quark as spectator
+quark is \myBsToJPsiPhi. In principle, this provides a clean measurement of
+the mixing phase \phis of the \Bs meson system. However, to extract the \CP
+observable an angular analysis is required to disentangle the
+different spin configurations of the two vector mesons in the final state.

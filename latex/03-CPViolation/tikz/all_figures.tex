@@ -61,6 +61,8 @@
 \usepackage{tikz-feynman}
 \usepackage{tikz}
 \usetikzlibrary{patterns}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.12}
 \pgfdeclarelayer{background}
@@ -74,8 +76,22 @@
 \input{Boxdiagrams}
 \endpgfgraphicnamed
 
-\beginpgfgraphicnamed{pdf/BdToJPsiKS}
-\input{BdToJPsiKS}
+\beginpgfgraphicnamed{pdf/BdToJPsiKS_Feynmans}
+\input{BdToJPsiKS_Feynmans}
+\endpgfgraphicnamed
+
+\beginpgfgraphicnamed{pdf/BdToDD_Feynmans}
+\input{BdToDD_Feynmans}
+\endpgfgraphicnamed
+
+\beginpgfgraphicnamed{pdf/BdToDD_Feynmans2}
+\input{BdToDD_Feynmans2}
+\endpgfgraphicnamed
+
+\beginpgfgraphicnamed{pdf/CKMtriangle}
+\begin{tikzpicture}[scale=0.38]
+\input{CKMtriangle}
+\end{tikzpicture}
 \endpgfgraphicnamed
 
 \end{document}

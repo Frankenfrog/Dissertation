@@ -1,0 +1,13 @@
+\tkzInit[xmin=0,xmax=10,ymin=0,ymax=10]
+\tkzDrawX[noticks,label=Re]
+\tkzDrawY[noticks,label=Im]
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(4,6){C}
+\tkzDefPoint(8,0){B}
+\tkzDrawPolygon(A,B,C)
+\tkzMarkAngle (A,C,B)
+\tkzLabelAngle[pos = 1.5](A,C,B){$\alpha$}
+\tkzMarkAngle (C,B,A)
+\tkzLabelAngle[pos = 1.5](C,B,A){$\beta$}
+\tkzMarkAngle (B,A,C)
+\tkzLabelAngle[pos = 1.5](C,A,B){$\gamma$}

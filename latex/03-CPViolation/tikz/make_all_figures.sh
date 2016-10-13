@@ -1,6 +1,6 @@
 #!/bin/sh
 
-figs=(Boxdiagrams BdToJPsiKS)
+figs=(Boxdiagrams BdToJPsiKS_Feynmans BdToDD_Feynmans CKMtriangle)
 
 for fig in ${figs[@]}; do
   pdflatex --jobname=pdf/$fig all_figures.tex
