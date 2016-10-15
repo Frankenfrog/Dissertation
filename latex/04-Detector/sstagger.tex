@@ -2,3 +2,31 @@
 
 \subsubsection{Same-side flavour tagging (1 page)}
 \label{sec:detecor:software:tagging:sstagger}
+
+Apart from $\bquark$ quarks being produced in \bbbar quark pairs, also
+$\dquark$ quarks mainly stem from \ddbar quark pairs. In the hadronisation
+process of the $B$ signal candidate charged pions and protons can be produced,
+which contain the other quark from the \ddbar quark pair, and whose charge is
+thereby correlated with the initial flavour of the reconstructed $B$ signal
+candidate. Positive pions and antiprotons are associated with \Bz mesons, and
+negative pions and protons with \Bzb mesons. Additionally, \Bd mesons can
+originate from the decay $B^{*+}\!\to\Bd\pip$ of excited charged $B$ mesons.
+Then, the charge of the associated pion again determines the initial flavour.
+For quite some time the only available same-side flavour-tagging algorithm for
+\Bz mesons was a SS\pion tagger with a cut-based approach to select the
+appropriate tagging pion. It has a tagging efficiency of around
+\SI{15}{\percent} for $\JPsiX$ final states at an average mistag probability
+of about \SI{42}{\percent}. Recently, an improved SS\pion tagger using a
+boosted decision tree (BDT) to select the tagging pion and based on the very
+same principles also a SS\proton tagger have been
+developed\cite{CERN-THESIS-2015-040,LHCb-PAPER-2016-039}. These two
+flavour-tagging algorithms select completely disjoint tagging particles
+ensured by a requirement on the distance log-likelihood (DLL) between the pion
+and the proton hypothesis of the tagging particle. The tagging efficiency of
+the SS\pion tagger is very high with \SIrange{70}{75}{\percent}. The SS\proton
+tagger provides non-zero tags for around \SI{35}{\percent} of all
+reconstructed signal candidates, of which about \SI{80}{\percent} are also
+tagged by the SS\pion (BDT). However, the high tagging efficiency comes along
+with rather large average mistag probabilities of around \SI{45}{\percent}.
+The response of the two BDT-based SS taggers is combined into a common SS
+response.

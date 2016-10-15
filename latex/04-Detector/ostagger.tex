@@ -1,4 +1,41 @@
 %!TEX root = ../main.tex
 
-\subsubsection{Opposite-side flavour tagging (1 page)}
+\subsubsection{Opposite-side flavour tagging}
 \label{sec:detector:software:tagging:ostagging}
+
+Opposite-side flavour-tagging algorithms~\cite{LHCb-PAPER-2011-027} infer the
+flavour of the signal $B$ meson by studying the decay process of the second
+$b$ hadron, which is produced from the same $\bbbar$ quark pair as the
+reconstructed signal $B$ meson. Mistag probabilities are on the one hand
+introduced by selecting a wrong tagging particle and on the other hand
+intrinsically if the opposite-side $b$ hadron is neutral and has already mixed
+at the time of decay.
+
+In case of a semileptonic decay of the opposite-side $b$ hadron the charges of
+the leptons are used by the OS electron and OS muon tagger to determine the
+flavour. These two taggers provide relatively good mistag estimates of around
+\SI{30}{\percent}, but have a quite low tagging efficiency of below
+\SI{10}{\percent}, whereby the efficiency for muons is a factor
+\numrange{2.5}{3.5} higher than for electrons due to the better reconstruction
+and identification with the LHCb detector.
+
+The OS kaon tagger selects kaons from a $\bquark\!\to\cquark\!\to\squark$
+decay chain. Its tagging efficiency is around \SI{18}{\percent} at an average
+mistag probability of approximately \SI{39}{\percent}.
+
+The OS vertex charge tagger reconstructs the secondary vertex of the
+opposite-side $b$ hadron and calculates the average charge of all tracks
+associated to this vertex. The tagging efficiency and mistag probability are
+comparable with the OS kaon tagger.
+
+The recent OS charm tagger~\cite{LHCb-PAPER-2015-027} reconstructs charm
+hadron candidates produced through $\bquark\!\to\cquark$ transitions of the
+opposite-side $b$ hadron. The main contribution to the tagging power of the OS
+charm tagger comes from partially reconstructed charm hadrons in $\Km\pip X$
+final states and from \DzToKpi decays. The overall tagging efficiency of the
+OS charm tagger is only \SIrange{3}{4}{\percent} with a mistag probability of
+around \SI{35}{\percent}.
+
+The four taggers described first are usually combined into an OS combination.
+Since the release of the OS charm tagger a new OS combination is defined,
+which is slightly better than the old one.

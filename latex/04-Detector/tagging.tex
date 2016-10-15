@@ -3,6 +3,72 @@
 \subsection{Flavour tagging}
 \label{sec:detector:software:tagging}
 
+For measurements of $\CP$ violation in $B$ decays it is essential to know the
+initial flavour of the decaying $\bquark$ hadron candidate, \ie whether it
+contained a $\bquark$ or a $\bquarkbar$ quark at production. When studying
+decays of charged $B$ mesons the flavour at decay matches the production
+flavour. Therefore, the flavour can unambiguously be determined from the
+charges of the final state particles. Due to meson oscillations it is not as
+trivial for neutral mesons. Instead, dedicated methods called flavour-tagging
+algorithms are needed, which infer the initial flavour of a reconstructed
+candidate from other particles inside the event. The $B$-factories \babar and
+\belle operated at the $\FourS$ resonance, which dominantly decays into a
+quantum-correlated pair of $B\Bbar$ mesons. Therefore, by analysing the decay
+of the non-signal $B$ meson, \eg if it proceeds via a flavour-specific
+process, the flavour of the signal $B$ meson at that time could be determined.
+Such correlations are not present at proton-proton colliders like the \lhc,
+where $\bquark$ quarks are dominantly produced in $\bbbar$ quark pairs via
+gluon-gluon fusion. The LHCb collaboration has developed several flavour
+tagging algorithms, which can be classified as \emph{same side} (SS) and
+\emph{opposite side} (OS) taggers. A schematic overview of all current taggers
+that can be exploited to tag $\Bd$ mesons is given in
+\cref{fig:detector:tagging:schematics}.
+\begin{figure}[htb]
+\centering
+\input{04-Detector/tikz/tikz_ft_schematics}
+\caption{Available tagging algorithms to tag \Bz mesons at the LHCb experiment.}
+\label{fig:detector:tagging:schematics}
+\end{figure}
+By convention each flavour-tagging algorithm provides a flavour tag of $d =
+\num{+1}$ if the tagger decides that it is more likely that the flavour of the
+initial $B$ meson was a \Bz and of $d = \num{-1}$ if, based on the algorithm,
+a \Bzb flavour is more likely. However, when no appropriate tagging particle
+can be found for a reconstructed candidate, a tag decision of $d = 0$ is
+assigned. The tag decisions are either based on the charge of a single
+selected tagging particle or on the sign of the averaged charge of multiple
+tagging particles. Besides the tag decision each tagger also provides a
+prediction $\eta$ on the probability that the tag decision is wrong. This
+mistag probability $\eta$ takes values between \numlist{0;0.5}, where $\eta =
+0$ means that there is no uncertainty on the tag decision and $\eta = 0.5$
+basically corresponds to a random choice and is associated with $d = 0$. These
+predictions are based on the outcome of multivariate classifiers, which
+combine kinematic and geometric properties of the tagging particle as well as
+information on the event.
+
+The performance of flavour-tagging algorithms can be quantified by the tagging
+efficiency \etag, which specifies for how many reconstructed candidates a tag
+decision can be made, and by the true mistag probability \mistag. The relation
+between the predicted and the true mistag probability $\omega(\eta)$ is
+determined in calibration studies (see
+\cref{sec:dataanalysis:taggingcalibration}). From the mistag probability the
+tagging dilution $D = 1 - 2\omega$ can be derived, which indicates how much a
+measured amplitude is reduced with respect to the physical amplitude due to
+wrong tags. The product of the tagging efficiency and the squared tagging
+dilution $\effeff = \etag D^2$ is called tagging power or effective tagging
+efficiency. It is widely used as figure of merit for tagging algorithms as it
+states the effective loss in statistics compared to a perfectly tagged sample.
+Ideally, the tagging power is calculated on a per-candidate basis by summing up the dilution of all $N$ signal candidates, with $\omega = 0.5$
+($D=0$) for the untagged candidates, according to
+\begin{equation}
+	\effeff = \frac{1}{N}\sum_{i=1}^{N} (1 - 2\omega(\eta_i))^2\,.
+\label{eq:detector:tagging:taggingpowerperevent}
+\end{equation}
+
+While further information on the basic principles of LHCb's flavour-tagging
+algorithms can be found in Refs.~\cite{LHCb-CONF-2011-003,Grabalosa:1456804},
+a short description of the OS and SS taggers will be given in
+\cref{sec:detector:software:tagging:ostagging,sec:detecor:software:tagging:sstagger}.
+
 \input{04-Detector/ostagger}
 
 \input{04-Detector/sstagger}
