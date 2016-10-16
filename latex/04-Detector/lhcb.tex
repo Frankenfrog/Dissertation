@@ -1,4 +1,164 @@
 %!TEX root = ../main.tex
 
+\newpage
+
 \section{The LHCb detector (4 pages)}
 \label{sec:detector:lhcb}
+
+The \lhcb detector, depicted in \cref{fig:detector:scheme}, is a single-arm
+forward spectrometer. This means that the individual detector
+components are sequentially arranged in the forward direction, starting from
+the interaction point. The angular acceptance in the horizontal plane is
+\SIrange{10}{300}{mrad} and in the vertical plane \SIrange{10}{250}{mrad}.
+Thereby, a pseudorapidity range $2<\eta <5$ is covered.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{04-Detector/figs/Lhcbdetektor.pdf}
+\caption{Schematic view on the \lhcb detector\cite{Alves:2008zz}.}
+\label{fig:detector:scheme}
+\end{figure}
+Instrumenting only this part of the space has been found to be an optimal
+compromise between cost and output for \lhcb's desired physics program, which
+is mainly to study particles containing \bquark or \cquark quarks. Simulations
+of the correlation between the angular distribution of \bbbar quark pairs (see
+\cref{fig:detector:bbbar}) show that the \bquark and \bquarkbar quarks are
+mainly produced in quite small cones around the beam axis. Of course, half of
+the \bbbar quark pairs are going backwards but about \SI{25}{\percent} of all
+\bbbar quark pairs are inside the instrumented \SI{4.5}{\percent} of the whole
+space.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.49\textwidth]{04-Detector/figs/bbbarcorrelation.pdf}
+\includegraphics[width=0.49\textwidth]{04-Detector/figs/bbbaracceptance.pdf}
+\caption{Correlation of angular acceptance (left) and pseudorapidity (right)
+of \bbbar quark pairs~\cite{LHCb-Technical-Proposal}. The frequency of
+produced \bbbar quark pairs is indicated by the bin content in the plot
+showing the angular acceptance and by the colour code in the plot of the
+pseudorapidities, where purple means low and red corresponds to high. The
+region marked in red (left) respectively the region in the red square is
+instrumented by the \lhcb detector.}
+\label{fig:detector:bbbar}
+\end{figure}
+
+More details on the structure of the \lhcb detector can be found in
+Ref.~\cite{Alves:2008zz} and an overview of the performance is given in
+Ref.~\cite{LHCb-DP-2014-002}.
+
+\subsection*{Vertexing and tracking}
+\label{subsec:tracker}
+
+The tracking system consists of several detector components, one of which is a
+dipole magnet, which bends the tracks of charged particles with an integrated
+magnetic field of \SI{4}{Tm}. To be able to study charge-dependent detection
+asymmetries the polarity of the dipole magnet is reversed periodically
+throughout data-taking. From the curvature radius it can be concluded on
+the momentum of the track. To determine the curvature radius information from
+tracking detector elements located upstream and downstream of the magnet are
+needed. The $pp$ interaction region is surrounded by a silicon-strip vertex
+locator (VELO)~\cite{LHCb-DP-2014-001}, which delivers the most precise
+information on the position of the tracks and vertices due to being installed
+very closely around the beam pipe. It is composed of 42 modules with R and
+$\phi$ sensors, which measure the positions of the tracks in cylindrical
+coordinates. Each module is a half disk (see \cref{fig:detector:velo}, which
+can be pulled to a proximity of \SI{5}{\milli\metre} to the beam axis.
+However, this is only done for stable beam conditions otherwise the modules
+could be destroyed by the beam. To monitor the beam position a dedicated
+detector component called Beam Conditions Monitor (BCM) is installed at two
+locations in the vicinity of the beam. Via eight diamond sensors, which have
+been proven to be very radiation-hard, each station determines the particle
+flux and can trigger a beam dump in case of instabilities, which occur
+especially at the injection of proton bunches. The importance of this system
+is underlined by the fact that it has its own power supply and constantly
+reports its status. If no information from the BCM is received a beam dump is
+also initiated. The VELO achieves a single hit resolution of up to \SI{4}{\mum}
+at an efficiency of more than \SI{99}{\percent}. The disks are arranged in a
+way that guarantees that even at the outermost acceptance of \SI{300}{mrad}
+tracks hit at least three VELO stations (see \cref{fig:detector:velo}).
+\begin{figure}[htb]
+\includegraphics[width=0.4\textwidth]{04-Detector/figs/VELO.jpg}
+\includegraphics[width=0.59\textwidth]{04-Detector/figs/AnordnungVELOStationen.pdf}
+\caption{View on a single VELO half disk (left) and arrangement of all VELO
+modules~\cite{Alves:2008zz}.}
+\label{fig:detector:velo}
+\end{figure}
+One of the main purposes of the VELO is to precisely determine the position of
+the proton-proton interaction called primary vertex (PV) and the displaced
+secondary decay vertices of long-lived particles like \Bd mesons. The impact
+parameter (IP), which is the minimum distance of a track to a PV, is measured
+depending on the transversal momentum \pT with a spatial resolution of
+$(15+29/\pt)\mum$ (\pT given in units of \si{\gevc}).
+
+Between VELO and dipole magnet there is another silicon-strip detector, the
+tracker turicensis (TT). Like the three tracking stations located downstream
+of the magnet, which are subdivided into an inner silicon-strip tracker and an
+outer straw drift tube detector~\cite{LHCb-DP-2013-003}, it is built of four
+layers. While the first and last layer are arranged vertically, the inner
+layers are tilted by \SI{-5}{\degrees} and \SI{+5}{\degrees}. Charged
+particles create electron-hole pairs in the silicon-strip detectors inducing a
+measurable current. A hit efficiency of at least \SI{99.7}{\percent} and a hit
+resolution of \SI{55}{\mum} and better is achieved during data-taking in 2011
+and 2012~\cite{LHCb-DP-2014-002}. The straw drift tubes of the outer tracker
+are filled with a gas mixture of \SI{70}{\percent} Ar and \SI{30}{\percent}
+CO$_2$, which gets ionised by passing particles. Timing measurements on how
+long it takes for the electrons to reach the anode in the middle of the tube
+allow to reconstruct the position of the hit.
+
+In total, the tracking system provides a relative precision on the measurement
+of the momentum that varies from \SI{0.5}{\percent} at low momentum to
+\SI{0.8}{\percent} at \SI{100}{\gevc}~\cite{LHCb-DP-2014-002}.
+
+Different track types are distinguished based on from which detector
+components information is available. The category with the best mass, momentum
+and vertex resolution is the long category. Long tracks originate in the
+vertex detector and leave hits in all subsequent tracking stations. Long-lived
+particles like \KS mesons might decay outside the VELO. If their tracks are
+detected in the TT and, after passing the magnet, in the tracking stations
+they are referred to as downstream. These two track categories are the only
+ones used in the analyses described in this thesis. Furthermore, tracks might
+be classified as VELO tracks, if they have only left hits in the VELO,
+upstream tracks, if in addition the TT delivers information, or T tracks, if
+they are solely reconstructed in the tracking stations downstream the magnet.
+
+
+\subsection*{Particle identification}
+\label{subsec:teilchenidentifizierung}
+
+Apart from detecting the tracks and reconstructing their trajectory it is
+important to estimate the identity of the particles. To distinguish pions from
+kaons and protons two ring-imaging Cherenkov (RICH)
+detectors~\cite{LHCb-DP-2012-003} are used, which are installed between VELO
+and TT respectively downstream the tracking stations. The RICH detector
+upstream of the magnet is filled with $\mathrm{C_4F_{10}}$ and during Run I
+additionally with Aerogel. It is designed for particles with momenta in the
+range \SIrange{1}{60}{\gevc}. Higher momentum particles are detected by the
+second RICH detector, which is filled with $\mathrm{CF_4}$. When particles
+pass through these materials with a speed greater than the speed of light in
+the medium photons are emitted. The light is guided to hybrid photo detectors
+by a system of mirrors (see \cref{fig:detector:rich}). From the radius of the
+light cones and the measurement of the momentum a particle hypothesis can be
+constructed.
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.50\textwidth]{04-Detector/figs/RICHSchema.jpg}
+\caption{Schematic Aufbau der beiden RICH-Detektoren~\cite{Alves:2008zz}}
+\label{fig:detector:rich}
+\end{figure}
+While photons and electrons are identified by an electromagnetic calorimeter
+(ECAL), the energy of protons, neutrons and other long-lived hadrons is
+measured in a hadronic calorimeter (HCAL). To suppress background from charged
+and neutral pions there is a preshower (PS) respectively a Scintillator Pad
+Detector (SPD) in front of the ECAL. The thickness of the lead in the PS is
+chosen as a compromise between energy resolution and trigger
+performance~\cite{Preshower}. The calorimeters are built of alternating layers
+of metal and plastic. Polysterene molecules in the plastic are excited by
+particle showers produced in the metal plates and produce ultraviolet light
+whose amount is proportional to the energy of the incident particle. The least
+interacting charged particles are muons, which are identified by five stations
+of multi-wire proportional chambers (MWPC) filled by a gas mixture of $\mathrm{Ar,
+CO_2}$ and $\mathrm{CF_4}$. Four of them are right at the end of the detector
+downstream of the calorimeters and one is located in between the second RICH
+and the calorimeter system. To stop the muons \SI{80}{cm} thick layers of iron
+are put between the last four muon stations. Only muons with a momentum $p >
+\SI{6}{\gevc}$ pass the whole detector. The detection of the muons is based on
+ionisation of the gas in the MWPCs. An electric field accelerates the ions and
+electrons. The emerging current is proportional to the energy of the muon.
