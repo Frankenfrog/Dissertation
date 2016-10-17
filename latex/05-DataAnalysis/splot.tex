@@ -16,11 +16,11 @@ typically performed for the invariant mass distribution where reliable
 parametrisations for signal and background contributions can quite easily be
 found. Based on the fit results sWeights according to
 \begin{align}
-	\SPlotweight(x_i) = \frac{\sum_{j = 1}^{N_s}\textbf{V}_{\text{n}j}f_j(x_i)}{\sum_{k = 1}^{N_s} N_k f_k(x_i)}
+	\SPlotweight(x_i) = \frac{\sum_{j = 1}^{N_s}\matr{V}_{\text{n}j}f_j(x_i)}{\sum_{k = 1}^{N_s} N_k f_k(x_i)}
 \label{eq:dataanalysis:selection:splot:weightdefinition}
 \end{align}
 can be calculated for each candidate. Herein, the indices $j$ and $k$ sum over
-the $N_s$ categories described in the PDF $f$. The matrix \textbf{V} contains
+the $N_s$ categories described in the PDF $f$. The matrix \matr{V} contains
 the covariances between the yields $N$ and needs to be determined from an
 individual fit in which all other floating parameters are fixed. The sWeights
 fulfil the condition that their sum over one category returns the
