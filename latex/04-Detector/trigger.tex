@@ -2,3 +2,52 @@
 
 \section{The LHCb trigger system (1 page)}
 \label{sec:detector:trigger}
+
+Deliberately, the instantaneous luminosity at \lhcb is reduced to
+$\SI{4e32}{\cm^{-2}s^{-1}}$, which is significantly lower than at the other
+three experiments at the \lhc. Though, the partial beam loss with time can be
+compensated by adjusting of the beam crossing so that a constant luminosity
+level can be kept throughout the whole fill. Nevertheless, it isn't possible
+to store the data of all visible proton-proton collisions. Instead, a two
+stage trigger system consisting of a hardware (L0) and a subsequent software
+level (HLT) is deployed. At the hardware trigger stage, which runs
+synchronously with the bunch crossing rate, events are required to contain at
+least one muon with a high \pt (\texttt{L0Muon}), or two muons with a minimal
+product of their \pT (\texttt{L0DiMuon}), or a hadron (\texttt{L0Hadron}), a
+photon (\texttt{L0Photon}) or an electron (\texttt{L0Electron}), which deposit
+high transverse energy in the calorimeters. Additionally, the number of
+allowed hits in the SPD is limited. These requirements reduce the data rate to 
+\SI{1}{\mega\hertz}, at which the full detector can be read out. The L0 signal
+efficiency varies a lot between muons and hadrons. While dimuon final states
+are triggered with more than \SI{90}{\percent} efficiency, for fully hadronic
+final states like $\Dp\Dm$ only around \SI{60}{\percent} are reached. The high
+level trigger (HLT) is a \cpp application, which runs on an event filter farm
+of several thousand CPU nodes. It is again split into two stages. In the HLT1
+basically the decisions of the L0 are checked. Due to the reduced data rate
+some more time is available. For all events the VELO tracks are reconstructed
+and a partial event reconstruction of all charged particles with $\pt >
+\SI{500}{\mevc}$ in 2011 and $\pt > \SI{300}{\mevc}$ in 2012 is performed.
+This improves the momentum resolution and enables to calculate some invariant
+masses. The \texttt{Hlt1TrackMuon} trigger line requires a high \pt muon with
+a \chisqip with respect to any primary interaction greater than 16, where
+\chisqip is defined as the difference in \chisq of a given PV reconstructed
+with and without the considered track.
+%which is incompatible with originating from any PV in the event. 
+The \texttt{Hlt1DiMuonHighMass} trigger line accepts events if they contain
+two muons that form a good common vertex with an invariant mass above
+\SI{2.7}{\gevcc}. In HLT2, a full reconstruction of the event is performed.
+Therefore, it is possible to further tighten the requirements applied in HLT1.
+Furthermore, for the \texttt{Hlt2DiMuonDetachedJPsi} trigger line a
+requirement on the flight distance is imposed. For hadrons, it is typically
+searched for two-, three- or four-track secondary vertices, which are
+identified via a multivariate algorithm~\cite{BBDT}.
+
+The total output rate after all trigger stages has been increased from
+\SI{3.5}{\kilo\hertz} in 2011 to \SI{5}{\kilo\hertz} in 2012 and
+\SI{12.5}{\kilo\hertz} in Run II.
+
+In the offline selection, trigger signals are associated with reconstructed
+particles. Selection requirements can therefore be made on the trigger
+selection itself and on whether the decision was due to the signal candidate
+(TOS), other particles produced in the $pp$ collision (TIS), or a combination
+of both.
