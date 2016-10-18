@@ -1,8 +1,40 @@
 %!TEX root = ../main.tex
 
-\subsection{Reconstruction (1 page)}
+\subsection{Reconstruction}
 \label{sec:detector:software:reconstruction}
 
-\todo{explain ghost tracks}
-\subsubsection{Decay Tree Fitter (0.5 pages)}
-\label{sec:dataanalysis:dtf}
+Two things need to be done in the reconstruction: tracks need to be find and
+combined and particle hypotheses have to be assigned to these tracks. The
+interface for the algorithms and tools is provided by the \brunel
+project~\cite{Brunel}, based on the \gaudi framework~\cite{Barrand:2001ny}.
+
+The forward tracking algorithm starts with straight VELO tracks, which are
+built from hits in the R and $\phi$ sensors of the VELO modules. These are
+extrapolated to match hits in the tracking stations taking into account the
+bending of the tracks by the magnet. Then, corresponding hits in the TT are
+added. A second tracking algorithm directly matches independent VELO and T
+tracks. It is possible that certain track segments are used for different
+tracks. In that case a Clone Killer algorithm selects one of the reconstructed
+tracks. Another difficulty are ghost tracks, which are randomly combined hits
+that do not stem from a real physics particle.
+
+The particle identification (PID) of charged hadrons is performed via the allocation
+of rings in the RICH detectors to the tracks and calculating likelihoods for
+the different particle hypotheses. The calorimeters are used to identify
+electrons and neutral pions, which decay into pairs of photons. One of the
+best signatures is given by the muon system, which excludes respectively
+settles the muon hypothesis quite reliable.
+
+Once the tracking and PID are done the full decay chain can be fitted. In
+order to correctly comprise correlations and uncertainties on vertex
+positions, particle momenta, flight distances, decay times, and invariant
+masses, the \mbox{DecayTreeFitter} (DTF)~\cite{Hulsbergen:2005pu} can be used
+in the reconstruction of decay chains. The decay time related observables in
+both analyses covered in this thesis stem from a DTF fit where a constraint on
+the production vertex of the \Bd mesons is applied using the knowledge about
+the position of the primary vertex. The momenta and the invariant mass of the
+\Bd meson are determined with a DTF fit in which additionally the invariant
+masses of the daughter hadrons are constrained to their PDG masses. In the
+Stripping the OfflineVertexFitter (OVF) is used for the analysis of the
+\BdToJPsiKS decays and the LoKiVertexFitter (LVF) for the analysis of the
+\BdToDD decays.
