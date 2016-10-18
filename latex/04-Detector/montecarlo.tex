@@ -1,4 +1,39 @@
 %!TEX root = ../main.tex
 
-\subsection{Monte Carlo simulation (1 page)}
+\subsection{Monte Carlo simulation}
 \label{sec:detector:software:simulation}
+
+In many ways data analyses benefit from the use of Monte Carlo simulations
+(MC). This reaches from the calculation of efficiencies to the development of
+selection strategies or to finding appropriate parametrisations to model data
+distributions. One of the advantages of MC is that, except for the need of
+enough computing and storage resources, the simulated samples can be very
+large, typically considerably larger than the real data sample. The main goal
+of the simulation is to be as close as possible to the conditions found on
+real data. Therefore, constant comparison, calibration and adjustments are
+needed. Whenever a deviation attracts attention, methods to compensate the
+effect are applied, \eg the performance of the particle identification system
+is overestimated on MC, which can be corrected by applying a data-driven
+resampling.
+
+For \lhcb the $pp$ collisions are generated using
+\pythia~\cite{Sjostrand:2006za,*Sjostrand:2007gs} with a specific
+configuration~\cite{LHCb-PROC-2010-056}. The decays of the hadronic particles
+are simulated with \evtgen~\cite{Lange:2001uf}. To account for the radiation
+of photons in the final-state the package
+\photos~\cite{Golonka:2005pn} is used. The \geant
+toolkit~\cite{Allison:2006ve, *Agostinelli:2002hh} is implemented as described
+in Ref.~\cite{LHCb-PROC-2011-006} to model the interaction of the generated
+particles with the detector material. The digitisation is realised using
+\boole. The further processing is identical with the analysis of real
+collision data, starting with the trigger implemented in \moore, the
+reconstruction done via \brunel and the stripping using the \davinci package.
+\todo{references for boole, moore, brunel, davinci}
+
+Apart from the reconstructed properties of the particles, the true information
+is available as well. This allows to compare the two and study resolution and
+acceptance effects. Besides signal MC, where a specific decay mode is
+specified in all details in a configuration file, it is also possible to
+generate inclusive MC samples, which contain a whole family of similar decay
+modes, \eg decays involving a \jpsi resonance and anything else, or even
+completely unbiased samples.
