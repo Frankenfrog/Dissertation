@@ -1,4 +1,27 @@
 %!TEX root = ../main.tex
 
-\subsection{Stripping (1 page)}
+\subsection{Stripping}
 \label{sec:detector:software:stripping}
+
+Once tracking and PID are done the full decay chain can be fitted. However,
+the data size after reconstruction is enormous. Right now, it is inevitable to
+use a centralized selection called Stripping to handle it. In the \davinci
+framework~\cite{DaVinci} stripping lines are defined, which basically are a
+set of requirements that describe certain decay modes. Many selection steps
+can be shared between various stripping lines, which saves a lot of computing
+time. For example, there are minimal requirements for stable particles to
+start from. In the individual stripping lines these can then be tightened.
+Only data selected by a stripping line can be analysed offline by the users
+and data campaigns are usually only performed as often as once per year. This
+makes the stripping so important. In the stripping the OfflineVertexFitter
+(OVF) is used for the analysis of the \BdToJPsiKS decays and the
+LoKiVertexFitter (LVF) for the analysis of the \BdToDD decays. In order to
+correctly comprise correlations and uncertainties on vertex positions,
+particle momenta, flight distances, decay times, and invariant masses, the
+\mbox{DecayTreeFitter} (DTF)~\cite{Hulsbergen:2005pu} can be used in the
+reconstruction of decay chains. The decay time related observables in both
+analyses covered in this thesis stem from a DTF fit where a constraint on the
+production vertex of the \Bd mesons is applied using the knowledge about the
+position of the primary vertex. The momenta and the invariant mass of the \Bd
+meson are determined with a DTF fit in which additionally the invariant masses
+of the daughter hadrons are constrained to their PDG masses.
