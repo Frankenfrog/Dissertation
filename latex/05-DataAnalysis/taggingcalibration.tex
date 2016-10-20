@@ -1,9 +1,9 @@
 %!TEX root = ../main.tex
 
-\section{Flavour tagging calibration}
+\section{Flavour-tagging calibration}
 \label{sec:dataanalysis:taggingcalibration}
 
-The output of the flavour tagging algorithms $\eta$ needs to be calibrated to
+The output of the flavour-tagging algorithms $\eta$ needs to be calibrated to
 ensure that it reflects the true mistag probability $\omega$. Usually, a
 linear function
 \begin{align}
@@ -16,11 +16,11 @@ parameters $p_0$ and $p_1$, which in case of a perfect calibration are
 $p_0 = \langle\eta\rangle$ and $p_1 = 1$.
 
 Due to different interaction rates of the tagging particles with the detector
-material or detection asymmetries the performance of the flavour tagging
+material or detection asymmetries the performance of the flavour-tagging
 algorithms can be dependent on the initial flavour. This behaviour is quite
 unfortunate in the measurement of \CP violation as it can dilute or enhance
 the observed asymmetry. To account for these tagging asymmetries separate
-parametrisations for the flavour tagging calibrations of initial \Bd and \Bzb
+parametrisations for the flavour-tagging calibrations of initial \Bd and \Bzb
 are implemented:
 \begin{equation}
 \begin{split}
@@ -43,13 +43,13 @@ The asymmetry of the mistags can then be written as
 \label{eq:dataanalysis:taggingcalibration:mistagasymmetry}
 \end{align}
 
-For the flavour tagging calibration it is beneficial to use flavour specific
+For the flavour-tagging calibration it is beneficial to use flavour-specific
 decay channels that are kinematically similar to the signal channel.
 Additionally, the selection between the two channels should be as close as
 possible. This allows to transfer the calibration results from the control to
 the signal channel without assigning large systematic uncertainties. On the
 other hand, the control channel should ideally be a mode with high statistics
-to reduce the statistical uncertainties on the flavour tagging calibration
+to reduce the statistical uncertainties on the flavour-tagging calibration
 parameters. A good compromise between these two requirements is found by
 choosing \BdToDsD as calibration mode for \BdToDD, while for \BdToJPsiKS the
 OS tagging combination and the cut-based SS\pion tagging algorithm are
