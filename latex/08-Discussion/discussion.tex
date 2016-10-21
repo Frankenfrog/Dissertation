@@ -12,9 +12,10 @@
 
 Measurements in decays with \bToccbars transitions have established the
 presence of \CP violation in the system of neutral $B$ mesons with very high
-precision. Comparing the plots of the signal yield asymmetry for \BdToJPsiKS
-and \BdToDD (see \cref{fig:discussion:asymmetry}), the difference in
-sensitivity becomes apparent.
+precision. Comparing the plots of the decay-time-dependent signal yield
+asymmetry for \BdToJPsiKS and \BdToDD decays (see
+\cref{fig:discussion:asymmetry}), the difference in sensitivity becomes
+apparent.
 \begin{figure}[hbt]
 \centering
 \includegraphics[width=0.49\textwidth]{08-Discussion/tikz/pdf/Asymmetry_B2DD.pdf}
@@ -27,16 +28,18 @@ However, the main motivation for the measurement of \CP violation in \BdToDD
 decays, presented in this thesis, is not to achieve the single best
 measurement of \CP violation. In fact, given the uncertainties the
 conservation of \CP symmetry can be excluded by only \num{4.0} standard
-deviations with this measurement. Instead, higher-order Standard Model
-corrections to $\beta$ and $\betas$ can be obtained. The fit results of $\SDD$
-and $\CDD$ (see \cref{eq:b02dd:decaytimefit:cpresults}) correspond to
+deviations with this measurement. Instead, the phase shift $\Delta\phi$ can be
+obtained, which is caused by higher-order Standard Model contributions and
+complicates the determination of $\beta$ and $\betas$ similarly (see
+\cref{sec:cpviolation:btoccbard}). The fit results of $\SDD$ and $\CDD$ (see
+\cref{eq:b02dd:decaytimefit:cpresults}) correspond to
 \begin{align*}
   \sin(\phid + \Delta \phi) = \frac{-\SDD}{\sqrt{1 - \CDD^2}} = 0.56\,\pm\,^{0.16}_{0.17}\,,
 \end{align*}
 where the statistical uncertainty is estimated by generating three million
 sets of \SDD and \CDD using a two-dimensional Gaussian distribution including
 their correlation, calculating $\sin(\phid + \Delta \phi)$ for each of them,
-and then taking the two-side \SI{68}{\percent} confidence intervals. This
+and then taking the two-sided \SI{68}{\percent} confidence intervals. This
 result can be combined with the corresponding value from \BdToJPsiKS to
 extract the phase shift $\Delta \phi$. The calculation yields $\Delta \phi =
 -0.16\,^{+0.19}_{-0.21}$\,\si{\radian}, which is significantly more precise
@@ -45,5 +48,4 @@ $\Delta \phi = (30\,^{+23}_{-30})\si{\degrees} =
 0.52\,^{+0.40}_{-0.56}$~\cite{Bel:2015wha}, and thus represents the world's
 most precise determination of this quantity. Moreover, the size of the
 higher-order corrections is reduced by more than a factor of three and is
-compatible with zero, though, this has already been the case before.
-\todo{extend discussion?}
+compatible with zero.
