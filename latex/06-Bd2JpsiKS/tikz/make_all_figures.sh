@@ -1,6 +1,11 @@
 #!/bin/sh
 
-figs=(Acceptancespline_zoomed_hlt1 Acceptancespline_zoomed_hlt2 MassPulls_summed)
+figs=(ResolutionCalibration_1_DD ResolutionCalibration_2_DD
+Acceptancespline_zoomed_hlt1 Acceptancespline_zoomed_hlt2
+BackgroundAsymmetryByHand_DD_OS_data
+BackgroundAsymmetryByHand_DD_SSPion_data
+BackgroundAsymmetryByHand_LL_OS_data
+BackgroundAsymmetryByHand_LL_SSPion_data MassPulls_summed)
 
 for fig in ${figs[@]}; do
   pdflatex --jobname=pdf/$fig all_figures.tex
