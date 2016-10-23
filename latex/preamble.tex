@@ -35,33 +35,6 @@
 \setcapindent{0em}
 \addtokomafont{disposition}{\boldmath}
 
-\newcommand\abstractname{Abstract}  %%% here
-\makeatletter
-\if@titlepage
-  \newenvironment{abstract}{%
-      \titlepage
-      \null\vfil
-      \@beginparpenalty\@lowpenalty
-      \begin{center}%
-        \bfseries \abstractname
-        \@endparpenalty\@M
-      \end{center}}%
-     {\par\vfil\null\endtitlepage}
-\else
-  \newenvironment{abstract}{%
-      \if@twocolumn
-        \section*{\abstractname}%
-      \else
-        \small
-        \begin{center}%
-          {\bfseries \abstractname\vspace{-.5em}\vspace{\z@}}%
-        \end{center}%
-        \quotation
-      \fi}
-      {\if@twocolumn\else\endquotation\fi}
-\fi
-\makeatother
-
 %% %%%%%%%%%%%%%%%%%%%%%%%
 %% Packages to be used
 %% %%%%%%%%%%%%%%%%%%%%%%%
@@ -96,7 +69,7 @@
 \pgfdeclarelayer{foreground}
 \pgfsetlayers{background,main,foreground}
 
-\usepackage[english]{babel}
+\usepackage[ngerman,english]{babel}
 \usepackage[utf8]{inputenc}
 
 %%%%%%%%%%%%%%%%%
