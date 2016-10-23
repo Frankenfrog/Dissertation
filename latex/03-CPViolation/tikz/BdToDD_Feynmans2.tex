@@ -2,27 +2,31 @@
 \begin{tikzpicture}
   \begin{feynman}
     \vertex(bbar) {$\bquarkbar$};
-    \vertex[right=1.5cm of bbar] (i1) ;
-    \vertex[right=1.5cm of i1] (c) {$\cquark$};
-    \vertex[below=1.5em of bbar] (d1) {$\dquark$};
-    \vertex[right=1.5cm of d1] (i2) ;
-    \vertex[right=1.5cm of i2] (cbar) {$\cquarkbar$};
-    \vertex[above=1.5em of c] (dbar) {$\dquarkbar$};
-    \vertex[below=1.5em of cbar] (d2) {$\dquark$};
-    \vertex at ($(c)!0.5!(cbar) - (1cm,0)$) (i3);
-    \vertex[right=0.75cm of bbar] (W1) ;
-    \vertex[right=0.75cm of d1] (W2) ;
+    \vertex[right=3cm of bbar] (i1) ;
+    \vertex[right=3cm of i1] (d2) {$\dquark$};
+    \vertex[below=3em of bbar] (d1) {$\dquark$};
+    \vertex[right=3cm of d1] (i2) ;
+    \vertex[right=3cm of i2] (dbar) {$\dquarkbar$};
+    \vertex[above=3em of d2] (cbar) {$\cquarkbar$};
+    \vertex[below=3em of dbar] (c) {$\cquark$};
+    \vertex at ($(d2)!0.5!(dbar) - (1.5cm,0)$) (i3);
+    \vertex[right=2cm of bbar] (W1) ;
+    \vertex[right=2cm of d1] (W2) ;
     \diagram* {
       {[edges=fermion]
-        (dbar) -- (i1) -- (bbar),
-        (d1) -- (i2) -- (d2),
-        (cbar) -- (i3) -- (c),
+        (cbar) -- (i1),
+        (W1) -- (bbar),
+        (d1) -- (W2),
+        (i2) -- (c),
+        (dbar) -- [out=180, in=-90] (i3) -- [out=90, in=180] (d2),
       },
-      (W1) -- [boson] (W2),
+      (W1) -- (i1),
+      (W2) -- (i2),
+      (W1) -- [boson, edge label={$W$}] (W2),
     };
-    \node [below left=0.75em and 1em of bbar] (Bd) {$\Bd$};
-    \node [right=1em of $(c)!0.5!(dbar)$] {$\Dp$};
-    \node [right=1em of $(cbar)!0.5!(d2)$] {$\Dm$};
+    \draw[decoration={brace}, decorate] (d1.south west) -- (bbar.north west) node[pos=0.5, left] {$\Bd$};
+    \draw[decoration={brace}, decorate] (dbar.north east) -- (c.south east) node[pos=0.5, right] {$\Dp$};
+    \draw[decoration={brace}, decorate] (cbar.north east) -- (d2.south east) node[pos=0.5, right] {$\Dm$};
   \end{feynman}
 \end{tikzpicture}
 \hspace{1cm}
@@ -30,28 +34,30 @@
 \begin{tikzpicture}
   \begin{feynman}
     \vertex(bbar) {$\bquarkbar$};
-    \vertex[below=1.5em of bbar] (d1) {$\dquark$};
-    \vertex[right=0.5cm of bbar] (W1);
-    \vertex[right=0.5cm of d1] (W2);
-    \vertex at ($(W1)!0.5!(W2) + (0.75em,0)$) (i1);
-    \vertex[right=0.5cm of i1] (i2);
-    \vertex[right=0.5cm of i2] (i3);
-    \vertex[right=3cm of bbar] (dbar) {$\dquarkbar$};
-    \vertex[right=3cm of d1] (d2) {$\dquark$};
-    \vertex[below=1.5em of d2] (cbar) {$\cquarkbar$};
-    \vertex[above=1.5em of dbar] (c) {$\cquark$};
+    \vertex[below=3em of bbar] (d1) {$\dquark$};
+    \vertex[right=1cm of bbar] (W1);
+    \vertex[right=1cm of d1] (W2);
+    \vertex[label={[rotate=90]above:{$\uquark,\cquark,\tquark$}}] at ($(W1)!0.5!(W2) + (1.5em,0)$) (i1);
+    \vertex[right=1.5cm of i1] (i2);
+    \vertex[right=1.5cm of i2] (i3);
+    \vertex[right=6cm of bbar] (dbar) {$\dquarkbar$};
+    \vertex[right=6cm of d1] (d2) {$\dquark$};
+    \vertex[below=3em of d2] (cbar) {$\cquarkbar$};
+    \vertex[above=3em of dbar] (c) {$\cquark$};
     
     \diagram* {
       {[edges=fermion]
-        (d1) -- (W2) -- [half right] (W1) -- (bbar),
-        (dbar) -- (i3) -- (d2),
-        (cbar) -- (i2) -- (c),
+        (d1) -- (W2),
+        (W1) -- (bbar),
+        (dbar) -- [out=180, in=90] (i3) -- [out=-90, in=180] (d2),
+        (cbar) -- [out=180, in=-90] (i2) -- [out=90, in=180] (c),
       },
       (i1) -- [scalar] (i2),
-      (W1) -- [boson] (W2),
+      (W2) -- [half right] (W1),
+      (W1) -- [boson, edge label'={$W$}] (W2),
     };
-    \node [below left=0.75em and 1em of bbar] (Bd) {$\Bd$};
-    \node [right=1em of $(c)!0.5!(dbar)$] {$\Dp$};
-    \node [right=1em of $(cbar)!0.5!(d2)$] {$\Dm$};
+    \draw[decoration={brace}, decorate] (d1.south west) -- (bbar.north west) node[pos=0.5, left] {$\Bd$};
+    \draw[decoration={brace}, decorate] (c.north east)  -- (dbar.south east) node[pos=0.5, right] {$\Dp$};
+    \draw[decoration={brace}, decorate] (d2.north east) -- (cbar.south east) node[pos=0.5, right] {$\Dm$};
   \end{feynman}
 \end{tikzpicture}

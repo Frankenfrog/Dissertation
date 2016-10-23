@@ -2,24 +2,24 @@
 \begin{tikzpicture}
   \begin{feynman}
     \vertex(a1) {$\bquarkbar$};
-    \vertex[right=1cm of a1] (a2) ;
-    \vertex[right=2cm of a2] (a3) {$\cquarkbar$};
-    \vertex[below=1.5em of a1] (b1) {$\dquark$};
-    \vertex[below=1.5em of a3] (b2) {$\dquark$};
-    \vertex[above=1.5em of a3] (c1) {$\cquark$};
-    \vertex[above=1.5em of c1] (c3) {$\dquarkbar$};
-    \vertex at ($(c1)!0.5!(c3) - (1cm,0)$) (c2) ;
+    \vertex[right=2cm of a1] (a2) ;
+    \vertex[right=4cm of a2] (a3) {$\cquarkbar$};
+    \vertex[below=3em of a1] (b1) {$\dquark$};
+    \vertex[below=3em of a3] (b2) {$\dquark$};
+    \vertex[above=3em of a3] (c1) {$\cquark$};
+    \vertex[above=3em of c1] (c3) {$\dquarkbar$};
+    \vertex at ($(c1)!0.5!(c3) - (1.5cm,0)$) (c2) ;
     \diagram* {
       {[edges=fermion]
         (a3) -- (a2) -- (a1),
         (b1) -- (b2),
-        (c3) -- (c2) -- (c1),
+        (c3) -- [out=180, in=90] (c2) -- [out=-90, in=180] (c1),
       },
       (a2) -- [boson] (c2),
     };
-    \node [below left=0.75em and 1em of a1] (Bd) {$\Bd$};
-    \node [right=1em of $(c1)!0.5!(c3)$] {$\Dp$};
-    \node [right=1em of $(a3)!0.5!(b2)$] {$\Dm$};
+    \draw[decoration={brace}, decorate] (b1.south west) -- (a1.north west) node[pos=0.5, left] {$\Bd$};
+    \draw[decoration={brace}, decorate] (c3.north east) -- (c1.south east) node[pos=0.5, right] {$\Dp$};
+    \draw[decoration={brace}, decorate] (a3.north east) -- (b2.south east) node[pos=0.5, right] {$\Dm$};
   \end{feynman}
 \end{tikzpicture}
 \hspace{1cm}
@@ -27,27 +27,28 @@
 \begin{tikzpicture}
   \begin{feynman}
     \vertex(bbar) {$\bquarkbar$};
-    \vertex[right=1.5cm of bbar] (i1) ;
-    \vertex[right=1.5cm of i1] (c) {$\cquark$};
-    \vertex[below=1.5em of bbar] (d1) {$\dquark$};
-    \vertex[right=1.5cm of d1] (i2) ;
-    \vertex[right=1.5cm of i2] (cbar) {$\cquarkbar$};
-    \vertex[above=1.5em of c] (dbar) {$\dquarkbar$};
-    \vertex[below=1.5em of cbar] (d2) {$\dquark$};
-    \vertex at ($(c)!0.5!(cbar) - (1cm,0)$) (i3);
-    \vertex[right=1.2cm of bbar] (W1) ;
+    \vertex[right=3cm of bbar] (i1);
+    \vertex[right=3cm of i1] (c) {$\cquark$};
+    \vertex[below=3em of bbar] (d1) {$\dquark$};
+    \vertex[right=3cm of d1] (i2) ;
+    \vertex[right=3cm of i2] (cbar) {$\cquarkbar$};
+    \vertex[above=3em of c] (dbar) {$\dquarkbar$};
+    \vertex[below=3em of cbar] (d2) {$\dquark$};
+    \vertex at ($(c)!0.5!(cbar) - (1.5cm,0)$) (i3);
+    \vertex[right=2.4cm of bbar] (W1) ;
     \vertex at ($(dbar)!0.75!(i1)$) (W2) ;
     \diagram* {
       {[edges=fermion]
         (dbar) -- (i1) -- (bbar),
         (d1) -- (i2) -- (d2),
-        (cbar) -- (i3) -- (c),
+        (cbar) -- [out=180, in=-90] (i3) -- [out=90, in=180] (c),
       },
       (i1) -- [gluon] (i3),
-      (W1) -- [bend left, boson] (W2),
+      (W1) -- [bend left, out=90, in=90, boson, looseness=2, edge label={$W$}] (W2),
     };
-    \node [below left=0.75em and 1em of bbar] (Bd) {$\Bd$};
-    \node [right=1em of $(c)!0.5!(dbar)$] {$\Dp$};
-    \node [right=1em of $(cbar)!0.5!(d2)$] {$\Dm$};
+    \draw[decoration={brace}, decorate] (d1.south west) -- (bbar.north west) node[pos=0.5, left] {$\Bd$};
+    \draw[decoration={brace}, decorate] (dbar.north east) -- (c.south east) node[pos=0.5, right] {$\Dp$};
+    \draw[decoration={brace}, decorate] (cbar.north east) -- (d2.south east) node[pos=0.5, right] {$\Dm$};
+    \node[above=1pt of i1] {$\uquark,\cquark,\tquark$};
   \end{feynman}
 \end{tikzpicture}
