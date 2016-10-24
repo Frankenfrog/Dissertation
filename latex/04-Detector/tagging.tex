@@ -2,6 +2,7 @@
 
 \subsection{Flavour tagging}
 \label{sec:detector:software:tagging}
+\todo{FT as subsection of software or standalone section?}
 
 For measurements of $\CP$ violation in $B$ decays it is essential to know the
 initial flavour of the decaying $\bquark$ hadron candidate, \ie whether it
@@ -38,7 +39,7 @@ assigned. The tag decisions are either based on the charge of a single
 selected tagging particle or on the sign of the averaged charge of multiple
 tagging particles. Besides the tag decision each tagger also provides a
 prediction $\eta$ on the probability that the tag decision is wrong. This
-mistag probability $\eta$ takes values between \numlist{0;0.5}, where $\eta =
+mistag estimate $\eta$ takes values between \numlist{0;0.5}, where $\eta =
 0$ means that there is no uncertainty on the tag decision and $\eta = 0.5$
 basically corresponds to a random choice and is associated with $d = 0$. These
 predictions are based on the outcome of multivariate classifiers, which
@@ -57,12 +58,13 @@ wrong tags. The product of the tagging efficiency and the squared tagging
 dilution $\effeff = \etag D^2$ is called tagging power or effective tagging
 efficiency. It is widely used as figure of merit for tagging algorithms as it
 states the effective loss in statistics compared to a perfectly tagged sample.
-Ideally, the tagging power is calculated on a per-candidate basis by summing up the dilution of all $N$ signal candidates, with $\omega = 0.5$
-($D=0$) for the untagged candidates, according to
+Ideally, the tagging power is calculated on a per-candidate basis by summing
+up the dilution of all $N$ signal candidates according to
 \begin{equation}
-	\effeff = \frac{1}{N}\sum_{i=1}^{N} (1 - 2\omega(\eta_i))^2\,.
+	\effeff = \frac{1}{N}\sum_{i=1}^{N} (1 - 2\omega(\eta_i))^2\,,
 \label{eq:detector:tagging:taggingpowerperevent}
 \end{equation}
+with $\omega = 0.5$ ($D=0$) for the untagged candidates.
 
 While further information on the basic principles of LHCb's flavour-tagging
 algorithms can be found in Refs.~\cite{LHCb-CONF-2011-003,Grabalosa:1456804},

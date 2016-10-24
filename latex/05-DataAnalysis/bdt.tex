@@ -3,35 +3,36 @@
 \subsection{Multivariate selection}
 \label{sec:dataanalysis:selection:bdt}
 
-In principle, the cut-based selection can be extended by allowing case
-differentiation, \ie connecting sequences with \texttt{OR} requirements, or by
-constructing combinations of variables, like products or ratios. Even more
-elaborate are machine learning algorithms, which more and more enter the field
-of particle physics. These multivariate techniques improve the possibility to
-separate signal from background contributions as they make use of correlations
-between input variables. Software packages, like TMVA~\cite{Hocker:2007ht} or
+More elaborate selection methods are based on machine learning algorithms,
+which more and more enter the field of particle physics. These multivariate
+techniques improve the possibility to separate signal from background
+contributions as they make use of correlations between input variables.
+Software packages, like TMVA~\cite{Hocker:2007ht} or
 scikit-learn~\cite{scikit-learn}, provide implementations of these algorithms.
 
-A simple multivariate classifier is a decision tree, which splits the phase
-space according to repeated decisions on certain variables. Starting from a
-root node the variable and cut value is determined where the best separation
-can be achieved according to a criterion like the Gini index~\cite{giniindex},
-$p \cdot (1-p)$ with $p$ being the purity. At each following node the cut
-value and even the variable used for the separation can be chosen dependent on
-the previous decision. The depth of the tree, \ie the maximal number of
-consecutive decisions, is tunable. When a stop criterion is matched, \eg the
-ratio of candidates reaching a node falls below a predefined threshold, no
-further decisions are applied. The tree is trained with a set of labelled
-data. Each final leaf is classified as signal or background depending on the
-class of the majority of training events ending in that leaf. An improvement
-can be achieved by combining several decision trees to a forest. In this case,
-the classification of an event follows a majority vote of the individual
-trees. Additionally, the impact of the training events is altered by applying
-weights using a procedure called boosting. However, the ability to easily
-interpret the training result vanishes for a Boosted Decision Tree
-(BDT)~\cite{Breiman,Roe}. There are several possibilities how the boosting is
-realised. In the AdaBoost method~\cite{AdaBoost} events that are misidentified
-in the previous tree are weighted by
+A simple multivariate classifier is a decision tree~\cite{Breiman}, which
+splits the phase space according to repeated decisions on certain variables.
+Starting from a root node the variable and cut value is determined where the
+best separation can be achieved according to a criterion like the Gini
+index~\cite{giniindex}, $p \cdot (1-p)$ with $p$ being the signal purity. \ie
+the fraction of signal in the total data sample. At each following node the
+cut value and even the variable used for the separation can be chosen
+dependent on the previous decision. The depth of the tree, \ie the maximal
+number of consecutive decisions, is tunable. When a stop criterion is matched,
+\eg the ratio of candidates reaching a node falls below a predefined
+threshold, no further decisions are applied. The tree is trained with a set of
+labelled data. Each final leaf is classified as signal or background depending
+on the class of the majority of training events ending in that leaf.
+
+An improvement can be achieved by combining several decision trees to a
+forest, in which the classification of an event follows a majority vote
+of the individual trees, \eg in a Random Forest~\cite{RandomForest}.
+
+An alternative is to alter the impact of the training events in a decision
+tree by applying weights. This procedure is called boosting and leads to
+Boosted Decision Trees (BDT)~\cite{Roe}. One possibility how the
+boosting can be realised is the AdaBoost method~\cite{AdaBoost}. Events that
+are misidentified in the previous tree are weighted by
 \begin{align}
 	\alpha = \frac{1 - \eps}{\eps}\,,
 \end{align}
@@ -52,7 +53,13 @@ method~\cite{GradientBoost}. It is based on minimising a defined loss
 function, which describes the deviation between the classification and the
 truth, by calculating the gradient of the loss function.
 
-The importance of a feature in the BDT training can be determined by counting
-how often it is used inside the BDT and by considering how important the cuts
-are in terms of events reaching the corresponding node and in terms of the
-separation power between signal and background candidates.
+The importance of a feature in a (boosted) decision tree can be determined by
+counting how often it is used and by considering how important the cuts are in
+terms of events reaching the corresponding node and in terms of the separation
+power between signal and background candidates.
+
+Another multivariate method is the Artificial Neural Network
+(ANN)~\cite{Denby:1987rk}. It consists of several neurons, divided into input
+units, hidden units and output units. The way how these units are connected,
+the corresponding strength and the effect, either excitatory or inhibitory,
+defines the neural network.

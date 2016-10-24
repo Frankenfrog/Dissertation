@@ -8,8 +8,8 @@ inevitable that some of the candidates do not stem from the signal decay chain
 that one wants to analyse. In fact, most of the reconstructed candidates are
 usually built from random combinations of tracks that have no common physical
 origin. But especially when searching for a very rare signal it is better to
-be careful and at first stage rather keep an event than throwing it away. Of
-course, these background candidates allocate disk space and cost computational
+be careful and at first stage rather keep an event than throwing it away.
+However, this is limited by the available disk space and computational
 resources. Furthermore, the sensitivity of a measurement suffers from
 background contamination. Therefore, a selection needs to be developed that
 separates signal from background candidates. The simplest selection is a
@@ -22,5 +22,7 @@ requirements can easily be understood and connected to event or particle
 properties. Additionally, the efficiency of the requirements can be determined
 individually. To account for dependencies between the variables a grid search
 can be performed, in which the optimal cut values are determined recursively.
-However, a cut-based selection often leads to suboptimal selection
-performances.
+In principle, the cut-based selection can be extended by allowing case
+differentiation, \ie connecting sequences with \texttt{OR} requirements, or by
+constructing combinations of variables, like products or ratios. However, a
+cut-based selection often leads to suboptimal selection performances.

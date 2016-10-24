@@ -3,18 +3,20 @@
 \subsection{Unfolding data distributions using sWeights}
 \label{sec:dataanalysis:selection:splot}
 
-The shape of invariant mass and decay time distributions of signal decays is
-mostly defined by some theoretical considerations that eventually need to be
-modified to account for experimental effects, like resolutions or acceptances.
-However, for background contributions especially the shape of the decay time
-distribution is usually difficult to motivate from first principles.
-Therefore, it is beneficial to statistically remove their contribution. The
-\sPlot technique~\cite{Pivk:2004ty} achieves this goal by unfolding the data
-distributions using weights calculated from yields of an extended maximum
-likelihood fit (see \cref{sec:dataanalysis:maximumlikelihood}). This fit is
-typically performed for the invariant mass distribution where reliable
-parametrisations for signal and background contributions can quite easily be
-found. Based on the fit results sWeights according to
+Another approach to unfold data distributions is to statistically remove
+background contributions by applying weights. To do so, the shape of the
+signal and background contributions for one or several dimensions is needed.
+While the shapes of signal decays are mostly defined by some theoretical
+considerations, which eventually need to be modified to account for
+experimental effects, like resolutions or acceptances, it is usually difficult
+to motivate the shape for background contributions from first principles. An
+observable that has proven to provide a good separation is the invariant mass.
+Reliable parametrisations of the invariant mass distribution of signal and
+background contributions can be found quite easily. In the \sPlot
+technique~\cite{Pivk:2004ty} the weights are calculated from yields of an
+extended maximum likelihood fit (see
+\cref{sec:dataanalysis:maximumlikelihood}). Based on the fit results sWeights
+according to
 \begin{align}
 	\SPlotweight(x_i) = \frac{\sum_{j = 1}^{N_s}\matr{V}_{\text{n}j}f_j(x_i)}{\sum_{k = 1}^{N_s} N_k f_k(x_i)}
 \label{eq:dataanalysis:selection:splot:weightdefinition}
