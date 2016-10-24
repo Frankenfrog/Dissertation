@@ -58,7 +58,7 @@
 
 %%%%%%%%%%%%%%%%
 \usepackage[force]{feynmp-auto}
-\usepackage{tikz-feynman}
+\usepackage[compat=1.1.0]{tikz-feynman}
 \usepackage{tikz}
 \usetikzlibrary{patterns}
 \usepackage{tkz-euclide}
@@ -80,16 +80,24 @@
 \input{BdToJPsiKS_Feynmans}
 \endpgfgraphicnamed
 
-\beginpgfgraphicnamed{pdf/BdToDD_Feynmans}
-\input{BdToDD_Feynmans}
+\beginpgfgraphicnamed{pdf/BdToDD_Tree}
+\input{BdToDD_Tree}
 \endpgfgraphicnamed
 
-\beginpgfgraphicnamed{pdf/BdToDD_Feynmans2}
-\input{BdToDD_Feynmans2}
+\beginpgfgraphicnamed{pdf/BdToDD_Penguin}
+\input{BdToDD_Penguin}
+\endpgfgraphicnamed
+
+\beginpgfgraphicnamed{pdf/BdToDD_Exchange}
+\input{BdToDD_Exchange}
+\endpgfgraphicnamed
+
+\beginpgfgraphicnamed{pdf/BdToDD_Annihilation}
+\input{BdToDD_Annihilation}
 \endpgfgraphicnamed
 
 \beginpgfgraphicnamed{pdf/CKMtriangle}
-\begin{tikzpicture}[scale=0.38]
+\begin{tikzpicture}
 \input{CKMtriangle}
 \end{tikzpicture}
 \endpgfgraphicnamed

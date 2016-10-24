@@ -1,0 +1,24 @@
+% Tree
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex(a1) {$\bquarkbar$};
+    \vertex[right=2cm of a1] (a2) ;
+    \vertex[right=4cm of a2] (a3) {$\cquarkbar$};
+    \vertex[below=3em of a1] (b1) {$\dquark$};
+    \vertex[below=3em of a3] (b2) {$\dquark$};
+    \vertex[above=3em of a3] (c1) {$\cquark$};
+    \vertex[above=3em of c1] (c3) {$\dquarkbar$};
+    \vertex at ($(c1)!0.5!(c3) - (1.5cm,0)$) (c2) ;
+    \diagram* {
+      {[edges=fermion]
+        (a3) -- (a2) -- (a1),
+        (b1) -- (b2),
+        (c3) -- [out=180, in=90] (c2) -- [out=-90, in=180] (c1),
+      },
+      (a2) -- [boson] (c2),
+    };
+    \draw[decoration={brace}, decorate] (b1.south west) -- (a1.north west) node[pos=0.5, left] {$\Bd$};
+    \draw[decoration={brace}, decorate] (c3.north east) -- (c1.south east) node[pos=0.5, right] {$\Dp$};
+    \draw[decoration={brace}, decorate] (a3.north east) -- (b2.south east) node[pos=0.5, right] {$\Dm$};
+  \end{feynman}
+\end{tikzpicture}

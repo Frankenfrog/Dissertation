@@ -1,0 +1,31 @@
+% Exchange
+\begin{tikzpicture}
+  \begin{feynman}
+    \vertex(bbar) {$\bquarkbar$};
+    \vertex[right=3cm of bbar] (i1) ;
+    \vertex[right=3cm of i1] (d2) {$\dquark$};
+    \vertex[below=3em of bbar] (d1) {$\dquark$};
+    \vertex[right=3cm of d1] (i2) ;
+    \vertex[right=3cm of i2] (dbar) {$\dquarkbar$};
+    \vertex[above=3em of d2] (cbar) {$\cquarkbar$};
+    \vertex[below=3em of dbar] (c) {$\cquark$};
+    \vertex at ($(d2)!0.5!(dbar) - (1.5cm,0)$) (i3);
+    \vertex[right=2cm of bbar] (W1) ;
+    \vertex[right=2cm of d1] (W2) ;
+    \diagram* {
+      {[edges=fermion]
+        (cbar) -- (i1),
+        (W1) -- (bbar),
+        (d1) -- (W2),
+        (i2) -- (c),
+        (dbar) -- [out=180, in=-90] (i3) -- [out=90, in=180] (d2),
+      },
+      (W1) -- (i1),
+      (W2) -- (i2),
+      (W1) -- [boson, edge label={$W$}] (W2),
+    };
+    \draw[decoration={brace}, decorate] (d1.south west) -- (bbar.north west) node[pos=0.5, left] {$\Bd$};
+    \draw[decoration={brace}, decorate] (dbar.north east) -- (c.south east) node[pos=0.5, right] {$\Dp$};
+    \draw[decoration={brace}, decorate] (cbar.north east) -- (d2.south east) node[pos=0.5, right] {$\Dm$};
+  \end{feynman}
+\end{tikzpicture}

@@ -1,13 +1,19 @@
-\tkzInit[xmin=0,xmax=10,ymin=0,ymax=10]
+\tkzInit[xmin=0,xmax=7.5,ymin=0,ymax=4.5]
 \tkzDrawX[noticks,label=Re]
-\tkzDrawY[noticks,label=Im]
-\tkzDefPoint(0,0){A}
-\tkzDefPoint(4,6){C}
-\tkzDefPoint(8,0){B}
+\tkzDrawY[noticks,label=$\mathcal{I}m$]
+
+\tkzDefPoint[label=below left:$0$](0,0){C}
+\tkzDefPoint[label=above:{($\bar{\rho},\bar{\eta}$)}](2.3,3){A}
+\tkzDefPoint[label=below:$1$](5.7,0){B}
+
 \tkzDrawPolygon(A,B,C)
-\tkzMarkAngle (A,C,B)
-\tkzLabelAngle[pos = 1.5](A,C,B){$\alpha$}
-\tkzMarkAngle (C,B,A)
-\tkzLabelAngle[pos = 1.5](C,B,A){$\beta$}
-\tkzMarkAngle (B,A,C)
-\tkzLabelAngle[pos = 1.5](C,A,B){$\gamma$}
+
+\tkzMarkAngle[size=1](B,C,A)
+\tkzLabelAngle[pos = 0.6](B,C,A){$\gamma$}
+\tkzMarkAngle[size=1](A,B,C)
+\tkzLabelAngle[pos = 0.75](A,B,C){$\beta$}
+\tkzMarkAngle[size=1](C,A,B)
+\tkzLabelAngle[pos = 0.6](C,A,B){$\alpha$}
+
+\tkzLabelSegment[right=5pt,pos=0.4](A,B){$R_t$}
+\tkzLabelSegment[left=5pt,pos=0.4](A,C){$R_b$}
