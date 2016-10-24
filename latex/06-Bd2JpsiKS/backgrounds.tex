@@ -33,57 +33,53 @@ combinatorial background. First of all, the time-integrated asymmetry
 \end{align}
 is calculated for both track type categories and separately for the OS tagging
 combination and the SS\pion tagging algorithm. Out of the four values listed
-in \cref{tab:bkgtimeintegratedasymm} only the one for the downstream OS tagged
-sample, which has the highest statistics, stands out as it disfavours \CP
+in \cref{tab:bd2jpsiks:bkgtimeintegratedasymm} only the one for the downstream OS tagged
+sample, which has the highest statistics, stands out, as it disfavours \CP
 symmetry at more than \num{3} standard deviations.
-%
-\begin{table}[!htb]
+\begin{table}[htb]
 \centering
-\caption{Time-integrated asymmetry of sweighted background distributions for
-downstream and long track OS and SS\pion tagged events.}
-\label{tab:bkgtimeintegratedasymm}
-\begin{tabular}{lr@{$\,\pm\,$}l}
+\caption{Decay-time-integrated asymmetry of sweighted background distributions
+and p-value for compatibility of decay-time-dependent asymmetry with flat line
+at zero for downstream (DD) and long track (LL) OS and SS\pion tagged events.}
+\label{tab:bd2jpsiks:bkgtimeintegratedasymm}
+\begin{tabular}{lr@{$\,\pm\,$}ll}
 	\toprule
-category    & \multicolumn{2}{c}{$\mathcal{A}_\text{bkg}^{\text{int}}$}\\
+category    & \multicolumn{2}{c}{$\mathcal{A}_\text{bkg}^{\text{int}}$} & p-value\\
 \midrule
-DD OS       & $0.017$     & $0.005$ \\
-DD SS\pion  & $-0.016$    & $0.011$ \\
-LL OS       & $-0.005$    & $0.012$ \\
-LL SS\pion  & $0.044$     & $0.034$ \\
+DD OS       & $0.017$     & $0.005$ & 0.100 \\
+DD SS\pion  & $-0.016$    & $0.011$ & 0.437 \\
+LL OS       & $-0.005$    & $0.012$ & 0.617 \\
+LL SS\pion  & $0.044$     & $0.034$ & 0.969 \\
 \bottomrule
 \end{tabular}
 \end{table}
-%
-But even time-integrated asymmetries compatible with zero do not exclude
-time-dependent asymmetries. The latter are investigated by dividing the data
-sample in ten bins of the decay time. The bin size is chosen to increase
-exponentially. In \cref{fig:background_asymmetry_sweighted} again the four
-categories of before are plotted.
-%
-\begin{figure}[!htb]
+
+But even decay-time-integrated asymmetries compatible with zero do not exclude
+decay-time-dependent asymmetries. The latter are investigated by plotting the
+raw background asymmetry in ten bins of the decay time with bin sizes chosen
+to increase exponentially (see \cref{fig:background_asymmetry_sweighted}).
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.49\textwidth]{06-Bd2JpsiKS/tikz/pdf/BackgroundAsymmetryByHand_DD_OS_data.pdf}
 \includegraphics[width=0.49\textwidth]{06-Bd2JpsiKS/tikz/pdf/BackgroundAsymmetryByHand_DD_SSPion_data.pdf}\\
 \includegraphics[width=0.49\textwidth]{06-Bd2JpsiKS/tikz/pdf/BackgroundAsymmetryByHand_LL_OS_data.pdf}
 \includegraphics[width=0.49\textwidth]{06-Bd2JpsiKS/tikz/pdf/BackgroundAsymmetryByHand_LL_SSPion_data.pdf}
 \caption{Raw background asymmetry in sweighted data with logarithmic binning.
-DD on top, LL on bottom plots. OS tagged candidates on the left, SS\pion tagged
+DD in top, LL in bottom plots. OS tagged candidates on the left, SS\pion tagged
 candidates on the right side.}
 \label{fig:background_asymmetry_sweighted}
 \end{figure}
-%
-It's difficult to judge by eye if there is a significant oscillation. So,
-\chisq-tests against the null-hypothesis, \ie a flat line at zero, are
-performed and the corresponding $p$-values are calculated. The results are
-\num{0.100} for DD OS, \num{0.437} for DD SS, \num{0.617} for DD SS, and
-\num{0.969} for LL OS. None of the $p$-values is very low so the deviations
-from zero can be explained with statistical fluctuations. The same procedure
-(mass fit \to sWeights \to histograms of $\mathcal{A}_{\text{bkg}}$) is
-performed with cocktail MC consisting of signal MC and background Toy MC.
-Here, no asymmetry is generated for the background and the resulting
-$p$-values are very similar to the ones for the nominal data sample. Finally,
-an unbinned likelihood fit is performed to the sweighted background decay time
-distribution using two/three exponentials with different pseudo-lifetimes and
-allowing for tagging-dependent asymmetries in the PDF. All asymmetry
-parameters are compatible with zero at a significance of two standard
-deviations.
+However, it is difficult to judge by eye if there is a significant
+oscillation. Thus, \chisq-tests against the null-hypothesis, \ie a flat line
+at zero, are performed and the corresponding $p$-values are calculated (see
+\cref{tab:bd2jpsiks:bkgtimeintegratedasymm}). None of the $p$-values is very
+low, so the deviations from zero can be explained with statistical
+fluctuations. The same procedure (mass fit \to sWeights \to histograms of
+$\mathcal{A}_{\text{bkg}}$) is performed with cocktail MC consisting of signal
+MC and background Toy MC\todo{Toy MC?}. Here, no asymmetry is generated for
+the background and the resulting $p$-values are very similar to the ones for
+the nominal data sample. Finally, an unbinned likelihood fit is performed to
+the sweighted background decay time distribution using two/three exponentials
+with different pseudo-lifetimes and allowing for tagging-dependent asymmetries
+in the PDF. All asymmetry parameters are compatible with zero at a
+significance of two standard deviations.

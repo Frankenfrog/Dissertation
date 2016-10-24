@@ -12,7 +12,7 @@ only the combinatorial background component needs to be parametrised.
 
 The mass distribution, which enables the best discrimination of the two
 components, is modelled by a modified Hypatia PDF~\cite{Santos:2013ky} and an
-exponential function. All parameters are allowed to differ between the two
+exponential function. All shape parameters are allowed to differ between the two
 track type categories. The four tail parameters of the signal parametrisation
 are taken from fits to simulated events.
 
@@ -36,11 +36,11 @@ mistagging. Furthermore, it is convolved with the decay time resolution model
 presented in \cref{sec:bd2jpsiks:decaytime:resolution} and multiplied by the
 time-dependent efficiency correction for low and high decay times developed in
 \cref{sec:bd2jpsiks:decaytime:acceptance}. The background decay time
-distribution is parametrised with the sum of exponential functions. How many
-of those give the best description in the various categories, in which the
-whole data sample can be divided into, is determined in extensive studies
-using sweighted background distributions (see
-\cref{sec:bd2jpsiks:backgrounds}).
+distribution is parametrised with the sum of exponential functions.
+In extensive studies using sweighted background distributions (see
+\cref{sec:bd2jpsiks:backgrounds}) it is determined how many exponential
+functions give the best description for the categories, into which the whole
+data sample is divided.
 
 Lognormal distributions have been found to fit best when describing the decay
 time error distributions. A combination of double and single lognormals with
@@ -52,7 +52,7 @@ downstream and the long track distributions differ as can be seen in
 \includegraphics[width=0.49\textwidth]{06-Bd2JpsiKS/tikz/pdf/obsTimeErr_downstream_pull_logy.pdf}
 \includegraphics[width=0.49\textwidth]{06-Bd2JpsiKS/tikz/pdf/obsTimeErr_longtrack_pull_logy.pdf}
 \caption{
-Time error distributions of downstream (left) and long track (right). The solid black line
+Decay-time error distributions of downstream (left) and long track (right). The solid black line
 shows the fit projection, while the blue dashed (green dotted) line shows the
 signal (background) component.}
 \label{fig:bd2jpsiks:nominalfit:time_error}
