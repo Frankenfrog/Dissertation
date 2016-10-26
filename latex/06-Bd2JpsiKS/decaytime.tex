@@ -15,12 +15,11 @@ The long-lived components are parametrised with two exponentials, which have
 different pseudo lifetimes and which are themselves convolved with the decay
 time resolution model. The decay time resolution depends on characteristics of
 the event. The DTF provides predictions for the per-event decay time
-resolution $\sigma_t$, which can be used as the width of a Gaussian
-resolution model. However, these predictions are not perfect and a
-certain calibration needs to be applied. Additionally, to account for
-different sources causing the decay time resolution an effective model with
-two Gaussian functions, which share a common mean but have different
-calibrations, is used.
+resolution $\sigma_t$, which can be used as the width of a Gaussian resolution
+model. However, these predictions are not perfect and a calibration needs to
+be applied. Additionally, to account for different sources causing the decay
+time resolution an effective model with two Gaussian functions, which share a
+common mean but have different calibrations, is used.
 
 The first step is to find a reasonable calibration model. A linear ($f_1$) and
 a quadratic ($f_2$) calibration model are tested:
@@ -78,12 +77,12 @@ and an \emph{exclusively biased} subset (EB), defined by
 \begin{description}\small
   \item[EB] $\equiv$ \UseVerb{ExclusivelyBiased}
 \end{description}
-
-For both samples the relative efficiency is calculated as the ratio between
-the number of signal candidates fulfilling these trigger requirements and
-those fulfilling the requirements of an unbiased collection of trigger lines
-(\texttt{Hlt1DiMuonHighMass \&\& Hlt2DiMuonJPsi}). A simultaneous fit of the
-mass distribution in ten bins of the decay time is performed to obtain the
+Here, the TOS decisions with respect to the \JPsi meson of these trigger lines
+are used. For both samples the relative efficiency is calculated as the ratio
+between the number of signal candidates fulfilling these trigger requirements
+and those fulfilling the requirements of an unbiased collection of trigger
+lines (\texttt{Hlt1DiMuonHighMass \&\& Hlt2DiMuonJPsi}). A simultaneous fit of
+the mass distribution in ten bins of the decay time is performed to obtain the
 signal yield ratios. The resulting histograms (see
 \cref{fig:bd2jpsiks:decaytime:acceptance:splines}) are fitted with cubic
 splines using the bin centres as knots for the splines. In the fit of the
