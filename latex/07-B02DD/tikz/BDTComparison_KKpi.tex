@@ -512,15 +512,15 @@
 \draw [c,line width=1.8] (16.72,2.31916) -- (16.8139,2.31916);
 \draw [c,line width=1.8] (16.9141,2.31916) -- (17.008,2.31916);
 \foreach \P in {(16.864,2.31916)}{\draw[mark options={color=c,fill=c},mark size=2.402402pt,mark=*] plot coordinates {\P};}
-\draw [anchor=base west] (12.88,12.6658) node[scale=1.58718, color=c, rotate=0]{LHCb};
+\draw [anchor=base west, align=left] (4,11.5) node[scale=1.58718, color=c, rotate=0]{LHCb inofficial\\\BdToDD};
 \definecolor{c}{rgb}{1,1,1};
 \draw [color=c, fill=c] (11.92,10.7947) rectangle (17.68,12.234);
 \definecolor{c}{rgb}{0,0,0};
-\draw [anchor=base west] (13.36,11.7123) node[scale=1.22519, color=c, rotate=0]{Signal MC};
-\draw [c,line width=1.8] (12.64,11.6583) -- (12.64,12.0901);
-\foreach \P in {(12.64,11.8742)}{\draw[mark options={color=c,fill=c},mark size=2.402402pt,mark=*] plot coordinates {\P};}
-\draw [anchor=base west] (13.36,10.9926) node[scale=1.22519, color=c, rotate=0]{sweighted data};
+\draw [anchor=base west] (13.36,12.5) node[scale=1.22519, color=c, rotate=0]{Signal MC};
+\draw [c,line width=1.8] (12.64,12.5) -- (12.64,12.9);
+\foreach \P in {(12.64,12.7)}{\draw[mark options={color=c,fill=c},mark size=2.402402pt,mark=*] plot coordinates {\P};}
+\draw [anchor=base west] (13.36,11.8) node[scale=1.22519, color=c, rotate=0]{sweighted data};
 \definecolor{c}{rgb}{0,0,1};
-\draw [c,line width=1.8] (12.64,10.9387) -- (12.64,11.3705);
-\foreach \P in {(12.64,11.1546)}{\draw[mark options={color=c,fill=c},mark size=2.402402pt,mark=*] plot coordinates {\P};}
+\draw [c,line width=1.8] (12.64,11.8) -- (12.64,12.2);
+\foreach \P in {(12.64,12.0)}{\draw[mark options={color=c,fill=c},mark size=2.402402pt,mark=*] plot coordinates {\P};}
 \end{tikzpicture}

@@ -35,7 +35,16 @@ higher masses. The parameters $\alpha_1$ to $\alpha_3$ of the power law
 functions, the ratio between the widths, and the fractions $f_1$ and $f_2$
 between the Crystal Ball functions are determined from a fit to the invariant
 $\Dp\Dm$ mass distribution of $\BdToDD$ signal MC in the range
-\SIrange{4800}{5400}{\MeVcc}. This MC sample consists of both final states
+\SIrange{4800}{5400}{\MeVcc}.
+\begin{figure}[!htb]
+\centering
+\includegraphics[width=0.49\textwidth]{07-B02DD/tikz/pdf/obsMass_MC.pdf}
+\caption{Mass distribution of the \BdToDD signal MC sample overlaid with the
+projection of the fitted PDF. The blue dotted, green dashed and turquoise
+short-dash-dotted lines represent the three Crystal Ball components.}%
+\label{fig:b02dd:massfit:mc}
+\end{figure}
+This MC sample consists of both final states
 generated in the ratio of the current world averages~\cite{PDG2016}. Apart
 from the mass range the full selection is applied. The background categories
 \num{0}, \ie \texttt{Signal}, and \num{50}, \ie \texttt{LowMassBkg} with
@@ -49,7 +58,7 @@ resolution between simulation and data. The fit results are listed in
 with the projection of the PDF is given in
 \cref{fig:b02dd:massfit:mc}.
 
-\begin{table}[tbh]
+\begin{table}[htb]
 \centering
 \caption{Fit results of the mass fit to \BdToDD signal MC.}%
 \label{tab:b02dd:massfit:mc_fitresults}
@@ -69,15 +78,6 @@ with the projection of the PDF is given in
   \bottomrule
 \end{tabular}
 \end{table}
-
-\begin{figure}[tbh]
-\centering
-\includegraphics[width=0.49\textwidth]{07-B02DD/tikz/pdf/obsMass_MC.pdf}
-\caption{Mass distribution of the \BdToDD signal MC sample overlaid with the
-projection of the fitted PDF. The blue dotted, green dashed and turquoise
-short-dash-dotted lines represent the three Crystal Ball components.}%
-\label{fig:b02dd:massfit:mc}
-\end{figure}
 
 \paragraph{$\boldsymbol{\BsToDD}$ background:}
 Apart from the $\Bd$ also the heavier $\Bs$ can decay to the $\Dp\Dm$ final state.
@@ -100,7 +100,7 @@ invariant mass distribution. The fit results are listed in
 taken from this fit. The width parameters as well as the peak position are
 floating parameters in the fit to data.
 
-\begin{table}[tbh]
+\begin{table}[htb]
 \centering
 \caption{Fit results of the mass fit to \BdToDsD MC.}
 \label{tab:massfit:DsDMC}
@@ -118,7 +118,7 @@ floating parameters in the fit to data.
 \end{tabular}
 \end{table}
 
-\begin{figure}[tbh]
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.49\textwidth]{07-B02DD/tikz/pdf/DsDMass_MC.pdf}
 \caption{Mass distribution of the $\BdToDsD$ MC sample reconstructed as
@@ -140,7 +140,9 @@ exponential function with individual slopes
 $\param{\beta}{\Kpipi}{}$ and $\param{\beta}{\KKpi}{}$ based on the number of
 kaons in the final state.
 
-\bigskip\noindent
+\FloatBarrier
+\paragraph{Total fit}\bigskip
+
 In \cref{tab:b02dd:FitResultsMass} the results of the floating shape
 parameters of the mass fit to data are shown.
 %
@@ -174,9 +176,9 @@ of splitting them to achieve an improved mass description. In
 \cref{fig:massfit} the complete data-sample is plotted overlaid with the PDF
 projections and its components.
 
-\begin{figure}[htb]
+\begin{figure}[!ht]
 \centering
-\includegraphics[width=0.5\textwidth]{07-B02DD/tikz/pdf/obsMass_summed_pull.pdf}
+\includegraphics[width=0.49\textwidth]{07-B02DD/tikz/pdf/obsMass_summed_pull.pdf}
 \caption{Plot of the reconstructed mass of the \BdToDD data sample with the
 projected \PDF and pull distribution.
 % Besides the data points and the full \PDF (solid black) the projections of the
@@ -196,5 +198,3 @@ candidates in the 2012 subsample than in the 2011 subsample and this can
 indeed be observed for the fitted yields. Additionally, there are around five
 times more signal candidates in the final state with two kaons than with three
 kaons, which also meets the expectations from the branching ratios.
-
-\FloatBarrier

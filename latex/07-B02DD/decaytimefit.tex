@@ -87,7 +87,32 @@ Only after rescaling the sWeights via
   w_i = w_i \frac{\sum w_i}{\sum w_i^2}\,,
 \end{align}
 correct asymmetric uncertainty estimates are delivered by \minos, which is
-\root's standard method to analyse the likelihood shape. To check if the
+\root's standard method to analyse the likelihood shape. A plot of
+the decay time distribution and the projection of the acceptance model are
+shown in \cref{fig:b02dd:decaytimefit}. Good agreement between the latter and
+the shape on signal MC (cf. \cref{fig:b02dd:decaytimefit:acceptance_MC}) can
+be observed but the low statistics leading to rather large uncertainties
+indicated by the error band diminishes the significance of the comparison.
+
+\begin{figure}[htb]
+\hspace*{\fill}
+\begin{minipage}{0.4\textwidth}
+\includegraphics[width=\textwidth]{07-B02DD/tikz/pdf/obsTime_summed_pull_logy.pdf}
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+\includegraphics[width=\textwidth]{07-B02DD/tikz/pdf/Acceptancespline_nolog.pdf}
+\end{minipage}
+\hspace*{\fill}
+\caption{Plot of the decay time distribution of the background-subtracted \BdToDD
+data sample with the projection of the \PDF and the pull distribution on the
+left. The y-axis is plotted in logarithmic scale. Plot of the nominal decay
+time acceptance model on the right. The red area indicates the 1\,$\sigma$
+error band taking into account the statistical uncertainties.}
+\label{fig:b02dd:decaytimefit}
+\end{figure}
+
+To check if the
 coverage is guaranteed the bootstrapping method is applied. The nominal fit
 procedure, \ie performing the mass fit, calculating the sWeights and fitting
 the weighted tagged decay time distribution, is executed and the fit results
@@ -117,53 +142,7 @@ distributions:
     \sigma_{\SDD}(\text{bootstrapping}) &= \,^{+0.17}_{-0.16} \,, \\
     \sigma_{\CDD}(\text{bootstrapping}) &= \,^{+0.18}_{-0.17} \,.
 \end{align}
-These uncertainties match the nominal ones from \minos quite well. A plot of
-the decay time distribution and the projection of the acceptance model are
-shown in \cref{fig:b02dd:decaytimefit}. Good agreement between the latter and
-the shape on signal MC (cf. \cref{fig:b02dd:decaytimefit:acceptance_MC}) can
-be observed but the low statistics leading to rather large uncertainties
-indicated by the error band diminishes the significance of the comparison.
-
-\begin{figure}[htb]
-\hspace*{\fill}
-\begin{minipage}{0.4\textwidth}
-\includegraphics[width=\textwidth]{07-B02DD/tikz/pdf/obsTime_summed_pull_logy.pdf}
-\end{minipage}
-\hfill
-\begin{minipage}{0.5\textwidth}
-\includegraphics[width=\textwidth]{07-B02DD/tikz/pdf/Acceptancespline_nolog.pdf}
-\end{minipage}
-\hspace*{\fill}
-\caption{Plot of the decay time distribution of the background-subtracted \BdToDD
-data sample with the projection of the \PDF and the pull distribution on the
-left. The y-axis is plotted in logarithmic scale. Plot of the nominal decay
-time acceptance model on the right. The red area indicates the 1\,$\sigma$
-error band taking into account the statistical uncertainties.}
-\label{fig:b02dd:decaytimefit}
-\end{figure}
-
-Apart from a quite high positive correlation between the parameters of the
-acceptance spline function and the already quoted correlation of about
-\num{0.5} between $\SDD$ and $\CDD$, which is expected from first principles
-(see Ref.~\cite{LHCb-ANA-2011-004}), no large correlation between fitted parameters
-is present as can be seen from the correlation matrix visualised in
-\cref{fig:b02dd:decaytimefit:FullFitCorrMatrixHotCold}. A possible correlation
-between $\dm$ and $\CDD$ is significantly reduced by the constraint applied on $\dm$,
-which is a lot tighter than the sensitivity accessible from the data sample.
-When releasing this constraint the correlation coefficient becomes \num{-0.8}.
-But the sensitivity on $\CDD$ would significantly decrease in this scenario, so
-the constraint on $\dm$ is maintained in the nominal setup.
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.5\textwidth]{07-B02DD/tikz/pdf/FitResultsCorrMatrix_RedBlueDiscrete_wText.pdf}
-\caption{Visualised correlation matrix of the fit parameters in the decay time
-fit to data. Positive correlations are represented by the red palette on the $z$ axis,
-while negative correlations are represented by the blue palette of the $z$
-axis.}
-\label{fig:b02dd:decaytimefit:FullFitCorrMatrixHotCold}
-\end{figure}
-
+These uncertainties match the nominal ones from \minos quite well.
 The 1D likelihood scans in \cref{fig:b02dd:decaytimefit:1DLLScan} show a nice
 parabolic shape with a clear minimum.
 \begin{figure}[htb]
@@ -173,6 +152,30 @@ parabolic shape with a clear minimum.
 \caption{One-dimensional likelihood profile scans for $\SDD$ and $\CDD$.}
 \label{fig:b02dd:decaytimefit:1DLLScan}
 \end{figure}
+
+Apart from a quite high positive correlation between the parameters of the
+acceptance spline function and the already quoted correlation of about
+\num{0.5} between $\SDD$ and $\CDD$, which is expected from first principles
+(see Ref.~\cite{LHCb-ANA-2011-004}), no large correlation between fitted parameters
+is present as can be seen from the correlation matrix visualised in
+\cref{fig:b02dd:decaytimefit:FullFitCorrMatrixHotCold}.
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{07-B02DD/tikz/pdf/FitResultsCorrMatrix_RedBlueDiscrete_wText.pdf}
+\caption{Visualised correlation matrix of the fit parameters in the decay time
+fit to data. Positive correlations are represented by the red palette on the $z$ axis,
+while negative correlations are represented by the blue palette of the $z$
+axis.}
+\label{fig:b02dd:decaytimefit:FullFitCorrMatrixHotCold}
+\end{figure}
+A possible correlation
+between $\dm$ and $\CDD$ is significantly reduced by the constraint applied on $\dm$,
+which is a lot tighter than the sensitivity accessible from the data sample.
+When releasing this constraint the correlation coefficient becomes \num{-0.8}.
+But the sensitivity on $\CDD$ would significantly decrease in this scenario, so
+the constraint on $\dm$ is maintained in the nominal setup.
+
+
 
 In \cref{fig:b02dd:decaytimefit:asymmetry} the signal yield asymmetry is
 plotted in eight bins of the decay time. A binned $\chisq$-fit to this signal
