@@ -1,0 +1,158 @@
+\documentclass[12pt,a4paper]{article}
+
+% FONTS
+\usepackage{microtype}
+\usepackage{graphicx}  % to include figures (can also use other packages)
+\usepackage{color}
+\usepackage{fancyvrb}
+\usepackage{scalefnt}
+
+% LAYOUT
+\textheight=230mm
+\textwidth=160mm
+\oddsidemargin=7mm
+\evensidemargin=-10mm
+\topmargin=-10mm
+\headsep=20mm
+\columnsep=5mm
+\addtolength{\belowcaptionskip}{0.5em}
+
+\renewcommand{\textfraction}{0.01}
+\renewcommand{\floatpagefraction}{0.99}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.9}
+
+
+\setlength{\hoffset}{-2cm}
+\setlength{\voffset}{-2cm}
+% Page defaults ...
+\topmargin=0.5cm
+\oddsidemargin=2.5cm
+\textwidth=16cm
+\textheight=22cm
+% Allow the page size to vary a bit ...
+\raggedbottom
+% To avoid Latex to be too fussy with line breaking ...
+\sloppy
+
+% MATH
+\usepackage{amsmath} % Adds a large collection of math symbols
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{upgreek} % Adds in support for greek letters in roman typeset
+
+\usepackage{siunitx}
+% Unit typesetting
+\sisetup{
+  detect-weight = true, 
+  separate-uncertainty=true,
+  uncertainty-separator = {\,},
+  list-units = single
+}
+
+\usepackage{ifthen} % for conditional statements
+\usepackage{xspace} % To avoid problems with missing or double spaces after predefined symbols
+\newboolean{uprightparticles}
+\setboolean{uprightparticles}{false} %True for upright particle symbols
+\input{../../97-Symbols/lhcb-symbols-def}
+\input{../../97-Symbols/personal-definitions}
+
+%%%%%%%%%%%%%%%%
+\usepackage[force]{feynmp-auto}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.12}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+\pgfrealjobname{all_figures}
+
+\begin{document}
+
+\beginpgfgraphicnamed{pdf/SM}
+\begin{tikzpicture}
+\node[minimum width=2cm, minimum height=2cm, rounded corners, draw, very thick, green!80!black] (nue) at (1.0,1.0) {};
+\node[circle, minimum size=1cm, inner sep=0pt, font=\large, fill=green!80!black] at (1.0,1.0) {$\neue$};
+\node[minimum width=2cm, minimum height=2cm, rounded corners, draw, very thick, green!80!black] (e) at (1.0,3.2) {};
+\node[circle, minimum size=1cm, inner sep=0pt, font=\large, fill=green!80!black] at (1.0,3.2) {$e$};
+\node[minimum width=2cm, minimum height=2cm, rounded corners, draw, very thick, red!80] (d) at (1.0,5.4) {};
+\node[circle, minimum size=1cm, inner sep=0pt, font=\large, fill=red!80] at (1.0,5.4) {$d$};
+\node[minimum width=2cm, minimum height=2cm, rounded corners, draw, very thick, red!80] (u) at (1.0,7.6) {};
+\node[circle, minimum size=1cm, inner sep=0pt, font=\large, fill=red!80] at (1.0,7.6) {$u$};
+\node[minimum width=2cm, minimum height=2cm, rounded corners, draw, very thick, green!80!black] (num) at (3.2,1) {};
+\node[circle, minimum size=1cm, inner sep=0pt, font=\large, fill=green!80!black] at (3.2,1) {$\neum$};
+\node[minimum width=2cm, minimum height=2cm, rounded corners, draw, very thick, green!80!black] (mu) at (3.2,3.2) {};
+\node[circle, minimum size=1cm, inner sep=0pt, font=\large, fill=green!80!black] at (3.2,3.2) {$\mu$};
+\node[minimum width=2cm, minimum height=2cm, rounded corners, draw, very thick, red!80] (s) at (3.2,5.4) {};
+\node[circle, minimum size=1cm, inner sep=0pt, font=\large, fill=red!80] at (3.2,5.4) {$s$};
+\node[minimum width=2cm, minimum height=2cm, rounded corners, draw, very thick, red!80] (c) at (3.2,7.6) {};
+\node[circle, minimum size=1cm, inner sep=0pt, font=\large, fill=red!80] at (3.2,7.6) {$c$};
+\node[minimum width=2cm, minimum height=2cm, rounded corners, draw, very thick, green!80!black] (nut) at (5.4,1.0) {};
+\node[circle, minimum size=1cm, inner sep=0pt, font=\large, fill=green!80!black] at (5.4,1.0) {$\neut$};
+\node[minimum width=2cm, minimum height=2cm, rounded corners, draw, very thick, green!80!black] (tau) at (5.4,3.2) {};
+\node[circle, minimum size=1cm, inner sep=0pt, font=\large, fill=green!80!black] at (5.4,3.2) {$\tau$};
+\node[minimum width=2cm, minimum height=2cm, rounded corners, draw, very thick, red!80] (b) at (5.4,5.4) {};
+\node[circle, minimum size=1cm, inner sep=0pt, font=\large, fill=red!80] at (5.4,5.4) {$b$};
+\node[minimum width=2cm, minimum height=2cm, rounded corners, draw, very thick, red!80] (t) at (5.4,7.6) {};
+\node[circle, minimum size=1cm, inner sep=0pt, font=\large, fill=red!80] at (5.4,7.6) {$t$};
+\node[minimum width=2cm, minimum height=2cm, rounded corners, draw, very thick, blue!50] (W) at (8.0,1.0) {};
+\node[circle, minimum size=1cm, inner sep=0pt, font=\large, fill=blue!50] at (8.0,1.0) {$\Wpm$};
+\node[minimum width=2cm, minimum height=2cm, rounded corners, draw, very thick, blue!50] (Z) at (10.2,1.0) {};
+\node[circle, minimum size=1cm, inner sep=0pt, font=\large, fill=blue!50] at (10.2,1.0) {$\Z$};
+\node[minimum width=2cm, minimum height=2cm, rounded corners, draw, very thick, blue!50] (ph) at (8.0,3.2) {};
+\node[circle, minimum size=1cm, inner sep=0pt, font=\large, fill=blue!50] at (8.0,3.2) {$\gamma$};
+\node[minimum width=2cm, minimum height=2cm, rounded corners, draw, very thick, blue!50] (g) at (10.2,3.2) {};
+\node[circle, minimum size=1cm, inner sep=0pt, font=\large, fill=blue!50] at (10.2,3.2) {$g$};
+\node[minimum width=2cm, minimum height=2cm, rounded corners, draw, very thick, orange] (H) at (9.1,6.5) {};
+\node[circle, minimum size=1cm, inner sep=0pt, font=\large, fill=orange] at (9.1,6.5) {$H$};
+
+
+\node[align=center, font=\tiny] at (1.0,0.25) {electron\\neutrino};
+\node[font=\tiny] at (1.0,2.5) {electron};
+\node[font=\tiny] at (1.0,4.7) {down};
+\node[font=\tiny] at (1.0,6.9) {up};
+\node[align=center, font=\tiny] at (3.2,0.25) {muon\\neutrino};
+\node[font=\tiny] at (3.2,2.5) {muon};
+\node[font=\tiny] at (3.2,4.7) {strange};
+\node[font=\tiny] at (3.2,6.9) {charm};
+\node[font=\tiny] at (5.4,2.5) {tau};
+\node[align=center, font=\tiny] at (5.4,0.25) {tau\\neutrino};
+\node[font=\tiny] at (5.4,4.7) {bottom};
+\node[font=\tiny] at (5.4,6.9) {top};
+\node[font=\tiny] at (8,0.3) {W boson};
+\node[align=center, font=\tiny] at (10.2,0.3) {Z boson};
+\node[font=\tiny] at (8,2.5) {photon};
+\node[font=\tiny] at (10.2,2.5) {gluon};
+\node[font=\tiny] at (9.1,5.8) {Higgs boson};
+
+\node[font=\tiny, align=left] at (0.85,3.77) {\SI{0.511}{\mevcc}\\$-1$\\$1/2$};
+\node[align=left, font=\tiny] at (0.6,1.57) {\SI{<2}{\evcc}\\$0$\\$1/2$};
+\node[font=\tiny, align=left] at (0.7,5.97) {\SI{4.7}{\mevcc}\\$-1/3$\\$1/2$};
+\node[font=\tiny, align=left] at (0.7,8.17) {\SI{2.2}{\mevcc}\\$2/3$\\$1/2$};
+\node[font=\tiny, align=left] at (3.1,3.77) {\SI{105.7}{\mevcc}\\$-1$\\$1/2$};
+\node[align=left, font=\tiny] at (3.1,1.57) {\SI{<0.19}{\mevcc}\\$0$\\$1/2$};
+\node[font=\tiny, align=left] at (2.9,5.97) {\SI{96}{\mevcc}\\$-1/3$\\$1/2$};
+\node[font=\tiny, align=left] at (3.0,8.17) {\SI{1.27}{\gevcc}\\$2/3$\\$1/2$};
+\node[font=\tiny, align=left] at (5.25,3.77) {\SI{1.777}{\gevcc}\\$-1$\\$1/2$};
+\node[align=left, font=\tiny] at (5.3,1.57) {\SI{<18.2}{\mevcc}\\$0$\\$1/2$};
+\node[font=\tiny, align=left] at (5.2,5.97) {\SI{4.18}{\gevcc}\\$-1/3$\\$1/2$};
+\node[font=\tiny, align=left] at (5.3,8.17) {\SI{173.21}{\gevcc}\\$2/3$\\$1/2$};
+\node[font=\tiny, align=left] at (7.9,1.6) {\SI{80.385}{\gevcc}\\$\pm1$\\$1$};
+\node[align=left, font=\tiny] at (10.2,1.6) {\SI{91.1876}{\gevcc}\\$0$\\$1$};
+\node[font=\tiny, align=left] at (7.15,3.8) {$0$\\$0$\\$1$};
+\node[font=\tiny, align=left] at (9.35,3.8) {$0$\\$0$\\$1$};
+\node[font=\tiny, align=left] at (9.0,7.1) {\SI{125.09}{\gevcc}\\$0$\\$0$};
+
+\node[rotate=90, green!80!black, font=\large] at ($(e)!0.5!(nue) - (1.3cm,0)$) {Leptons};
+\node[rotate=90, red, font=\large] at ($(u)!0.5!(d) - (1.3cm,0)$) {Quarks};
+\node[blue!50, font=\large] at ($(ph)!0.5!(g) + (0,1.3cm)$) {Gauge Bosons};
+\node[font=\tiny, align=left] at (-0.5,8.125) {mass\\charge\\spin};
+
+\end{tikzpicture}
+\endpgfgraphicnamed
+
+\end{document}
