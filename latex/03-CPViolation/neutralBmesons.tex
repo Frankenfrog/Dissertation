@@ -22,20 +22,22 @@ loops involving charged currents as shown in the Feynman diagrams in
 \end{figure}
 The corresponding decay amplitude is given by
 \begin{align}
-	\mathcal{A}(\Bdb\!\to\Bd) \propto \frac{g_2^4}{16\,\pi^2}(\Vtb\Vtds)^2 \frac{\bra{\Bd}(\dquarkbar_L\gamma_\mu\bquark_L)(\dquarkbar_L\gamma^\mu\bquark_L)\ket{\Bdb}}{M_W^2}S(x_t)\,,
+	\bra{\Bdb}H_{\textrm{eff}}\ket{\Bd} = \mathcal{A}(\Bdb\!\to\Bd) = \frac{g^4}{6\,\pi^2\,M_W^2}(\Vtb\Vtds)^2 B_{\Bd} F_{\Bd}^2 m_{\Bd}^2 \eta_{2B} S(x_t)\,,
 \label{eq:cpviolation:mixingamplitude}
 \end{align}
-\todo{probably typo in book}
-with the \W boson mass $M_W$, the squared fraction of the top quark mass $x_t
-= m_t^2/M_W^2$ and the Inami-Lim function~\cite{Inami:1980fz}
+with the coupling constant of the weak interaction $g$, the masses of the \W
+boson $M_W$ and the \Bd meson $m_{\Bd}$, the bag parameter for the \Bd meson
+$B_{\Bd}$, the weak decay constant $F_{\Bd}$, the short-distance QCD
+correction factor $\eta_{2B}$~\cite{Buchalla:1995vs}, and the Inami-Lim
+function~\cite{Inami:1980fz}
 \begin{align}
-	S(x_t) = x_t \left(\frac 14 + \frac 94 \frac{1}{1 - x_t} - \frac 32 \frac{1}{(1 - x_t)^2}\right) + \frac 32 \left(\frac{x_t}{x_t - 1}\right)^3 \log x_t\,.
+	S(x_t) = x_t \left(\frac 14 + \frac 94 \frac{1}{1 - x_t} - \frac 32 \frac{1}{(1 - x_t)^2}\right) + \frac 32 \left(\frac{x_t}{x_t - 1}\right)^3 \log x_t\,,
 \label{eq:cpviolation:inamilim}
 \end{align}
-Here, it is accounted for the suppression of contributions with up and charm
-quarks in the loop due to $m_{\uquark,\cquark}^2 \ll m_{\tquark}^2$. Formulae
-(\ref{eq:cpviolation:mixingamplitude}) and (\ref{eq:cpviolation:inamilim}) are
-taken from Ref.~\cite{Brock:2011zz}.
+where $x_t$ is the squared fraction of the top quark mass with respect to the
+\W boson mass. Here, it is accounted for the suppression of contributions with
+up and charm quarks in the loop due to $m_{\uquark,\cquark}^2 \ll
+m_{\tquark}^2$.
 
 To derive the time evolution of initially produced \Bd and \Bdb mesons the
 Schrödinger equation~\cite{Schroedinger} needs to be solved. Assuming the
