@@ -5,7 +5,7 @@
 % Created on: 2016-05-16
 % ================================================================================
 \RequirePackage[l2tabu, orthodox]{nag}
-\documentclass[12pt,a4paper,twoside,BCOR=13mm,openright,cleardoublepage=plain]{scrbook}
+\documentclass[12pt,a4paper,twoside,BCOR=13mm,openright,cleardoublepage=plain,bibliography=totoc]{scrbook}
 
 % helper packages needed for figures next to tables
 % \usepackage{etex}
@@ -102,10 +102,8 @@
 \input{09-Conclusion/conclusion}
 
 %\addcontentsline{toc}{chapter}{Appendices}
-\input{A-Appendix/appendix}
+% \input{A-Appendix/appendix}
 
-\clearpage
-\addcontentsline{toc}{chapter}{Bibliography}
 \setboolean{inbibliography}{true}
 \bibliographystyle{LHCb}
 \bibliography{99-References/bibliography,99-References/LHCb-PAPER,99-References/LHCb-CONF,99-References/LHCb-DP,99-References/LHCb-TDR,99-References/LHCb-ANA,99-References/LHCb-THESIS,99-References/external}
@@ -113,16 +111,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Acknowledgmenets %%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\addcontentsline{toc}{chapter}{Acknowledgements}
 \input{A-Acknowledgements/acknowledgements}
-\newpage
+\addcontentsline{toc}{chapter}{Acknowledgements}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%% Erklärung %%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ifthenelse{\boolean{wordcount}}{
-}
-{\input{B-Erklaerung/erklaerung}}
+% \ifthenelse{\boolean{wordcount}}{
+% }
+% {\input{B-Erklaerung/erklaerung}}
 
 \end{document}
