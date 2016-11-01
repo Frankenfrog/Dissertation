@@ -12,9 +12,9 @@ scikit-learn~\cite{scikit-learn}, provide implementations of these algorithms.
 
 A simple multivariate classifier is a decision tree~\cite{Breiman}, which
 splits the phase space according to repeated decisions on certain variables.
-Starting from a root node the variable and cut value is determined where the
+Starting from a root node the variable and cut value is determined, where the
 best separation can be achieved according to a criterion like the Gini
-index~\cite{giniindex}, $p \cdot (1-p)$ with $p$ being the signal purity. \ie
+index $p \cdot (1-p)$~\cite{giniindex}, with $p$ being the signal purity, \ie
 the fraction of signal in the total data sample. At each following node the
 cut value and even the variable used for the separation can be chosen
 dependent on the previous decision. The depth of the tree, \ie the maximal
