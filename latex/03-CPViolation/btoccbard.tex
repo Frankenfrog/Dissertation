@@ -18,28 +18,56 @@ tree diagram (top left), a penguin diagram (top right), an exchange diagram
 \end{figure}
 The tree diagram ($T$) proceeds via a \bToccbard quark transition, which is
 CKM suppressed. The contributions from the other diagrams, especially the
-penguin diagrams ($P^{(q)}$ with $q = \cquark$ and \tquark quarks in the
+penguin diagrams ($P^{(q)}$ with $q = \uquark$, \cquark and \tquark quarks in the
 loop), but also exchange ($E$) and penguin annihilation diagrams
-($P\!A^{(q)}$), need to be taken into account as well because they can carry
+($P\!A^{(q)}$), need to be taken into account as well, because they can carry
 different weak phases and are not Cabibbo-suppressed. Thus, the decay
 amplitude is given by~\cite{Fleischer1999,Fleischer2007,Bel:2015wha}
 \begin{align}
-	A(\BdToDD) = \Vcb \mathcal{A}[1 - ae^{i\theta}e^{i\gamma}]\,,
+\begin{split}
+	A(\BdToDD) &= \Vcbs\Vcd T + \Vtbs\Vtd P^{(t)} + \Vcbs\Vcd P^{(c)} + \Vubs\Vud P^{(u)}\\
+			   &+ \Vcbs\Vcd E + \Vcbs\Vtd P\!A^{(t)} + \Vcbs\Vcd P\!A^{(c)} + \Vubs\Vud P\!A^{(u)}\,.
+\end{split}
+\end{align}
+Using the CKM unitarity condition
+\begin{align}
+	\Vtbs\Vtd + \Vcbs\Vcd + \Vubs\Vud = 0 \quad\Leftrightarrow\quad \Vtbs\Vtd = - \Vcbs\Vcd - \Vubs\Vud
+\end{align}
+the decay amplitude can be written as
+\begin{align}
+\begin{split}
+	A(\BdToDD) &= \Vcbs\Vcd \left(T + E + \left\{P^{(c)} + P\!A^{(c)}\right\} - \left\{P^{(t)} + P\!A^{(t)}\right\}\right)\\
+			   &+ \Vubs\Vud \left(\left\{P^{(u)} + P\!A^{(u)}\right\} - \left\{P^{(t)} + P\!A^{(t)}\right\}\right)\,.
+\end{split}
+\end{align}
+With the definition
+\begin{align}
+	\mathcal{A} \equiv \left[T + E + \left\{P^{(c)} + P\!A^{(c)}\right\} - \left\{P^{(t)} + P\!A^{(t)}\right\}\right]\,,
+\end{align}
+this can be further simplified to
+\begin{align}
+	A(\BdToDD) = \Vcbs\Vcd \mathcal{A}\left[1 + \frac{\Vubs\Vud}{\Vcbs\Vcd} \frac{\left\{P^{(u)} + P\!A^{(u)}\right\} - \left\{P^{(t)} + P\!A^{(t)}\right\}}{\mathcal{A}}\right]\,.
+\end{align}
+Applying the Wolfenstein parametrisation and plugging in the definitions of the
+side length $R_b$ (see \cref{eq:cpviolation:Rb}) and of the angle $\gamma$ of
+the unitarity triangle (see \cref{eq:cpviolation:angles})
+\begin{align}
+	\frac{\Vubs\Vud}{\Vcbs\Vcd} &= -\left(1 - \frac{\lambda^2}2\right)\frac 1\lambda \left|\frac \Vub\Vcb\right| \text{arg}\left(\frac{\Vubs\Vud}{\Vcbs\Vcd}\right)\\
+	&= -R_b e^{-i\gamma}\,,
+\end{align}
+the decay amplitude becomes
+\begin{align}
+	A(\BdToDD) = \Vcbs\Vcd \mathcal{A}[1 - ae^{i\theta}e^{-i\gamma}]\,,
 \end{align}
 with
 \begin{align}
-	\mathcal{A} \equiv \Vcds[T + E + {P^{(c)} + P\!A^{(c)}} - {P^{(t)} + P\!A^{(t)}}]\,,
+	ae^{i\theta} \equiv R_b\left[\frac{\{P^{(u)} + P\!A^{(u)}\} - \{P^{(t)} + P\!A^{(t)}\}}{T + E + \left\{P^{(c)} + P\!A^{(c)}\right\} - \left\{P^{(t)} + P\!A^{(t)}\right\}}\right]\,.
 \end{align}
-and
+While $\gamma$ is a \CP-violating weak phase, $a$ and $\theta$ are hadronic
+\CP-conserving parameters. Therefore, the corresponding \Bzb decay amplitude
+is
 \begin{align}
-	ae^{i\theta} \equiv R_b\left[\frac{{P^{(u)} + P\!A^{(u)}} - {P^{(t)} + P\!A^{(t)}}}{T + E + {{P^{(c)} + P\!A^{(c)}} - {P^{(t)} + P\!A^{(t)}}}}\right]\,.
-\end{align}
-Here, $R_b$ is a side length of the unitarity triangle defined in
-\cref{eq:cpviolation:Rb}. The angle $\gamma$ of the unitarity triangle is a
-\CP-violating weak phase, while $a$ and $\theta$ are hadronic \CP-conserving
-parameters. Therefore, the corresponding \Bzb decay amplitude is
-\begin{align}
-	A(\BdbToDD) = \Vcbs \mathcal{A}[1 - ae^{i\theta}e^{-i\gamma}]\,.
+	A(\BdbToDD) = \Vcb\Vcds \mathcal{A}[1 - ae^{i\theta}e^{i\gamma}]\,.
 \end{align}
 The parameter describing \CP violation in the interference can be written as
 \begin{align}
@@ -57,17 +85,13 @@ parameters cannot be calculated reliably within QCD~\cite{Bel:2015wha}. Thus,
 they must be determined through a measurement of the \CP observables, which
 can be expressed via
 \begin{align}
-	\SDD &= -\frac{\sin\phid - 2a \cos\theta\sin(\phid + \gamma) + a^2\sin(\phid + 2\gamma)}{1 - 2a\cos\theta\cos\gamma + a^2}\,,\\
-	\CDD &= \frac{2a\sin\theta\sin\gamma}{1 - 2a\cos\theta\cos\gamma + a^2}\,.
+	\CDD &= \frac{1 - |\lambda|^2}{1 + |\lambda|^2} = \frac{2a\sin\theta\sin\gamma}{1 - 2a\cos\theta\cos\gamma + a^2}\,,\\
+	\SDD &= \frac{2\,\mathcal{I}m\,\lambda}{1 + |\lambda|^2} = -\frac{\sin\phid - 2a \cos\theta\sin(\phid + \gamma) + a^2\sin(\phid + 2\gamma)}{1 - 2a\cos\theta\cos\gamma + a^2}\,.
 \end{align}
-The term \SDD gives access to the mixing phase \phid, which is related to $\beta$ through
-\begin{align}
-	\phid = 2\beta + \phi_d^{\mathrm{NP}}\,,
-\end{align}
-and thus considers new physics contributions as well. While \SDD is caused by
-interference between the direct decay and the decay after mixing, \CDD
-might differ from zero due to interferences between tree and penguin
-contributions. Different than in the case of \BdToJPsiKS only an effective
+Due to interferences between tree and penguin contributions \CDD might differ
+from zero. The term \SDD, which is caused by interference between the direct
+decay and the decay after mixing, gives access to the mixing phase \phid.
+However, different than in the case of \BdToJPsiKS decays only an effective
 phase
 \begin{align}
 	\phideff = \phid + \Delta\phid
@@ -76,20 +100,35 @@ with
 \begin{align}
 	\sin\phideff = -\frac{\SDD}{\sqrt{1 - \CDD^2}}
 \end{align}
-can be measured in \BdToDD. The phase shift $\Delta\phi$ is given by
+can be measured in \BdToDD. The phase shift $\Delta\phid$ is given by
 \begin{align}
-	\tan\Delta\phi = \frac{a^2\sin2\gamma - 2a\cos\theta\sin\gamma}{1 - 2a\cos\rho\cos\gamma + a^2\cos2\gamma}\,.
+	\tan\Delta\phid = \frac{a^2\sin2\gamma - 2a\cos\theta\sin\gamma}{1 - 2a\cos\theta\cos\gamma + a^2\cos2\gamma}\,.
 \end{align}
 
-The decay channel \BsToDsDs is also governed by a \bToccbard transition. It
-gives access to \phis. However, the measurement is as well polluted by
-hadronic penguin effects. Since \BsToDsDs is related to \BdToDD via U-spin
-symmetry, the phase shift $\Delta\phi$ can be transferred.
+The decay channel \BsToDsDs is related to \BdToDD via U-spin symmetry. It is
+governed by a \bToccbars transition and gives access to \phis. The
+measurement is as well polluted by hadronic penguin effects. Here, the phase
+shift is given by
+\begin{align}
+	\tan\Delta\phis = \frac{\epsilon^2a'^2\sin2\gamma + 2\epsilon a'\cos\theta'\sin\gamma}{1 + 2\epsilon a'\cos\theta'\cos\gamma + \epsilon^2a'^2\cos2\gamma}\,.
+\end{align}
+The factor
+\begin{align}
+	\epsilon \equiv \frac{\lambda^2}{1 - \lambda^2} = \num{0.0536\pm0.0003}
+\end{align}
+reduces the impact of the phase shift. However, in the concept of U-spin symmetry
+\begin{align}
+	ae^{i\theta} = a'e^{i\theta'}\,.
+\end{align}
+Thus, with a measurement of \CP violation in \BdToDD decays, where the phase
+shift is not suppressed by $\epsilon$, the hadronic parameters $a$ and
+$\theta$ can be determined precisely, and then transferred to the measurement
+of \CP violation in \BsToDsDs decays.
 
 Further decay modes from the family of \BToDDbar decays are \BdToDstD and
 \BdToDstDst, which also enable a determination of \phideff, but introduce
-further complications. For \BdToDstD the final state is no \CP eigenstate as
-it can be distinguished by the charge of the \Dstarpm meson. Thus, four \CP
+further complications. For \BdToDstD the final state is not a \CP eigenstate
+as it can be distinguished by the charge of the \Dstarpm meson. Thus, four \CP
 observables are needed to describe \CP violation. Furthermore, from an
 experimentalist's point of view the final state is not symmetrical in terms of
 the charges of pions and kaons and thus a detection asymmetry has to be taken
