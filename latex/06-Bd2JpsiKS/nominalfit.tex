@@ -23,8 +23,8 @@ The PDF describing the signal decay time distribution is basically given by
   &\propto \mathrm{e}^{-t/\tau}
     \Big(
       1
-      - d\, \Sf \sin{\left(\dm\,t\right)}
-      + d\, \Cf \cos{\left(\dm\,t\right)}
+      - d\, \Sf \sin{\left(\dmd\,t\right)}
+      + d\, \Cf \cos{\left(\dmd\,t\right)}
     \Big)\,,
 \end{aligned}
 \label{eq:simpledecayrates}
@@ -34,7 +34,7 @@ difference \DGd is set to zero. The theoretical parametrisation is extended by
 taking into account the production asymmetry and the experimental effects of
 mistagging. Furthermore, it is convolved with the decay time resolution model
 presented in \cref{sec:bd2jpsiks:decaytime:resolution} and multiplied by the
-time-dependent efficiency correction for low and high decay times developed in
+decay-time-dependent efficiency correction for low and high decay times developed in
 \cref{sec:bd2jpsiks:decaytime:acceptance}. The background decay time
 distribution is parametrised with the sum of exponential functions.
 In extensive studies using sweighted background distributions (see
@@ -49,8 +49,8 @@ downstream and the long track distributions differ as can be seen in
 \cref{fig:bd2jpsiks:nominalfit:time_error}.
 
 \begin{figure}[htb]
-\includegraphics[width=0.49\textwidth]{06-Bd2JpsiKS/tikz/pdf/obsTimeErr_downstream_pull_logy.pdf}
-\includegraphics[width=0.49\textwidth]{06-Bd2JpsiKS/tikz/pdf/obsTimeErr_longtrack_pull_logy.pdf}
+\includegraphics[width=0.48\textwidth]{06-Bd2JpsiKS/tikz/pdf/obsTimeErr_downstream_pull_logy.pdf}
+\includegraphics[width=0.48\textwidth]{06-Bd2JpsiKS/tikz/pdf/obsTimeErr_longtrack_pull_logy.pdf}
 \caption{
 Decay-time error distributions of downstream (left) and long track (right). The solid black line
 shows the fit projection, while the blue dashed (green dotted) line shows the
@@ -78,7 +78,7 @@ and all parameters included in the decay time acceptance model are fixed.
 Thus, \num{72} floating parameters remain for the fit, of which \num{48} are
 yields.
 
-From the \num{41560} flavour-tagged \BdToJPsiKS decays the \CP observables are determined to be
+From \num{41560} flavour-tagged \BdToJPsiKS decays the \CP observables are determined to be
 \begin{align*}
   \SJpsiKS &=  \phantom{-}0.731 \, \pm 0.035 \, \text{(stat)} \pm 0.020 \, \text{(syst)}\,, \\
   \CJpsiKS &=  			- 0.038 \, \pm 0.032 \, \text{(stat)} \pm 0.005 \, \text{(syst)}\,,

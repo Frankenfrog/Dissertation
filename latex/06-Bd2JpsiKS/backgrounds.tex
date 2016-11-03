@@ -3,12 +3,12 @@
 \section{Backgrounds}
 \label{sec:bd2jpsiks:backgrounds}
 
-Although \BdToJPsiKS is an experimentally very clean decay channel care has to
+Although \BdToJPsiKS is an experimentally very clean decay channel, care has to
 be taken to properly identify, suppress or even reject backgrounds. While the
 two muons can be identified quite effectively, the pions of the \KS decay might
-actually be kaons or protons that have been mis-identified. This would lead
+actually be kaons or protons that have been misidentified. This would lead
 to background contributions from \BdToJPsiKst and \LbToJPsiL. To analyse the
-$\proton \to \pion$ mis-ID the proton mass hypothesis is assigned to one of
+\mbox{$\proton \to \pion$} misidentification the proton mass hypothesis is assigned to one of
 the pions and the invariant mass of the proton-pion pair $m_{\proton\pion}$ is
 recalculated. An excess of candidates at the \Lz mass $M_{\Lz} =
 \SI{1115.683}{\MeVcc}$~\cite{PDG2014} can be seen, which is reduced by applying
@@ -16,7 +16,7 @@ a tighter requirement on the difference of the proton-pion log-likelihood for
 candidates close to $M_{\Lz}$. With \LbToJPsiL signal MC it is checked that
 after reconstruction, stripping and all offline selection requirements,
 including the veto described above, the expected yield is a sub-percent
-effect. For $\kaon \to \pion$ mis-ID the broad width of the \Kstarz does not
+effect. For \mbox{$\kaon \to \pion$} misidentification the broad width of the \Kstarz does not
 allow an analogous approach. But studies on \BdToJPsiKst MC show that the
 expected contribution is even lower than for \LbToJPsiL. The main reason is
 the short lifetime of the \Kstarz, which is exploited by the lifetime
@@ -25,18 +25,16 @@ signal candidates almost only combinatorial background is present in the data
 sample. Nevertheless, it has to be studied whether the background shows any
 tagging-dependent asymmetry, which would dilute the measured \CP asymmetry.
 
-By performing a fit to the invariant mass distribution the \sPlot technique
-provides a possibility to study the tagging-dependent distributions of the
-combinatorial background. First of all, the time-integrated asymmetry
+By performing a fit to the invariant mass distribution the \SPlot
+technique~\cite{Pivk:2004ty} provides a possibility to study the
+tagging-dependent distributions of the combinatorial background. First of all,
+the time-integrated asymmetry
 \begin{align}
   \mathcal{A}_\text{bkg}^{\text{int}} = \frac{\param{N}{\Bzb}{bkg} - \param{N}{\Bz}{bkg}}{\param{N}{\Bzb}{bkg} + \param{N}{\Bz}{bkg}}
 \end{align}
 is calculated for both track type categories and separately for the OS tagging
-combination and the SS\pion tagging algorithm. Out of the four values listed
-in \cref{tab:bd2jpsiks:bkgtimeintegratedasymm} only the one for the downstream OS tagged
-sample, which has the highest statistics, stands out, as it disfavours \CP
-symmetry at more than \num{3} standard deviations.
-\begin{table}[htb]
+combination and the SS\pion tagging algorithm.
+\begin{table}[b]
 \centering
 \caption{Decay-time-integrated asymmetry of sweighted background distributions
 and p-value for compatibility of decay-time-dependent asymmetry with flat line
@@ -53,6 +51,10 @@ LL SS\pion  & $0.044$     & $0.034$ & 0.969 \\
 \bottomrule
 \end{tabular}
 \end{table}
+Out of the four values listed in \cref{tab:bd2jpsiks:bkgtimeintegratedasymm}
+only the one for the downstream OS tagged sample, which has the highest
+statistics, stands out, as it disfavours \CP symmetry at more than \num{3}
+standard deviations.
 
 But even decay-time-integrated asymmetries compatible with zero do not exclude
 decay-time-dependent asymmetries. The latter are investigated by plotting the

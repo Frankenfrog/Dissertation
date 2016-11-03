@@ -19,7 +19,7 @@ where
   \mathcal{P}(t,\vect{d'}\given \vect{\eta}) \\
   \propto \sum_{d} \mathcal{P}(\vect{d'} \given d,\vect{\eta})
       [1 - d\, A_\text{P}] \,
-      e^{-t/\tau}\left\{1 - d\, S \sin(\dm t) + d\, C \cos(\dm t)\right\}\,,
+      e^{-t/\tau}\left\{1 - d\, S \sin(\dmd t) + d\, C \cos(\dmd t)\right\}\,,
 \end{equation}
 and where $t$ is the true decay time, $d$ is the true production flavour,
 $A_\text{P}$ is the production asymmetry, and $\mathcal{P}(\vect{d'} \given
@@ -59,7 +59,7 @@ correlated. So, the latter is modelled as $\prodasym{12} = \prodasym{11} +
 the production asymmetries observed for the two data-taking conditions in the
 measurement of the semileptonic $\CP$ asymmetry~\cite{LHCb-PAPER-2014-053} and
 is used as the width of a Gaussian constraint. The $\Bz$ oscillation frequency and
-the $\Bz$ lifetime are constrained to $\dm =
+the $\Bz$ lifetime are constrained to $\dmd =
 \SI{0.510\pm0.003}{\planckbar\invps}$~\cite{PDG2014} and $\tau =
 \SI{1.519\pm0.005}{\ps}$~\cite{PDG2014}, respectively. The
 flavour-tagging calibration parameters
@@ -81,18 +81,17 @@ The fit results of the $\CP$ observables from the decay time fit are
 \end{split}
 \label{eq:b02dd:decaytimefit:cpresults}
 \end{align}
-
 Only after rescaling the sWeights via
 \begin{align}
-  w_i = w_i \frac{\sum w_i}{\sum w_i^2}\,,
+  \SPlotweight = \mbox{\SPlotweight} \frac{\sum \mbox{\SPlotweight}}{\sum \mbox{\SPlotweight}^2}\,,
 \end{align}
-correct asymmetric uncertainty estimates are delivered by \minos, which is
-\root's standard method to analyse the likelihood shape. A plot of
-the decay time distribution and the projection of the acceptance model are
-shown in \cref{fig:b02dd:decaytimefit}. Good agreement between the latter and
-the shape on signal MC (cf. \cref{fig:b02dd:decaytimefit:acceptance_MC}) can
-be observed but the low statistics leading to rather large uncertainties
-indicated by the error band diminishes the significance of the comparison.
+the correct asymmetric uncertainty estimates are determined from an analysis
+of the likelihood shape. A plot of the decay time distribution and the
+projection of the acceptance model are shown in \cref{fig:b02dd:decaytimefit}.
+Good agreement between the latter and the shape on signal MC (cf.
+\cref{fig:b02dd:decaytimefit:acceptance_MC}) can be observed but the low
+statistics leading to rather large uncertainties indicated by the error band
+diminishes the significance of the comparison.
 
 \begin{figure}[htb]
 \hspace*{\fill}
@@ -112,39 +111,41 @@ error band taking into account the statistical uncertainties.}
 \label{fig:b02dd:decaytimefit}
 \end{figure}
 
-To check if the
-coverage is guaranteed the bootstrapping method is applied. The nominal fit
-procedure, \ie performing the mass fit, calculating the sWeights and fitting
-the weighted tagged decay time distribution, is executed and the fit results
-are stored. The drawing and fitting is done \num{10000} times. It turns out
-that half of the fits fail if the flavour-tagging calibration parameters are
-constrained within their statistical uncertainties. When fixing them to their
-central values the fit failure rate drops to a per-mille effect. From the
-distribution of fit results the two-side \SI{68}{\percent} confidence
-intervals are extracted. To account for the uncertainties on the
-flavour-tagging calibration parameters \num{10000} pseudoexperiments are
-performed, in which the nominal model is used to generate the signal decay
-time distribution and the fit results of the nominal fit are chosen for the
-\CP observables \SDD and \CDD. Before generating the flavour-tagging
-calibration parameters are drawn from Gaussian distributions around their
-central values using the combined statistical + systematic uncertainties. In
-the subsequent fit the flavour-tagging calibration parameters are fixed to
-their central values, like in the fits to the bootstrapped samples. The
-resulting pull distributions are broader than standard normal distributions.
-The deviation of the width from unity shows how much the statistical
-uncertainties are underestimated in the likelihood fit due to not accounting
-for the variation of the flavour-tagging calibration parameters. So, the
-statistical uncertainties for \SDD and \CDD from the bootstrapping including
-the impact of the uncertainty of the flavour-tagging calibration parameters
-are given by scaling the bootstrapping uncertainties by the width of the pull
-distributions:
+To check if the coverage is guaranteed the bootstrapping method is applied.
+The nominal fit procedure, \ie performing the mass fit, calculating the
+sWeights and fitting the weighted tagged decay time distribution, is executed
+and the fit results are stored. The drawing and fitting is done \num{10000}
+times. It turns out that half of the fits fail if the flavour-tagging
+calibration parameters are constrained within their statistical uncertainties.
+When fixing them to their central values the fit failure rate drops to a
+per-mille effect. From the distribution of fit results the two-side
+\SI{68}{\percent} confidence intervals are extracted. To account for the
+uncertainties on the flavour-tagging calibration parameters \num{10000}
+pseudoexperiments are performed, in which the nominal model is used to
+generate the signal decay time distribution and the fit results of the nominal
+fit are chosen for the \CP observables \SDD and \CDD. Before generating the
+flavour-tagging calibration parameters are drawn from Gaussian distributions
+around their central values using the combined statistical + systematic
+uncertainties. In the subsequent fit the flavour-tagging calibration
+parameters are fixed to their central values, like in the fits to the
+bootstrapped samples. The resulting pull distributions are broader than
+standard normal distributions. The deviation of the width from unity shows how
+much the statistical uncertainties are underestimated in the likelihood fit
+due to not accounting for the variation of the flavour-tagging calibration
+parameters. So, the statistical uncertainties for \SDD and \CDD from the
+bootstrapping including the impact of the uncertainty of the flavour-tagging
+calibration parameters are given by scaling the bootstrapping uncertainties by
+the width of the pull distributions:
 \begin{align}
+\begin{split}
     \sigma_{\SDD}(\text{bootstrapping}) &= \,^{+0.17}_{-0.16} \,, \\
     \sigma_{\CDD}(\text{bootstrapping}) &= \,^{+0.18}_{-0.17} \,.
+\end{split}
 \end{align}
-These uncertainties match the nominal ones from \minos quite well.
-The 1D likelihood scans in \cref{fig:b02dd:decaytimefit:1DLLScan} show a nice
-parabolic shape with a clear minimum.
+These uncertainties match the nominal ones from the likelihood shape quite
+well. The one-dimensional likelihood scans in
+\cref{fig:b02dd:decaytimefit:1DLLScan} support the validity as they show nice
+parabolic shapes with clear minima.
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.48\textwidth]{07-B02DD/tikz/pdf/Likelihoodscan_sin2b.pdf}
@@ -157,31 +158,29 @@ Apart from a quite high positive correlation between the parameters of the
 acceptance spline function and the already quoted correlation of about
 \num{0.5} between $\SDD$ and $\CDD$, which is expected from first principles
 (see Ref.~\cite{LHCb-ANA-2011-004}), no large correlation between fitted parameters
-is present as can be seen from the correlation matrix visualised in
+is present, as can be seen from the correlation matrix visualised in
 \cref{fig:b02dd:decaytimefit:FullFitCorrMatrixHotCold}.
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.5\textwidth]{07-B02DD/tikz/pdf/FitResultsCorrMatrix_RedBlueDiscrete_wText.pdf}
+\includegraphics[width=0.7\textwidth]{07-B02DD/tikz/pdf/FitResultsCorrMatrix_RedBlueDiscrete_wText.pdf}
 \caption{Visualised correlation matrix of the fit parameters in the decay time
-fit to data. Positive correlations are represented by the red palette on the $z$ axis,
-while negative correlations are represented by the blue palette of the $z$
-axis.}
+fit to data. Positive correlations are represented by the red palette on the
+$z$ axis, while negative correlations are represented by the blue palette of
+the $z$ axis.}
 \label{fig:b02dd:decaytimefit:FullFitCorrMatrixHotCold}
 \end{figure}
-A possible correlation
-between $\dm$ and $\CDD$ is significantly reduced by the constraint applied on $\dm$,
-which is a lot tighter than the sensitivity accessible from the data sample.
-When releasing this constraint the correlation coefficient becomes \num{-0.8}.
-But the sensitivity on $\CDD$ would significantly decrease in this scenario, so
-the constraint on $\dm$ is maintained in the nominal setup.
-
-
+A possible correlation between $\dmd$ and $\CDD$ is significantly reduced by
+the constraint applied on $\dmd$, which is a lot tighter than the sensitivity
+accessible from the data sample. When releasing this constraint the
+correlation coefficient becomes \num{-0.8}. But the sensitivity on $\CDD$
+would significantly decrease in this scenario, so the constraint on $\dmd$ is
+maintained in the nominal setup.
 
 In \cref{fig:b02dd:decaytimefit:asymmetry} the signal yield asymmetry is
 plotted in eight bins of the decay time. A binned $\chisq$-fit to this signal
 asymmetry is performed using
 \begin{align}
-{\mathcal A}^{\text{meas}}(t) = \frac{\Delta\omega + \prodasym{11}(1 - 2\omega) + (1 - 2\omega + \prodasym{11}\Delta\omega){\mathcal A}^{\text{theo}}(t)}{1 + \prodasym{11}(\SDD \sin(\dm\,t) - \CDD \cos(\dm\,t))}\,,
+{\mathcal A}^{\text{meas}}(t) = \frac{\Delta\omega + \prodasym{11}(1 - 2\omega) + (1 - 2\omega + \prodasym{11}\Delta\omega){\mathcal A}^{\text{theo}}(t)}{1 + \prodasym{11}(\SDD \sin(\dmd\,t) - \CDD \cos(\dmd\,t))}\,,
 \label{eq:b02dd:decaytimefit:asymmetry_td}
 \end{align}
 which is a modified version of the theoretical signal asymmetry in
@@ -198,11 +197,11 @@ are compatible with those from the unbinned fit presented in
 \cref{eq:b02dd:decaytimefit:cpresults} but not as sensitive.
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.48\textwidth]{07-B02DD/tikz/pdf/Asymmetry.pdf}
+\includegraphics[width=0.7\textwidth]{07-B02DD/tikz/pdf/Asymmetry.pdf}
 \caption{Decay-time-dependent signal yield asymmetry. The solid blue curve is the
-projection of the signal PDF given in \cref{eq:fullpdf} and the dashed red curve is the
-pure time-dependent fit function from
-\cref{eq:b02dd:decaytimefit:asymmetry_td}}
+projection of the signal PDF given in \cref{eq:fullpdf} and the dashed red
+curve is the pure decay-time-dependent fit function from
+\cref{eq:b02dd:decaytimefit:asymmetry_td}.}
 \label{fig:b02dd:decaytimefit:asymmetry}
 \end{figure}
 

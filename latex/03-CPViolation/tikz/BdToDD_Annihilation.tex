@@ -6,8 +6,8 @@
     \vertex[right=1cm of bbar] (W1);
     \vertex[right=1cm of d1] (W2);
     \vertex[label={[rotate=90]above:{$\uquark,\cquark,\tquark$}}] at ($(W1)!0.5!(W2) + (1.5em,0)$) (i1);
-    \vertex[right=1.5cm of i1] (i2);
-    \vertex[right=1.5cm of i2] (i3);
+    \vertex[right=1.6cm of i1] (i2);
+    \vertex[right=1.4cm of i2] (i3);
     \vertex[right=6cm of bbar] (dbar) {$\dquarkbar$};
     \vertex[right=6cm of d1] (d2) {$\dquark$};
     \vertex[below=3em of d2] (cbar) {$\cquarkbar$};
@@ -20,7 +20,7 @@
         (dbar) -- [out=180, in=90] (i3) -- [out=-90, in=180] (d2),
         (cbar) -- [out=180, in=-90] (i2) -- [out=90, in=180] (c),
       },
-      (i1) -- [scalar] (i2),
+      (i1) -- [scalar, align=center, font=\tiny, edge label'={Colour Singlet\\Exchange}] (i2),
       (W2) -- [half right] (W1),
       (W1) -- [boson, edge label'={$W$}] (W2),
     };

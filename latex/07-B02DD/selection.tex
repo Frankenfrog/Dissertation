@@ -6,7 +6,7 @@
 The amount of background in \BdToDD is too high to perform a significant
 measurement of \CP violation without any selection. The selection is divided
 into three parts: a preselection with many high signal efficiency
-requirements, a dedicated treatment of mis-identified backgrounds and a
+requirements, a dedicated treatment of misidentified backgrounds and a
 multivariate analysis to further reduce combinatorial background.
 
 \subsection{Preselection}
@@ -39,11 +39,11 @@ assumption that a very tight cut leaves only candidates with resonant $\Dpm$
 mesons. Gradually loosening the cut the value can be found where the product
 of the \Bd signal yield, extracted from a fit on data, and the signal
 efficiency, determined on MC, exceeds the estimation from the initial tight
-cut scenario. If both $\Dpm$ mesons are reconstructed via \DToKpipi decays the
+cut scenario. If both $\Dpm$ mesons are reconstructed via \DToKpipi decays, the
 decay time significance has to be greater than \num{0}. It needs to be greater
 than \num{3} if one of the $\Dpm$ mesons is reconstructed in the \KKpi and the
 other in the \Kpipi final state. Although in this case the final states
-of the \Dpm mesons differ the same cut is applied to both \Dpm mesons as on
+of the \Dpm mesons differ, the same cut is applied to both \Dpm mesons, as on
 signal MC the comparison of the distributions of the decay time significance
 shows a good agreement between \DToKpipi and \DToKKpi decays.
 
@@ -51,7 +51,7 @@ The vertex formed by a pair of oppositely charged $\Dpm$ candidates needs to
 be of good quality. The scalar sum of the $\pT$ of the $\Dpm$ mesons must
 exceed $\SI{5}{\GeVc}$. In the stripping a BDT to select $\Bd$ candidates is
 applied. The BDT is based on the \pT and the flight distance \chisq of the \Bz
-as well as on the sum of the \Bz and both \PD vertex \chisq's divided by the
+as well as on the sum of the \Bz and both \PD vertex \chisq divided by the
 sum of the degrees of freedom of these vertex fits. Moreover, the \Bd
 candidates are required to have $p > \SI{10}{\GeVc}$ and to have
 $\chisqip<\num{25}$, where $\chisqip$ is defined as the difference in the
@@ -59,47 +59,59 @@ vertex fit $\chi^2$ of the associated PV with and without the $B^0$ candidate.
 
 The reconstructed decay time $t$ of the \Bd candidate is determined from a
 DecayTreeFit~\cite{Hulsbergen:2005pu}, in which the \Bd production vertex is
-constrained to the position of the associated PV. Only candidates with decay
-times in the range \SIrange{0.25}{10.25}{\ps} are kept. The invariant mass
-$m_{\Dp\Dm}$ of the $\Bd$ candidate has to be in the range
-\SIrange{5150}{5500}{\MeVcc}. It is calculated from a DTF, in which the
-invariant masses of $\Kpipi$ and $\KKpi$ are additionally constrained to the
-known $\Dp$ mass. It is required that these fits have converged. Further
-outliers are removed by requiring that the uncertainty on the invariant mass
-and on the decay time has to be below \SI{30}{\MeVcc} and \SI{0.2}{\ps},
-respectively, and that the absolute value of the $z$ coordinate of the PV is
-smaller than \SI{250}{\milli\meter}.
+constrained to the position of the associated PV. The invariant mass
+$m_{\Dp\Dm}$ of the $\Bd$ candidate is calculated from a DecayTreeFit, in
+which the invariant masses of $\Kpipi$ and $\KKpi$ are additionally
+constrained to the known $\Dp$ mass. It is required that these fits have
+converged. Further outliers are removed by requiring that the uncertainties on
+the invariant mass and on the decay time have to be below \SI{30}{\MeVcc} and
+\SI{0.2}{\ps}, respectively, and that the absolute value of the $z$ coordinate
+of the PV is smaller than \SI{250}{\milli\meter}.
 
-The signal efficiency of the preselection for the final state with two kaons
-is $\SI{82}{\percent}$ at a background rejection of $\SI{94}{\percent}$. For
-the final state with three kaons the signal efficiency is
-$\SI{67.5}{\percent}$ at a background rejection of $\SI{98}{\percent}$.
+The signal efficiency of the preselection is $\SI{82}{\percent}$ for the final
+state, where both \Dpm mesons are reconstructed as \Kpipi, at a background
+rejection of $\SI{94}{\percent}$. For the second final state, which in total
+contains three kaons, the signal efficiency is $\SI{67.5}{\percent}$ at a
+background rejection of $\SI{98}{\percent}$. The total number of candidates
+after the preselection is about \num{110000}. The emerging mass distribution
+in \cref{fig:b02dd:selection:mass_afterpreselection} shows that most of these
+candidates are due to background contributions. In fact, the highest peak in
+the mass spectrum is not arising from the signal decay but from misidentified
+background. The vetoes, which are applied to suppress this contribution, are
+described in the next section.
+\begin{figure}[hbt]
+\centering
+\includegraphics[width=0.7\textwidth]{07-B02DD/tikz/pdf/obsMass_afterPreselection.pdf}
+\caption{Invariant mass distribution of \BdToDD decays after all preselection
+requirements are applied.}
+\label{fig:b02dd:selection:mass_afterpreselection}
+\end{figure}
 
 \subsection{Vetoes}
 \label{sec:b02dd:selection:vetoes}
 
-A $K\rightarrow\pi$ mis-ID can lead to background contributions from
-$\DspToKKpi$, which predominantly proceeds through $\DsTophipi$. To reduce
-these $\Dsp$ contributions the kaon mass hypothesis is assigned to the pion
-with the higher transverse momentum of $\DpToKpipi$ candidates. The candidate
-is rejected if the invariant mass of the hypothetical kaon pair is compatible
-with the $\phi$ mass of $M_{\phi} = \SI{1019.461}{\MeVcc}$~\cite{PDG2014}
-within $\pm\SI{10}{\MeVcc}$ or if the invariant mass of the $\kaon\kaon\pion$
-combination is compatible with the \Dsp mass of $M_{\Dsp} =
-\SI{1968.30}{\MeVcc}$~\cite{PDG2014} within $\pm\SI{25}{\MeVcc}$ and the pion
-with the higher \pT (the one that the kaon mass hypothesis is assigned to) has
-a larger $\texttt{ProbNN}K$ than $\texttt{ProbNN}\pion$ probability. When
-assigning the kaon mass hypothesis to the pion with the lower \pT no vetoes
-are applied as no resonant structures at the $\phi$ or the $\Dsp$ mass are
-found.
+Misidentification of kaons as pions can lead to background contributions from
+\mbox{$\DspToKKpi$}, which predominantly proceeds through $\DsTophipi$. To
+reduce these $\Dsp$ contributions the kaon mass hypothesis is assigned to the
+pion with the higher transverse momentum of $\DpToKpipi$ candidates. The
+candidate is rejected if the invariant mass of the hypothetical kaon pair is
+compatible with the $\phi$ mass of $M_{\phi} =
+\SI{1019.461}{\MeVcc}$~\cite{PDG2014} within $\pm\SI{10}{\MeVcc}$. It is also
+rejected if the invariant mass of the $\kaon\kaon\pion$ combination is
+compatible with the \Dsp mass of $M_{\Dsp} =
+\SI{1968.30}{\MeVcc}$~\cite{PDG2014} within $\pm\SI{25}{\MeVcc}$ and at the
+same time the pion with the higher \pT (the one that the kaon mass hypothesis
+is assigned to) is more kaon- than pion-like. When the kaon mass hypothesis is
+assigned to the pion with the lower \pT, no vetoes are applied as no resonant
+structures at the $\phi$ or the $\Dsp$ mass are found.
 
-To reduce $p\rightarrow\pi$ mis-ID the proton mass hypothesis is assigned to
-the pion with the higher \pT of $\DpToKpipi$ candidates. The candidate is
-rejected if the invariant mass of the $\kaon\proton\pion$ combination is
-compatible with the \Lc mass of $M_{\Lc} =
+To reduce \mbox{$p\rightarrow\pi$} misidentification the proton mass
+hypothesis is assigned to the pion with the higher \pT of $\DpToKpipi$
+candidates. The candidate is rejected if the invariant mass of the
+$\kaon\proton\pion$ combination is compatible with the \Lc mass of $M_{\Lc} =
 \SI{2286.46}{\MeVcc}$~\cite{PDG2014} within $\pm\SI{25}{\MeVcc}$ and the
-proton probability $\texttt{ProbNN}p$ of the pion with the higher \pT is
-larger than $\texttt{ProbNN}\pion$.
+proton probability of the pion with the higher \pT is
+larger than the pion probability.
 
 \subsection{Multivariate analysis}
 \label{sec:b02dd:selection:mva}
@@ -111,7 +123,7 @@ To further suppress combinatorial background a Boosted Decision Tree
 (BDT)~\cite{Breiman,Roe} based on the implementation in
 TMVA~\cite{Hocker:2007ht} is trained using a signal MC sample and the upper
 mass sideband with $m_{\Dp\Dm} > \SI{5500}{\MeVcc}$. The training is performed
-on half of these samples while the other half is used to test the BDT
+on half of these samples, while the other half is used to test the BDT
 performance. The selection steps described above, are applied before the
 training.
 
@@ -166,18 +178,19 @@ related to the kinematics of the decay like transverse momenta, decay time
 significances and direction angles, qualities of the track segments in the
 VELO and the T-stations, and vertex qualities.
 
-Before the training the features are transformed to decorrelate and
-decompose them into the principal components, which improves the performance of
-the BDT. The BDTs are each built out of \num{700} trees. The depth of the trees is
+Before the training the features are transformed to decorrelate and decompose
+them into the principal components, which improves the performance of the BDT.
+The BDTs are each built out of \num{700} trees. The depth of the trees is
 limited to three. At each node at least \SI{3}{\percent} of the training
 events have to be present. The variables are scanned at \num{40} points to
 find the optimal cut value. For the boosting the AdaBoost
 method~\cite{AdaBoost} with a boost factor of $\beta = \num{0.1}$ is deployed.
 
 Overtraining is checked by applying the BDT on both the training and the
-testing sample (see \cref{fig:b02dd:selection:mva:overtraining}).
-%
-\begin{figure}[!htb]
+testing sample. As can be seen in \cref{fig:b02dd:selection:mva:overtraining},
+the classifier output distributions are compatible, which means that no
+inherent overtraining is present for the BDT.
+\begin{figure}[htb]
 \centering
 \includegraphics[width=0.48\textwidth]{07-B02DD/figs/Overtraining_Check_Kpipi.pdf}
 \includegraphics[width=0.48\textwidth]{07-B02DD/figs/Overtraining_Check_KKpi.pdf}
@@ -185,16 +198,13 @@ testing sample (see \cref{fig:b02dd:selection:mva:overtraining}).
 \KpipiKpipi final state (left) and the \KKpiKpipi final state (right).}
 \label{fig:b02dd:selection:mva:overtraining}
 \end{figure}
-%
-Using simulations in the selection contains the possibility that certain
-distributions are not modelled properly and differences between the simulation
-and real data are exploited instead of differences between signal and
-background. Indeed, the classifier output distributions of the signal MC and
-background-subtracted data show a quite large disagreement for both final
-states as can be seen in \cref{fig:b02dd:selection:mva:bdtcomparison}. The
-performance is clearly overestimated in the training.
-%
-\begin{figure}[htbp]
+However, using simulated data in the selection involves the possibility that
+certain distributions are not modelled properly and differences between the
+simulation and real data are exploited instead of differences between signal
+and background. Indeed, the classifier output distributions of signal MC and
+of background-subtracted data show a quite large disagreement for both final
+states, as can be seen in \cref{fig:b02dd:selection:mva:bdtcomparison}.
+\begin{figure}[htb]
     \centering
     \includegraphics[width=0.49\textwidth]{07-B02DD/tikz/pdf/BDTComparison_Kpipi.pdf}
     \includegraphics[width=0.49\textwidth]{07-B02DD/tikz/pdf/BDTComparison_KKpi.pdf}
@@ -203,11 +213,13 @@ performance is clearly overestimated in the training.
     \KKpiKpipi final state (right).}
     \label{fig:b02dd:selection:mva:bdtcomparison}
 \end{figure}
-%
-This would be a problem if the selection efficiencies had to be calculated
-using the MC sample. But for a measurement of \CP violation it is mainly
-important that the amount of background can somehow be reduced while most of
-the signal is kept. This can be achieved with the current setting.
+The distributions of signal MC are shifted towards higher, thus more
+signal-like, values. This means that the performance of the BDT classifier is
+overestimated in the training. If selection efficiencies had to be calculated
+using the MC sample, this would be a problem. But for a measurement of \CP
+violation it is mainly important that the amount of background can somehow be
+reduced, while most of the signal is kept. This can be achieved with the given
+setting.
 
 % ==============================================================================
 \subsubsection*{BDT cut optimisation}
@@ -215,7 +227,7 @@ the signal is kept. This can be achieved with the current setting.
 
 As explained in \cref{sec:dataanalysis:selection:fom} the best figure of merit
 for a measurement of \CP violation is the sensitivity on the \CP observables
-themselves. So the requirement on the BDT classifier output is scanned
+themselves. Thus, the requirement on the BDT classifier output is scanned
 performing a fit to the invariant $\Dp\Dm$ mass spectrum followed by a decay
 time fit of the background-subtracted sample for each scan point. Initially,
 only the subsample with two kaons in the \Bd final state is analysed. In
@@ -227,24 +239,24 @@ the BDT classifier output.
 \centering
 \includegraphics[width=0.48\textwidth]{07-B02DD/tikz/pdf/Sensitivities_Kpipi.pdf}
 \includegraphics[width=0.48\textwidth]{07-B02DD/tikz/pdf/Sensitivities_KKpi.pdf}
-\caption{Sensitivity of \SDD (red short-dashed) and \CDD (blue long-dashed) as
+\caption{Statistical uncertainty on \SDD (red short-dashed) and \CDD (blue long-dashed) as
 a function of the BDT classifier output for the \KpipiKpipi final state (left)
 and the \KKpiKpipi final state (right).}
 \label{fig:b02dd:selection:mva:sensitivities}
 \end{figure}
 %
 The uncertainty on \CDD improves with tighter requirements on the BDT
-classifier until it reaches an optimum shortly after zero. This can be
+classifier, until it reaches an optimum just above zero. This can be
 explained with the fact that the sensitivity on \CDD mainly comes from
 candidates at low decay times because the cosine function is maximal there.
 The suppression of the rather short-lived combinatorial background compensates
 the loss in signal efficiency for a quite long range. In contrast, the
-uncertainty on \SDD is mainly driven by the amount of signal candidates. So it
-is more or less flat for loose requirements on the BDT classifier where only
-few signal candidates are lost and this is compensated by the higher purity
-and reaches its optimum around \num{-0.25} before it starts to get worse. Now
+uncertainty on \SDD is mainly driven by the amount of signal candidates. Thus, it
+is more or less flat for loose requirements on the BDT classifier, where only
+few signal candidates are lost and this loss is compensated by the higher purity,
+and reaches its optimum around \num{-0.25}, before it starts to get worse. Now
 that both observables are of interest and the optima are not at the same cut
-value it is decided to require the BDT classifier to be greater than
+value, it is decided to require the BDT classifier to be greater than
 \num{-0.10}. This is a good compromise between both observables as the
 uncertainties of \SDD and \CDD are almost the same and close to their optima.
 The requirement has a signal efficiency of \SI{96.5\pm0.5}{\percent} and
@@ -253,7 +265,7 @@ rejects \SI{84.18\pm0.34}{\percent} of the combinatorial background.
 In a second step the requirement on the BDT classifier for the \KKpiKpipi
 final state is optimised. The \KKpiKpipi subsample is quite small, which makes
 individual fits on this subsample rather unstable. This can be solved by
-performing a simultaneous fit to the whole dataset with the previously
+performing a simultaneous fit to the whole data sample with the previously
 determined BDT cut applied to the \KpipiKpipi subsample. Scanning the BDT
 classifier output for the \KKpiKpipi final state results in the sensitivities
 on \SDD and \CDD plotted in \cref{fig:b02dd:selection:mva:sensitivities}. Both
@@ -270,7 +282,17 @@ misreconstructed \mbox{\BdToDstD}, at low masses, prevents overtraining
 effects on the high-mass sideband used in the training of the BDT, and leaves
 enough candidates in the upper mass sideband to determine the shape of the
 combinatorial background. Additionally, the decay time is restricted to be in
-the range \SIrange{0.25}{10.25}{\ps} to avoid edge effects. In
+the range \SIrange{0.25}{10.25}{\ps}. Already in the stripping the candidates
+are required to have decay times greater than \SI{0.2}{\ps}. But as in the
+stripping the LokiVertexFitter and in the analysis the DecayTreeFitter is
+used, the lower decay time boundary is not well defined. That is the reason
+why the cut is tightened a little bit. Very few signal candidates are lost by
+this requirement, while the determination of a smooth decay time acceptance
+(see \cref{sec:b02dd:decaytimefit:acceptance}) is simplified. In
 \SI{0.8}{\percent} of the selected events more than one candidate remains,
 which is very unlikely given the low branching fraction. Therefore, only one
 of the multiple candidates is kept, which is chosen randomly.
+
+After all selection steps \num{6209} candidates remain in the data sample, of
+which about \SI{25}{\percent} are signal candidates. The exact number of
+signal candidates is determined in a mass fit described in the next section.

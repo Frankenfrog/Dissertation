@@ -11,25 +11,27 @@ this is unrealistic. Instead, suitable figures of merit have to be defined,
 whose optimum should correspond with the ideal selection.  In a measurement of
 \CP violation the goal is to obtain the optimal precision. Therefore, the
 sensitivity on the \CP observables itself seems to be the best figure of
-merit. However, there are some caveats. On the one hand, there is usually more
-than one observable describing the \CP violation and a strategy needs to be
-found how the sensitivities of the different \CP observables can be combined
-into a single figure of merit. On the other hand, the absolute uncertainty
-might depend on the central value and thus small values for the \CP
-observables could be preferred. Finally, the full time-dependent fit has to be
-performed, which is often very complex and takes a long time until it
-converges. For all these reasons, alternative figure of merits are developed.
-A very simple one is the pure signal efficiency $\epsilon_S$. Under the
-assumptions that a high signal yield is more important than a low background
-contamination and that the selection requirements are effectively suppressing
-background contributions, a possible selection strategy is to judge
-requirements only by their signal efficiency. In the \BdToJPsiKS analysis this
-approach is chosen using the requirement that the individual cuts have to be
-at least \SI{99}{\percent} signal efficient. Including the background yield to
-the definition of the figure of merit should make it easier to find the
-optimal cut point, as the background contamination partly influences the
-achievable sensitivity. There are several possibilities how the signal yield
-$S$ and the background yield $B$ can be combined: The figure of merit
+merit. Indeed, the optimisation of the BDT output classifier in the selection
+of \BdToDD decays is based on this very criterion. However, there are some
+caveats. On the one hand, there is usually more than one observable describing
+the \CP violation and a strategy needs to be found how the sensitivities of
+the different \CP observables can be combined into a single figure of merit.
+On the other hand, the absolute uncertainty might depend on the central value
+and thus small values for the \CP observables could be preferred. Finally, the
+full decay-time-dependent fit has to be performed, which is often very complex
+and takes a long time until it converges. For all these reasons, alternative
+figures of merit are developed. A very simple one is the pure signal
+efficiency $\epsilon_S$. Under the assumptions that a high signal yield is
+more important than a low background contamination and that the selection
+requirements are effectively suppressing background contributions, a possible
+selection strategy is to judge requirements only by their signal efficiency.
+In the \BdToJPsiKS analysis this approach is chosen using the requirement that
+the individual cuts have to be at least \SI{99}{\percent} signal efficient.
+Including the background yield to the definition of the figure of merit should
+make it easier to find the optimal cut point, as the background contamination
+partly influences the achievable sensitivity. There are several possibilities
+how the signal yield $S$ and the background yield $B$ can be combined: The
+figure of merit
 \begin{align}
 	Q_1 = \frac{S}{S + B}\,,
 \end{align}
@@ -83,4 +85,11 @@ Moreover, the influence of further experimentally induced dilutions can be
 added, \eg from the flavour tagging (see \cref{sec:detector:tagging})
 or the decay time resolution (see \cref{sec:dataanalysis:resolution}). Such a
 generalised figure of merit for decay-time-dependent measurements of
-\CP violation is derived in Ref.~\cite{FOM}.
+\CP violation is derived in Ref.~\cite{FOM}. Although it sounds as if the
+figure of merit $Q_6$ is most qualified, it is neither used in the selection
+of \BdToJPsiKS decays nor in the selection of \BdToDD decays. The reason is
+that the systematic uncertainty caused by complex figures of merit is
+difficult to estimate. Therefore, although alternative figures of merit have
+been tested, the signal efficiency respectively the direct statistical
+uncertainty are chosen as figures of merit, as they have been trusted more in
+the internal review processes.

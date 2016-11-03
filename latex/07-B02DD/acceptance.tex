@@ -4,7 +4,7 @@
 
 The trigger requirements as well as some input variables to the BDT result in
 a decay-time-dependent efficiency. Additionally, the \velo reconstruction
-(\ie the FastVelo algorithm~\cite{Callot:2011bza}) causes a drop in decay time
+(\ie the FastVelo algorithm~\cite{Callot:2011bza}) causes a drop in the decay time
 acceptance for events with large decay times. In order to correctly describe
 these effects the $\Bd$ lifetime is constrained to $\tau =
 \SI{1.519\pm0.005}{\ps}$~\cite{PDG2014} in the nominal fit and any deviation
@@ -16,7 +16,7 @@ boundaries of the decay time range (\SIlist{0.25;10.25}{\ps}). The
 normalisation of the splines is arbitrary and it has been decided to fix the
 second to last spline coefficient to $\num{1.0}$.
 
-On signal MC the truth information is available so the shape of the decay time
+On signal MC the truth information is available, so the shape of the decay time
 acceptance can be separated from the exponential decay. This shape is compared
 with the spline method described above. As the BDTs are trained and applied
 separately for the two final states and might have different effects on the
@@ -37,17 +37,17 @@ with six knots.}
 \end{figure}
 
 Looking at the plots in \cref{fig:b02dd:decaytimefit:acceptance_MC} it is
-apparent that compared to $\BdToJPsiKS$ there is a quite large efficiency loss
-at high decay times. This might be related to the fact that both $\Bd$
-daughter particles ($\Dp$ and $\Dm$) are relatively long-lived. The true MC
-decay time acceptance is overlaid with the shape of two spline functions.
-Besides the spline function with the nominal number of four knots an
-additional spline function with two more knots and slightly changed positions
-$(\SIlist[list-final-separator={, }]{0.25;0.7;1.0;1.5;2.5;10.25}{\ps})$ is
-plotted, which gives a better description. But it has to be considered that
-the statistics of the MC sample is \num{25} times larger than the real data.
-Therefore, the spline function with four knots is chosen, otherwise
-statistical fluctuations and not acceptance effects would be described. The
-low statistics of the $\KKpiKpipi$ final state on real data does also not
-allow to use separate spline coefficients for the two final states although
-with the increased MC statistics some differences become visible.
+apparent that there is a quite large efficiency loss at high decay times. This
+might be related to the fact that both $\Bd$ daughter particles ($\Dp$ and
+$\Dm$) are relatively long-lived. The true MC decay time acceptance is
+overlaid with the shape of two spline functions. Besides the spline function
+with the nominal number of four knots an additional spline function with two
+more knots and slightly changed positions $(\SIlist[list-final-separator={,
+}]{0.25;0.7;1.0;1.5;2.5;10.25}{\ps})$ is plotted, which gives a better
+description. But it has to be considered that the statistics of the MC sample
+is \num{25} times larger than the real data. Therefore, the spline function
+with four knots is chosen, otherwise statistical fluctuations and not
+acceptance effects would be described. The low statistics of the $\KKpiKpipi$
+final state on real data does also not allow to use separate spline
+coefficients for the two final states, although with the increased MC
+statistics some differences become visible.

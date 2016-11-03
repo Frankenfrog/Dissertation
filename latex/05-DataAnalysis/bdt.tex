@@ -22,11 +22,12 @@ number of consecutive decisions, is tunable. When a stop criterion is matched,
 \eg the ratio of candidates reaching a node falls below a predefined
 threshold, no further decisions are applied. The tree is trained with a set of
 labelled data. Each final leaf is classified as signal or background depending
-on the class of the majority of training events ending in that leaf.
-
-An improvement can be achieved by combining several decision trees to a
-forest, in which the classification of an event follows a majority vote
-of the individual trees, \eg in a Random Forest~\cite{RandomForest}.
+on the class of the majority of training events ending in that leaf. Ideally,
+the decision tree should learn, which sequence of criteria achieves the best
+separation between signal and background. An improvement can be achieved by
+combining several decision trees to a forest, in which the classification of
+an event follows a majority vote of the individual trees, \eg in a Random
+Forest~\cite{RandomForest}.
 
 An alternative is to alter the impact of the training events in a decision
 tree by applying weights. This procedure is called boosting and leads to
@@ -63,3 +64,20 @@ Another multivariate method is the Artificial Neural Network
 units, hidden units and output units. The way how these units are connected,
 the corresponding strength and the effect, either excitatory or inhibitory,
 defines the neural network.
+
+Multivariate selection methods have the disadvantage that their success has to
+be limited or in other words that it is not necessarily ideal if a perfect
+separation is achieved. The problem is that the training data are only proxies
+for the real data and that the multivariate method eventually learns to
+distinguish the different categories based on unphysical properties that do
+not inhere in real data. These could for example be statistical fluctuations
+or differences between simulated and real data. This so called overtraining
+leads to an overestimation of the performance of the selection. Overtraining
+can be avoided if the training data samples are large and as close as possible
+to the real data, on which the selection should be applied in the end.
+However, this does not mean that the same data should be used for the training
+and for the analysis. In the selection of \BdToDD decays the high mass
+sideband is taken as proxy for the combinatorial background and excluded from
+the subsequent analysis. A typical check for overtraining is performed by
+comparing the output classifier distributions of the training data and of a
+test sample, which has been removed randomly from a common data set.
